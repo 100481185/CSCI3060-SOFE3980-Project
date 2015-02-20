@@ -1,0 +1,2 @@
+/home/nicholas/projects/CSCI3060-SOFE3980-Project/gtest/CMakeFiles/gtest.dir
+/home/nicholas/projects/CSCI3060-SOFE3980-Project/gtest/CMakeFiles/gtest_main.dir
