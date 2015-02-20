@@ -13,6 +13,7 @@ set(SOURCE_FILES xstream/src/control.cpp
                  xstream/src/account.cpp
                  xstream/src/account.cpp
                  xstream/src/test/ControlTestSuite.h
+                 xstream/src/test/LoginTestSuite.h
                  xstream/src/test/main.cpp )
 
 add_executable(runTests ${SOURCE_FILES})
