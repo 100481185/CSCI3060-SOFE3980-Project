@@ -1,26 +1,25 @@
-#ifndef ACCOUNT_H
-#define ACCOUNT_H
+#ifndef XSTREAM_ACCOUNT_H
+#define XSTREAM_ACCOUNT_H
 
 #include <iostream>
-#include <string>
 #include <list>
+
 
 using namespace std;
 
-
 class Account {
-    string username, type_;
+    std::string username, type_;
     float credit;
 public:
-    Account(string, string, float);
+    Account(std::string, std::string, float);
 
-    void setValues(string, string, float);
+    void setValues(std::string, std::string, float);
 
-    string getName() {
+    std::string getName() {
         return username;
     }
 
-    string getType() {
+    std::string getType() {
         return type_;
     }
 

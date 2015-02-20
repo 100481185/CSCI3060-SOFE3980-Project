@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(QandA)
+project(runTests)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES src/main.cpp src/login.cpp src/cmdfilter.cpp src/account.cpp)
-add_executable(QandA ${SOURCE_FILES})
+
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+set(SOURCE_FILES xstream/src/control.cpp xstream/src/login.cpp xstream/src/account.cpp xstream/src/test/sample1.cpp)
+add_executable(runTests ${SOURCE_FILES})
+
+target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
