@@ -1,3 +1,7 @@
+#include "../src/xstream.h"
+#include "ControlTestSuite.h"
+
+
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -7,8 +11,7 @@ int main(int argc, char **argv) {
     } else if (argc <= 2) {
         switch (atoi(argv[1])) {
             case LOGIN:
-                cout << "check" << endl;
-                ::testing::FLAGS_gtest_filter = "LoginTestSuite";
+                testing::FLAGS_gtest_filter = "LoginTestSuite.*";
                 break;
             case LOGOUT:
             case CREATE:

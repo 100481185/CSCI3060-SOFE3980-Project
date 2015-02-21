@@ -1,3 +1,6 @@
+#ifndef XSTREAM_TEST_CONTROLTESTSUITE_H
+#define XSTREAM_TEST_CONTROLTESTSUITE_H
+
 #include <gtest/gtest.h>
 #include "../src/controller/control.h"
 
@@ -9,7 +12,6 @@ TEST(CMDFilterTestCase, InputLogin) {
     ASSERT_LT(cmdManager("Login"), 0);
 }
 
-//Test(ControlTestCase, ) {
-//    ASSERT_ANY_THROW(<#statement#>);
-//}
+#endif // XSTREAM_TEST_CONTROLTESTSUITE_H
+
 

@@ -1,21 +1,20 @@
 #include <string>
 #include <iostream>
-
 #include "login.h"
-#include <fstream>
 #include <iomanip>
 
 using namespace std;
 
 int login(bool *loggedIn, string *permission) {
-    std::cout << USERACCNT << std::endl;
-    if (readFile(USERACCNT) < 0) {
+    std::cout << USERACCOUNT_TXT << std::endl;
+    if (openFile(USERACCOUNT_TXT) < 0) {
         return -1;
     }
 
     std::string username;
     std::cout << "Please enter your username: \n";
     std::cin >> username;
+
 
     username.resize(14, ' ');
     if (checkUser(username, loggedIn, permission) < 0) {
@@ -25,21 +24,29 @@ int login(bool *loggedIn, string *permission) {
 }
 
 
-int readFile(string const fileName) {
+int openFile(string const fileName) {
     ifstream userAccounts;
     userAccounts.open(fileName);
 
+    if (userAccounts.is_open()) {
+        return readFile(&userAccounts);
+    }
+    return -1;
+}
+
+int readFile(ifstream *userAccounts) {
     ptr = accounts.begin();
     std::string line;
-    if (userAccounts.is_open()) {
-        while (getline(userAccounts, line)) {
+    while (getline(*userAccounts, line)) {
+        try {
             accounts.insert(ptr, loadData(line));
+        } catch (exception &e) {
+            cout << e.what() << endl;
+            (*userAccounts).close();
+            return -1;
         }
-        userAccounts.close();
     }
-    else {
-        return -1;
-    }
+    (*userAccounts).close();
     return 0;
 }
 

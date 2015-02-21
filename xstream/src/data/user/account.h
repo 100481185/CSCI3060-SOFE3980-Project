@@ -7,6 +7,8 @@
 
 using namespace std;
 
+#define USERACCOUNT_TXT "../xstream/src/data/user/UserAccounts.txt"
+
 class Account {
     std::string username;
     std::string type_;

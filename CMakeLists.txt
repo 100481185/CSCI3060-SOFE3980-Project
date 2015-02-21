@@ -9,7 +9,7 @@ find_package(GTest REQUIRED)
 include_directories("${PROJECT_BINARY_DIR} ${GTEST_INCLUDE_DIRS}")
 
 set(SOURCE_FILES
-                 xstream/src/main.cpp
+                 #xstream/src/main.cpp
                  xstream/src/xstream.h
                  xstream/src/controller/control.cpp
                  xstream/src/controller/control.h
@@ -25,7 +25,7 @@ set(SOURCE_FILES
                  xstream/src/data/available/tickets.h
                  xstream/test/ControlTestSuite.h
                  xstream/test/LoginTestSuite.h
-                 #xstream/test/main.cpp
+                 xstream/test/main.cpp
                  )
 
 add_executable(runTests ${SOURCE_FILES})

@@ -11,7 +11,7 @@ int cmdManager(std::string cmd) {
     if ((!loggedIn) && (cmd == "login")) {
         return LOGIN;
     } else if (loggedIn) {
-        cout << "Cool" << endl;
+
     } else {
         cout << INVALID;
     }
