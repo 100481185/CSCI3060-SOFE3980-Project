@@ -1,10 +1,12 @@
+#include "logout.h"
+
 #include <string>
 #include <iomanip>
 #include <fstream>
 
-#include "transaction.h"
-#include "account.h"
-#include "logout.h"
+#include "../data/daily/transaction.h"
+#include "../data/user/account.h"
+
 
 int logout(bool *loggedIn, string *user, string *permission) {
 	std::cout << USERACCNT << std::endl;
