@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src=src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 xStream Project: 
 ===============
 ---
@@ -12,15 +16,14 @@ xStream Project:
 
 
 ---
-
 Installation:
----------------
-
+-------------
 Download the [zip] [id] 
 or 
 alternativly clone the the repository:
 
 ```
+
 ```
     
 [id]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
@@ -29,6 +32,7 @@ alternativly clone the the repository:
     
 ####Navigate to the directory:
         
-```**cd /path/to/project/directory**
+```
+cd /path/to/project/directory
 ```
 eg. 'cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
