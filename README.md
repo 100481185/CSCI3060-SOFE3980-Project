@@ -15,7 +15,7 @@ xStream Project:
 ---
 
 How to compile:
-===============
+---------------
 
     Download the zip or clone the repository.
 
