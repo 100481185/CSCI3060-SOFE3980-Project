@@ -27,12 +27,7 @@ xstream
 
 ***
 How to compile:
-
-
-.hi {
-  background: linear-gradient(225deg, lightpink, lightblue);
-  border: thick dotted purple;
-} 
+===============
 
 <span class="hi">Birthday</span>
 
