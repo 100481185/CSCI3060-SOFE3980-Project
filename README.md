@@ -17,9 +17,7 @@ xStream Project:
 How to compile:
 ===============
 
-<span class="hi">Birthday</span>
-
-###Download the zip or clone the repository.
+    Download the zip or clone the repository.
 
 
 ##  Navigate to the directory:
