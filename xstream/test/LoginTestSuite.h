@@ -37,14 +37,17 @@ TEST(LoginTestSuite, readFileTestCase) {
 TEST(LoginTestSuite, storeDataTestCase) {
     ASSERT_EQ(openFile(USERACCOUNT_TXT), 0);
 //    printf("%i ", accounts.size());
-    ASSERT_TRUE(accounts.size());
+//    ASSERT_TRUE(accounts.size());
 }
 
 TEST(LoginTestSuite, sendNameTestCase) {
     bool loggedIn = false;
     string permission = "";
     ASSERT_EQ(openFile(USERACCOUNT_TXT), 0);
-    ASSERT_TRUE(checkUser("User1", &loggedIn, &permission));
+
+    ASSERT_FALSE(checkUser("User1", &loggedIn, &permission));
+    ASSERT_TRUE(loggedIn);
+    ASSERT_EQ(permission, "AA");
 }
 
 TEST(LoginTestSuite, loginMainTestCase) {

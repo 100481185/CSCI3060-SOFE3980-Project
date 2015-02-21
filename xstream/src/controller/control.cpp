@@ -4,9 +4,6 @@
 
 using namespace std;
 
-bool loggedIn = false;
-std::string permission;
-
 
 int cmdManager(std::string cmd) {
     if ((!loggedIn) && (cmd == "login")) {
