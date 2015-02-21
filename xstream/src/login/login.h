@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "../data/user/account.h"
+#include "account.h"
 
 
 int login(bool *loggedIn, string *permission);
@@ -14,7 +14,7 @@ Account loadData(std::string record);
 
 int checkUser(std::string name, bool *loggedIn, std::string *permission);
 
-string const USERACCNT = "/home/nicholas/ClionProjects/QandA/data/UserAccounts.txt";
+string const USERACCNT = "UserAccounts.txt";
 
 #endif // XSTREAM_LOGIN_LOGIN_H
 
