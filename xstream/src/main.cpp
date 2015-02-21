@@ -1,5 +1,5 @@
 #include "xstream.h"
-#include "controller/control.h"
+#include "control.h"
 
 int main(int argc, char **argv) {
     int powerOff = false;

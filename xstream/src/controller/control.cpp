@@ -1,10 +1,12 @@
 #include "control.h"
-#include "../login/login.h"
-#include "../xstream.h"
+#include "login.h"
+#include "xstream.h"
+#include <string>
 
+using namespace std;
 
 bool loggedIn = false;
-string permission;
+std::string permission;
 
 
 int cmdManager(std::string cmd) {
