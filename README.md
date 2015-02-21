@@ -17,8 +17,11 @@ xStream Project:
 How to compile:
 ---------------
 
-    Download the zip https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip
+Download the [zip] [id]
     
+[id]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
+    "zip"
+        
     
 ####Navigate to the directory:
         
