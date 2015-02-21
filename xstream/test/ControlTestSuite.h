@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "./../control.h"
+#include "../src/controller/control.h"
 
 
 // Tests if 'login' will return 0

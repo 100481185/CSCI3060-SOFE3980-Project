@@ -1,5 +1,5 @@
-#ifndef XSTREAM_ACCOUNT_H
-#define XSTREAM_ACCOUNT_H
+#ifndef XSTREAM_USER_ACCOUNT_H
+#define XSTREAM_USER_ACCOUNT_H
 
 #include <iostream>
 #include <list>
@@ -32,4 +32,4 @@ public:
 static list<Account> accounts;
 static list<Account>::iterator ptr;
 
-#endif //ACCOUNT_H
+#endif // XSTREAM_USER_ACCOUNT_H

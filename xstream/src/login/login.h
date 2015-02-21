@@ -1,9 +1,9 @@
-#ifndef XSTREAM_LOGIN_H
-#define XSTREAM_LOGIN_H
+#ifndef XSTREAM_LOGIN_LOGIN_H
+#define XSTREAM_LOGIN_LOGIN_H
 
 
 #include <iostream>
-#include "account.h"
+#include "../data/user/account.h"
 
 
 int login(bool *loggedIn);
@@ -16,5 +16,5 @@ int checkUser(std::string name, bool *loggedIn);
 
 string const USERACCNT = "/home/nicholas/ClionProjects/QandA/data/UserAccounts.txt";
 
-#endif // XSTREAM_LOGIN_H
+#endif // XSTREAM_LOGIN_LOGIN_H
 

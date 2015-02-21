@@ -3,14 +3,14 @@
 using namespace std;
 
 
-#define LOGIN 'l'
-#define LOGOUT 'q'
-#define CREATE 'c'
-#define DELETE 'd'
-#define SELL 's'
-#define BUY 'b'
-#define REFUND 'r'
-#define ADDCREDIT 'a'
+#define LOGIN        'l'
+#define LOGOUT       'q'
+#define CREATE       'c'
+#define DELETE       'd'
+#define SELL         's'
+#define BUY          'b'
+#define REFUND       'r'
+#define ADDCREDIT    'a'
 
 
 int main(int argc, char **argv) {
@@ -23,6 +23,12 @@ int main(int argc, char **argv) {
                 ::testing::FLAGS_gtest_filter = "LoginTestSuite";
                 break;
             case LOGOUT:
+            case CREATE:
+            case DELETE:
+            case SELL:
+            case BUY:
+            case REFUND:
+            case ADDCREDIT:
             default:
                 break;
         }

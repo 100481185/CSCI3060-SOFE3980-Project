@@ -2,8 +2,8 @@
 #define XSTREAM_TEST_LOGINTESTSUITE_H
 
 #include <gtest/gtest.h>
-#include "./../control.h"
-#include "./../login.h"
+#include "../src/controller/control.h"
+#include "../src/login/login.h"
 
 
 // Tests if 'login' will return 0
