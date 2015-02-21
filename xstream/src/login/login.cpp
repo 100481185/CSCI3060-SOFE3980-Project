@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int login(bool *loggedIn, string *permission) {
+int login(bool *loggedIn, std::string *permission) {
     std::cout << USERACCNT << std::endl;
     if (readFile(USERACCNT) < 0) {
         return -1;
@@ -25,7 +25,7 @@ int login(bool *loggedIn, string *permission) {
 }
 
 
-int readFile(string const fileName) {
+int readFile(std::string const fileName) {
     ifstream userAccounts;
     userAccounts.open(fileName);
 
