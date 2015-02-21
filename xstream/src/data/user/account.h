@@ -29,6 +29,7 @@ public:
     }
 };
 
+string const USERACCNT = "UserAccounts.txt";
 
 static list<Account> accounts;
 static list<Account>::iterator ptr;
