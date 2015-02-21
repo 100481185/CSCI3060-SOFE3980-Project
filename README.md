@@ -30,11 +30,10 @@ alternativly clone the the repository:
     "zip"
         
     
-####Navigate to the directory:
-        
+###Navigate to the directory:
+
+__`cd /path/to/project/directory`__
+
 ```
-cd /path/to/project/directory
-
-        __eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project__
-
+eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
 ```
