@@ -31,12 +31,7 @@ Mohammad - mohammad.ali3@uoit.net
 
 ***
 How to compile:
-
-
-.hi {
-  background: linear-gradient(225deg, lightpink, lightblue);
-  border: thick dotted purple;
-} 
+---------------
 
 <span class="hi">Birthday</span>
 
