@@ -2,19 +2,12 @@ xStream Project:
 ===============
 ---
 
-                                   __CSCI3060/SOFE3980:__ 
+                                     CSCI3060/SOFE3980: 
                                Software Quality and Assurance
                                ------------------------------
-
                             Mohammad Ali    <mohammad.ali3@uoit.net>
-                            
-                       
                        Nicholas De Souza    <nicholas.desouza@uoit.net>
-                        
-                        
                         Bradley Hamilton    <bradley.hamilton@uoit.net>
-                        
-                        
                               Fuad Tareq    <fuad.tareq@uoit.net>
 
 
