@@ -22,7 +22,7 @@ How to compile:
     
 ####Navigate to the directory:
         
-        cd /path/to/project/directory
+        *cd /path/to/project/directory*
         
 
             eg. 'cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
