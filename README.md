@@ -20,7 +20,7 @@ How to compile:
     Download the zip or clone the repository.
 
 
-##  Navigate to the directory:
+####Navigate to the directory:
         '''
         cd /path/to/project/directory
         '''
