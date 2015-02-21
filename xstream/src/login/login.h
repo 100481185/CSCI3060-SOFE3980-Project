@@ -14,7 +14,5 @@ Account loadData(std::string record);
 
 int checkUser(std::string name, bool *loggedIn, std::string *permission);
 
-string const USERACCNT = "UserAccounts.txt";
-
 #endif // XSTREAM_LOGIN_LOGIN_H
 
