@@ -1,7 +1,6 @@
 #include "control.h"
-#include "login.h"
-#include "xstream.h"
-#include <string>
+#include "../login/login.h"
+#include "../xstream.h"
 
 using namespace std;
 

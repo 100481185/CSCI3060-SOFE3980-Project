@@ -18,6 +18,8 @@ int login(bool *loggedIn, string *permission) {
 
     username.resize(14, ' ');
     if (checkUser(username, loggedIn, permission) < 0) {
+        *loggedIn = true;
+        *permission = (*ptr).getType();
         return -1;
     }
     return 0;
@@ -65,8 +67,6 @@ Account loadData(std::string record) {
 int checkUser(std::string name, bool *loggedIn, std::string *permission) {
     for (ptr = accounts.begin(); ptr != accounts.end(); ptr++) {
         if ((*ptr).getName() == name) {
-            *loggedIn = true;
-            *permission = (*ptr).getType();
             std::cout << "Hello, " << (*ptr).getName() << "\n"
                     << "\tpermission:  " << (*ptr).getType() << "\n";
             std::cout << std::setw(9);
