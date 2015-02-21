@@ -33,6 +33,6 @@ alternativly clone the the repository:
 ####Navigate to the directory:
         
 ```
-cd /path/to/project/directory
+__cd /path/to/project/directory__
 ```
 __eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project__
