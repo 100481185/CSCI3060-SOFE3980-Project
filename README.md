@@ -2,22 +2,33 @@ xStream Project:
 ===============
 ---
 
-                                     CSCI3060/SOFE3980: 
+                                   __CSCI3060/SOFE3980:__ 
                                Software Quality and Assurance
                                ------------------------------
 
-                            Mohammad Ali    mohammad.ali3@uoit.net
-                       Nicholas De Souza    nicholas.desouza@uoit.net
-                        Bradley Hamilton    bradley.hamilton@uoit.net
-                              Fuad Tareq    fuad.tareq@uoit.net
+                            Mohammad Ali    <mohammad.ali3@uoit.net>
+                            
+                       
+                       Nicholas De Souza    <nicholas.desouza@uoit.net>
+                        
+                        
+                        Bradley Hamilton    <bradley.hamilton@uoit.net>
+                        
+                        
+                              Fuad Tareq    <fuad.tareq@uoit.net>
 
 
 ---
 
-How to compile:
+Installation:
 ---------------
 
-Download the [zip] [id]
+Download the [zip] [id] 
+or 
+alternativly clone the the repository:
+
+```
+```
     
 [id]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
     "zip"
@@ -25,11 +36,6 @@ Download the [zip] [id]
     
 ####Navigate to the directory:
         
-        **cd /path/to/project/directory**
-        
-
-            eg. 'cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
-
-
-        </code>
-</pre>
+```**cd /path/to/project/directory**
+```
+eg. 'cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
