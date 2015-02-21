@@ -35,4 +35,4 @@ alternativly clone the the repository:
 ```
 cd /path/to/project/directory
 ```
-eg. 'cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
+eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
