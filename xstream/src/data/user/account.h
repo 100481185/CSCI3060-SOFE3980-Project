@@ -8,7 +8,8 @@
 using namespace std;
 
 class Account {
-    std::string username, type_;
+    std::string username;
+    std::string type_;
     float credit;
 public:
     Account(std::string, std::string, float);

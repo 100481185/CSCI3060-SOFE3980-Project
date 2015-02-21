@@ -1,3 +1,6 @@
+#include "xstream.h"
+#include "controller/control.h"
+
 int main(int argc, char **argv) {
     int powerOff = false;
     do {
@@ -11,4 +14,5 @@ int main(int argc, char **argv) {
 
 bool printMsg(int powerOff) {
     std::cout << powerOff << std::endl;
+    return 0;
 }

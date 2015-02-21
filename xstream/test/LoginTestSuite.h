@@ -10,8 +10,8 @@
 TEST(LoginTestCase, invalidReadFileTest) {
     ASSERT_EQ(readFile(USERACCNT), 0);
 
-//    ASSERT_LT(cmdFilter(" "), 0);
-//    ASSERT_LT(cmdFilter("Login"), 0);
+//    ASSERT_LT(cmdManager(" "), 0);
+//    ASSERT_LT(cmdManager("Login"), 0);
 }
 
 //Test(ControlTestCase, ) {

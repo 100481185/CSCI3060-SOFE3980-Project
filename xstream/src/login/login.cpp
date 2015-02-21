@@ -3,10 +3,11 @@
 
 #include "login.h"
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
-int login(bool *loggedIn) {
+int login(bool *loggedIn, string *permission) {
     std::cout << USERACCNT << std::endl;
     if (readFile(USERACCNT) < 0) {
         return -1;
@@ -17,10 +18,9 @@ int login(bool *loggedIn) {
     std::cin >> username;
 
     username.resize(14, ' ');
-    if (checkUser(username, loggedIn) < 0) {
+    if (checkUser(username, loggedIn, permission) < 0) {
         return -1;
     }
-
     return 0;
 }
 
@@ -46,8 +46,8 @@ int readFile(string const fileName) {
 
 Account loadData(std::string record) {
     std::string username = record.substr(0, 14);
-    std::string type_ = record.substr(16, 17);
-    float credit = std::stof((record.substr(19)));
+    std::string type_ = record.substr(16, 2);
+    float credit = std::stof((record.substr(19, 9)));
 
     Account user(username, type_, credit);
 
@@ -55,13 +55,17 @@ Account loadData(std::string record) {
 }
 
 
-int checkUser(std::string name, bool *loggedIn) {
+int checkUser(std::string name, bool *loggedIn, std::string *permission) {
     for (ptr = accounts.begin(); ptr != accounts.end(); ptr++) {
-        std::cout << (*ptr).getName() << ((*ptr).getName()).size()
-                << name << name.size() << std::endl;
         if ((*ptr).getName() == name) {
-            std::cout << "Hello " << name << std::endl;
             *loggedIn = true;
+            *permission = (*ptr).getType();
+            std::cout << "Hello, " << (*ptr).getName() << "\n"
+                    << "\tpermission:  " << (*ptr).getType() << "\n";
+            std::cout << std::setw(9);
+            printf("\t    credit: $%.2f", ((*ptr).getCredit()));
+            std::cout << std::endl;
+
             return 0;
         }
     }

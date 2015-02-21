@@ -1,18 +1,21 @@
 #include "control.h"
 #include "../login/login.h"
-#include "../logout/logout.h"
+#include "../xstream.h"
 
 
 bool loggedIn = false;
-bool admin = false;
+string permission;
 
 
-int cmdFilter(std::string cmd) {
-    if ((cmd == "login") && (!loggedIn)) {
-        return 0;
+int cmdManager(std::string cmd) {
+    if ((!loggedIn) && (cmd == "login")) {
+        return LOGIN;
+    } else if (loggedIn) {
+        cout << "Cool" << endl;
     } else {
-        return -1;
+        cout << INVALID;
     }
+    cout << NOTLOGGED << endl;
 }
 
 
@@ -21,11 +24,17 @@ int control() {
     std::string cmd;
     std::cin >> cmd;
 
-    switch (cmdFilter(cmd)) {
-        case 0:
-            return login(&loggedIn);
-        case 1:
-            return logout();
+    switch (cmdManager(cmd)) {
+        case LOGIN:
+            return login(&loggedIn, &permission);
+        case LOGOUT:
+//            return logout();
+        case CREATE:
+        case DELETE:
+        case SELL:
+        case BUY:
+        case REFUND:
+        case ADDCREDIT:
         default:
             return -1;
     }

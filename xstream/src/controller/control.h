@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int cmdFilter(std::string cmd);
+int cmdManager(std::string cmd);
 
 int control();
 

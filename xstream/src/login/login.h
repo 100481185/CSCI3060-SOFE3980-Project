@@ -6,13 +6,13 @@
 #include "../data/user/account.h"
 
 
-int login(bool *loggedIn);
+int login(bool *loggedIn, string *permission);
 
 int readFile(string const fileName);
 
 Account loadData(std::string record);
 
-int checkUser(std::string name, bool *loggedIn);
+int checkUser(std::string name, bool *loggedIn, std::string *permission);
 
 string const USERACCNT = "/home/nicholas/ClionProjects/QandA/data/UserAccounts.txt";
 
