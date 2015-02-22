@@ -4,7 +4,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 <span style="color:green;"> Hello </span>
 
 <pre>           
-             ------------------------------
+         ------------------------------
         Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
         Nicholas De Souza     <a href="nicholas.desouza@uoit.net">@nicholas</a>
         Bradley Hamilton      <a href="bradley.hamilton@uoit.net">@bradley</a>
