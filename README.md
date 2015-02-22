@@ -7,15 +7,15 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
                           <i>Software Quality and Assurance</i>
                              ------------------------------
 
-                        Mohammad Ali          [@mohommad][m]
+                        Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
                         Nicholas De Souza     [@nicholas][n]
                         Bradley Hamilton      [@bradley][b]
-                        Fuad Tareq            p[@Fuad][f]
+                        Fuad Tareq            [@Fuad][f]
 </pre>
 ---
 
 
-[m]: <mohammad.ali3@uoit.net>
+[m]: 
 [n]: <nicholas.desouza@uoit.net>
 [b]: <bradley.hamilton@uoit.net>
 [f]: <fuad.tareq@uoit.net>
