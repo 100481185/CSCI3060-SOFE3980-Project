@@ -16,17 +16,18 @@ xStream Project:
 
 
 ---
+![Alt text][id1]
+
 Installation:
 -------------
-Download the [zip] [id] 
+Download the [zip][id2] 
 or 
 alternativly clone the the repository:
 
-```
 
-```
+[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
     
-[id]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
+[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
     "zip"
         
     
