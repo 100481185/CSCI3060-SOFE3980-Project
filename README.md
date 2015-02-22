@@ -1,9 +1,9 @@
 xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)                                                            
 ===============
 ---
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__CSCI3060/SOFE3980:__   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>Software Quality and Assurance
+```
+/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;__CSCI3060/SOFE3980:__   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Quality and Assurance
 
             ------------------------------
 
@@ -14,7 +14,7 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
 &nbsp;&nbsp;&nbsp;&nbsp;Bradley  Hamilton    <bradley.hamilton@uoit.net>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Fuad     Tareq       <fuad.tareq@uoit.net>
-
+```
 
 ---
 
