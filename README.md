@@ -7,20 +7,23 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
                           <i>Software Quality and Assurance</i>
                              ------------------------------
 
-                        Mohammad Ali          [@mohommad]<mohammad.ali3@uoit.net>
-                        Nicholas De Souza     [@nicholas]<nicholas.desouza@uoit.net>
-                        Bradley Hamilton      [@bradley]<bradley.hamilton@uoit.net>
-                        Fuad Tareq            p[@Fuad]<fuad.tareq@uoit.net>
+                        Mohammad Ali          [@mohommad][m]
+                        Nicholas De Souza     [@nicholas][n]
+                        Bradley Hamilton      [@bradley][b]
+                        Fuad Tareq            p[@Fuad][f]
 </pre>
-
 ---
+
+
+[m]: <mohammad.ali3@uoit.net>
+[n]: <nicholas.desouza@uoit.net>
+[b]: <bradley.hamilton@uoit.net>
+[f]: <fuad.tareq@uoit.net>
 
 
 Installation:
 -------------
-
 ###Get the source:
-
 
 *   Option1: Download the zip:
 
