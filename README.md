@@ -26,11 +26,6 @@ There are two options methods to obtain the source code. For developers, and for
 
     In terminal type:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream`__
-    
-    
-         
-
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
@@ -38,6 +33,7 @@ There are two options methods to obtain the source code. For developers, and for
     
 ###Compiling the source
 
+    &nbsp;&nbsp;&nbsp;&nbsp;__sudo git clone http://github.com/ncdesouza/xStream__
 
 
 1. Navigate to ${SOURCE_ROOT} directory:
@@ -49,6 +45,6 @@ There are two options methods to obtain the source code. For developers, and for
     &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
     
 3. CMake
-cd ../ 
+    cd  
 
 
