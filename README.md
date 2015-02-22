@@ -3,15 +3,16 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ---
 
 
-      
+
+```python 
+
 <h1>DevTeam</h1>        
 --------------------------------                  
 Mohammad Ali        [@mohammad][]     
 Nicholas De Souza   [@nicholas][]     
-Bradley Hamilton    [@bradley] []     
-FuadTareq           [@fuad][]                         
+ Bradley Hamilton   [@bradley][]     
+    Fuad Tareq      [@fuad][]                       
 
-```python 
 ```
              
 ---             
