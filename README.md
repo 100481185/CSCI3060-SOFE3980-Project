@@ -45,11 +45,7 @@ Installation:
 
 1. Navigate to the directory:
 
-&nbsp;&nbsp;&nbsp;&nbsp;__`cd /path/to/dir/xServer`__
-
-    ```
-            eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
-    ```
+    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /path/to/dir/xServer`__
 
 2. 
 
