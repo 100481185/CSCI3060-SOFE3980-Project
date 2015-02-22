@@ -19,13 +19,18 @@ xStream Project:
 
 [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
 
-Installation:2
+Installation:
 -------------
-Download the zip:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [zip][id2] \] 
+###Get the source:
 
-or alternatively, clone the github repository:
+1. Download the zip:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [zip][id2] \] 
+
+    or alternatively, 
+
+2. clone the github repository:
 
 __In terminal type:__
 
@@ -39,7 +44,7 @@ sudo git clone http://github.com/ncdesouza/xStream
     "zip"
         
     
-###Navigate to the directory:
+####Navigate to the directory:
 
 __`cd /path/to/project/directory`__
 
