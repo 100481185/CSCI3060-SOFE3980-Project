@@ -1,11 +1,10 @@
-class session
+class Session
 {
 
 private:
-    string name_;
     bool loggedIn_ = false;
+    string name_;
     string type_;
-
     std::map<int, Data()> transactions;
 
 public:
@@ -26,5 +25,6 @@ public:
 
     void setType(char *type_);
 
-    void commit()
+    void commit() {
+    }
 };
