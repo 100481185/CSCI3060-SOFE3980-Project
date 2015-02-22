@@ -43,7 +43,7 @@ sudo git clone http://github.com/ncdesouza/xStream
     
 ###Navigate to the directory:
 
-__`cd /path/to/project/directory`______
+__`cd /path/to/project/directory`__
 
 ```
 eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
