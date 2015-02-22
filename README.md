@@ -32,14 +32,7 @@ __In terminal type:__
 ```bash
 sudo git clone http://github.com/ncdesouza/xStream
 ```
-    
     http://github.com/ncdesouza/xstream.git
-
-`<code>` spans are delimited
-by backticks.
-
-You can include literal backticks
-like `` `this` ``.
 
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
