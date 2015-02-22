@@ -16,23 +16,26 @@ xStream Project:
 
 
 ---
+
+[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
+
 Installation:
 -------------
-Download the [zip] [id] 
+Download the [zip][id2] 
 or 
 alternativly clone the the repository:
 
-```
 
-```
+[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
     
-[id]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
+[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
     "zip"
         
     
-####Navigate to the directory:
-        
+###Navigate to the directory:
+
+__`cd /path/to/project/directory`__
+
 ```
-__cd /path/to/project/directory__
+eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
 ```
-__eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project__
