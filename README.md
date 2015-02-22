@@ -44,7 +44,7 @@ Installation:
 
 1. Navigate to the directory:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__`cd //<path/>//<to/>//<dir/>/xServer`__
+    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/<dir>/xServer`__
 
 2. 
 
