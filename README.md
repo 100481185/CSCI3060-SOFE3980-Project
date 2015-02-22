@@ -2,7 +2,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ===============
 ---
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;__*Authors*__   
+`/&nbsp;/&nbsp;/&nbsp;/&nbsp;__*Authors*__   
     --------------------------------
     
     /&nbsp;/&nbsp;/&nbsp;/&nbsp;Mohammad Ali        <a href="mohammad.ali3@uoit.net">@Mohommad</a>`        
