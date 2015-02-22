@@ -3,40 +3,33 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ---
 
 ```
-    &nbsp;&nbsp;&nbsp;&nbsp;__*`Authors`*__     
-    ----------------------------------
-
-    &nbsp;&nbsp;&nbsp;&nbsp;`Mohammad Ali`            <a href="mohammad.ali3@uoit.net">`@Mohommad`</a>        
-    &nbsp;&nbsp;&nbsp;&nbsp;`Nicholas De Souza`       <a href="nicholas.desouza@uoit.net">`@Nicholas`</a>    
-    &nbsp;&nbsp;&nbsp;&nbsp;`Bradley Hamilton`        <a href="bradley.hamilton@uoit.net">`@Bradley`</a>    
-    &nbsp;&nbsp;&nbsp;&nbsp;`Fuad Tareq`              <a href="fuad.tareq@uoit.net">`@Fuad`</a>    
+>    <b>Authors</b>     
+>    ----------------------------------
+>>        Mohammad Ali          [@mohammed][email1]     
+>>        Nicholas De Souza     [@nicholas][email2] 
+>>        Bradley Hamilton      [@bradley][email3]
+>>        Fuad Tareq            [@fuad][email4]`
 ```
-
 ---
 
 Installation:
 -------------
 ###Get the source:
 
->   There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
+There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
 
->>   Option1: Download the zip:
-
->>>    \[ [xStream.zip][id2] \] 
- 
->>   Option2: Clone the github repository:
-
-    In terminal type:
-
-
-[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
-[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
-[mid]: (https://magnum.travis-ci.com/ncdesouza/xstream)
+> Option1: Download the zip:
+> > \[ [xStream.zip][id2] \] 
+> Option2: Clone the github repository:
+> > In terminal type:
+> > > ```bash
+      sudo git clone http://github.com/ncdesouza/xStream.git
+      ```
+   
     
 ###Compiling the source
 
-   &nbsp;&nbsp;&nbsp;&nbsp;__sudo git clone http://github.com/ncdesouza/xStream__
-
+   &nbsp;&nbsp;&nbsp;&nbsp;
 
 1. Navigate to ${SOURCE_ROOT} directory:
 
@@ -50,3 +43,9 @@ Installation:
     cd  
 
 
+
+
+
+[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
+[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
+[mid]: (https://magnum.travis-ci.com/ncdesouza/xstream)
