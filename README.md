@@ -4,13 +4,13 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
 
 <pre>
                                 <b>CSCI3060/SOFE3980:</b>
-                            <i>Software Quality and Assurance</i>
-                               ------------------------------
+                          <i>Software Quality and Assurance</i>
+                             ------------------------------
 
-                        Mohammad Ali          <mohammad.ali3@uoit.net>
-                        Nicholas De Souza  <nicholas.desouza@uoit.net>
-                        Bradley Hamilton   <bradley.hamilton@uoit.net>
-                        Fuad Tareq               <fuad.tareq@uoit.net>
+                        Mohammad Ali          [@mohommad]<mohammad.ali3@uoit.net>
+                        Nicholas De Souza     [@nicholas]<nicholas.desouza@uoit.net>
+                        Bradley Hamilton      [@bradley]<bradley.hamilton@uoit.net>
+                        Fuad Tareq            p[@Fuad]<fuad.tareq@uoit.net>
 </pre>
 
 ---
