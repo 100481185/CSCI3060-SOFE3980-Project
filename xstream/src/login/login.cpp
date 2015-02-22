@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int login(bool *loggedIn, string *permission) {
+int login(session *use) {
     std::cout << USERACCOUNT_TXT << std::endl;
     if (openFile(USERACCOUNT_TXT) < 0) {
         return -1;
@@ -17,7 +17,7 @@ int login(bool *loggedIn, string *permission) {
 
 
 
-    if (checkUser(username, loggedIn, permission) < 0) {
+    if (checkUser(username,  use) < 0) {
         return -1;
     }
     return 0;
@@ -62,12 +62,14 @@ Account loadData(std::string record) {
 }
 
 
-int checkUser(std::string name, bool *loggedIn, std::string *permission) {
+int checkUser(std::string name, session *use) {
+	session sess = *use;
     name.resize(14, ' ');
     for (ptr = accounts.begin(); ptr != accounts.end(); ptr++) {
         if ((*ptr).getName() == name) {
-            *loggedIn = true;
-            *permission = (*ptr).getType();
+			sess.setName((*ptr).getName());
+			sess.setloggedIn(true);
+			sess.setType((*ptr).getType());
             std::cout << "Hello, " << (*ptr).getName() << "\n"
                     << "\tpermission:  " << (*ptr).getType() << "\n";
             std::cout << std::setw(9);
