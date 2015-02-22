@@ -32,7 +32,7 @@ __In terminal type:__
 ```bash
 sudo git clone http://github.com/ncdesouza/xStream
 ```
-    http://github.com/ncdesouza/xstream.git
+    <span style="background-color:purple">http://github.com/ncdesouza/xstream.git</span>
 
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
@@ -48,3 +48,5 @@ __`cd /path/to/project/directory`__
 ```
 eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
 ```
+
+
