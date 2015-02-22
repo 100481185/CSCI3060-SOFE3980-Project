@@ -6,10 +6,10 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ```    
 <h1>DevTeam</h1>
 --------------------------------                  
-> Mohammad Ali      `[@mohammed][eml1]`     
-  Nicholas De Souza `[@nicholas][eml2]`     
-  Bradley Hamilton  `[@bradley][eml3]`     
-  Fuad Tareq        `[@fuad][eml4]`                
+``>`Mohammad Ali      `[@mohammed][eml1]`     
+   Nicholas De Souza `[@nicholas][eml2]`     
+   Bradley Hamilton  `[@bradley][eml3]`     
+   Fuad Tareq        `[@fuad][eml4]`                
   
 ```
              
