@@ -4,7 +4,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 
 
 ```python    
-`/<h1/>`DevTeam`/</h1/>`
+/<h1/>DevTeam/</h1/>
 --------------------------------                  
     Mohammad Ali      [@mohammed][]     
     Nicholas De Souza [@nicholas][]     
@@ -35,7 +35,7 @@ There are two options main methods to obtain the source code.
 
    &nbsp;&nbsp;&nbsp;&nbsp;
 
-1. Navigate to ${SOURCE_ROOT} directory:
+1. Navigate to __${SOURCE_ROOT}__ directory:
 
     &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/<dir>/xServer`__
 
