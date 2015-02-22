@@ -2,7 +2,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ===============
 ---
 
-<pre><span style="color: green">
+<pre><span color: green>
                               
                         
                         ------------------------------
