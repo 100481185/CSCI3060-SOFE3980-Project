@@ -4,7 +4,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 
 
 ```python    
-'/<h1/>DevTeam/</h1/>'
+`/<h1/>`DevTeam`/</h1/>`
 --------------------------------                  
     Mohammad Ali      [@mohammed][]     
     Nicholas De Souza [@nicholas][]     
