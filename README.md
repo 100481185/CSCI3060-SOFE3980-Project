@@ -32,11 +32,10 @@ Installation:
 
 2. clone the github repository:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In terminal type:
+    In terminal type:
 
-```bash
-            sudo git clone http://github.com/ncdesouza/xStream
-```
+    &nbsp;&nbsp;&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream`__
+
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
