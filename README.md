@@ -1,4 +1,5 @@
-xStream Project:                                                            [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
+xStream Project:                                                            
+[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
 ===============
 ---
 
