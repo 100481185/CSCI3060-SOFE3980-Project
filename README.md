@@ -18,13 +18,13 @@ Installation:
 -------------
 ###Get the source:
 
-There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
+>   There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
 
-*   Option1: Download the zip:
+>>   Option1: Download the zip:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [xStream.zip][id2] \] 
+>>>    \[ [xStream.zip][id2] \] 
  
-*   Option2: Clone the github repository:
+>>   Option2: Clone the github repository:
 
     In terminal type:
 
