@@ -24,13 +24,13 @@ Installation:
 
 ###Get the source:
 
-1. Download the zip:
+> Download the zip:
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [xStream.zip][id2] \] 
 
     or alternatively, 
 
-2. clone the github repository:
+> Clone the github repository:
 
     In terminal type:
 
@@ -46,5 +46,10 @@ Installation:
 
     &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/<dir>/xServer`__
 
-2. 
+2. Make a build directory:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
+    
+3. 
+
 
