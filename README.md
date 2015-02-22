@@ -4,8 +4,8 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
 
 <pre>
                                 <b>CSCI3060/SOFE3980:</b>
-                             <i>Software Quality and Assurance</i>
-                             ------------------------------
+                        <i>Software Quality and Assurance</i>
+                        ------------------------------
 
                         Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
                         Nicholas De Souza     <a href="nicholas.desouza@uoit.net">@nicholas</a>
