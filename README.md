@@ -10,7 +10,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 =================
 ---
 ```python 
-DevTeam        
+@DevTeam        
 --------------------------------                  
 Mohammad Ali      [@mohammad][]     
 Nicholas De Souza [@nicholas][]     
@@ -26,8 +26,9 @@ Installation:
 There are two options main methods to obtain the source code.  
 
 ######&nbsp;&nbsp;&nbsp;&nbsp;__Disclosure__
-    >   Either method is valid and will work.Developers and for those who want to maintain the most current version the recommended  option is the second  
-    >   
+    > Either method is valid and will work.Developers and for those who want to maintain 
+      the most current version the recommended  option is the second.  
+    > K  
 * Option1: Download the zip:
 
 &nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][id2] ]__ 
