@@ -10,8 +10,6 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 =================
 
 ---
-___
-
 
 ```python 
 
@@ -23,7 +21,8 @@ Nicholas De Souza   [@nicholas][]
     Fuad    Tareq   [@fuad][]                       
 
 ```
-             
+___             
+
 ---             
 Installation:           
 -------------           
