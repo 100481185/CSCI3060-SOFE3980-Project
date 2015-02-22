@@ -1,13 +1,13 @@
-xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
+xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 ===============
 ---
 
-> <b>DevTeam</b>     
+> > <b>DevTeam</b>     
 > ---------------------------------
-> > Mohammad Ali         [@mohammed][email1]     
-> > Nicholas De Souza    [@nicholas][email2] 
-> > Bradley Hamilton     [@bradley][email3]
-> > Fuad Tareq           [@fuad][email4]`
+> > > Mohammad Ali         [@mohammed][email1]     
+> > > Nicholas De Souza    [@nicholas][email2]     
+> > > Bradley Hamilton     [@bradley][email3]     
+> > > Fuad Tareq           [@fuad][email4]        
 
 ---
 
@@ -45,6 +45,11 @@ There are two options methods to obtain the source code. For developers, and for
 
 
 
-[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
-[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
-[mid]: (https://magnum.travis-ci.com/ncdesouza/xstream)
+[id01]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
+[id02]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
+[wdgt]: (https://magnum.travis-ci.com/ncdesouza/xstream)
+[eml1]: <mohammad.ali3@uoit.net>   
+[eml2]: <nicholas.desouza@uoit.net>
+[eml3]: <bradley.hamilton@uoit.net>
+[eml4]: <fuad.tareq@uoit.net>   
+
