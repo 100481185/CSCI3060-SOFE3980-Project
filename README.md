@@ -1,7 +1,3 @@
-<link rel="stylesheet" href="/path/to/styles/default.css">
-<script src=src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 xStream Project:                                                            [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
 ===============
 ---
