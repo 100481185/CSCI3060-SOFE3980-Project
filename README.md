@@ -8,7 +8,7 @@
 
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 =================
------------------
+------------------
 ```python 
 <h2>DevTeam</h2>        
 --------------------------------                  
@@ -19,14 +19,8 @@ Nicholas De Souza   [@nicholas][]
 ```
 -----------------
 =================             
-
-***
-
-* * *
-___________________________________________________________________________________________________________________
-             
 Installation:           
--------------           
+--------------           
 ###Get the source:          
 There are two options main methods to obtain the source code.  
 >   * Developers and for those who want to maintain the most current version the recommended  option is the second  
