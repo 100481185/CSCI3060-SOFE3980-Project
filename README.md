@@ -31,13 +31,13 @@ There are two options main methods to obtain the source code.
     > K  
 * Option1: Download the zip:
 
-&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][id2] ]__ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][id2] ]__ 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Option2: Clone the github repository:
     In terminal type:
      
 ```bash
-sudo git clone http://github.com/ncdesouza/xStream.git
+&nbsp;&nbsp;&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream.git`__
 ```
 
     
