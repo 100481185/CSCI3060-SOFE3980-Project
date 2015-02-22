@@ -1,3 +1,5 @@
+#include <map>
+using namespace std;
 class session
 {
 
@@ -26,5 +28,5 @@ public:
 
     void setType(char *type_);
 
-    void commit()
+    void commit();
 };
