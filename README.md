@@ -22,21 +22,23 @@ Fuad     Tareq    [@fuad][]
 Installation:           
 --------------           
 ###Get the source:          
-There are two options main methods to obtain the source code.  
->   * Developers and for those who want to maintain the most current version the recommended  option is the second  
->
 
+There are two options main methods to obtain the source code.  
+
+######&nbsp;&nbsp;&nbsp;&nbsp;__Disclosure__
+    >   Either method is valid and will work.Developers and for those who want to maintain the most current version the recommended  option is the second  
+    >   
 * Option1: Download the zip:
 
 &nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][id2] ]__ 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Option2: Clone the github repository:
     In terminal type:
-     ```bash
-      sudo git clone http://github.com/ncdesouza/xStream.git
-      ```
-   ` ` `
-&nbsp;&nbsp;&nbsp;&nbsp;
+     
+```bash
+sudo git clone http://github.com/ncdesouza/xStream.git
+```
+
     
 ###Compiling the source
 
