@@ -26,13 +26,13 @@ Installation:
 
 1. Download the zip:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [zip][id2] \] 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [xStream.zip][id2] \] 
 
     or alternatively, 
 
 2. clone the github repository:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__In terminal type:__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In terminal type:
 
 ```bash
             sudo git clone http://github.com/ncdesouza/xStream
@@ -41,12 +41,15 @@ Installation:
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
     
-####&nbsp;&nbsp;&nbsp;Navigate to the directory:
+###Compiling the source
 
-__`cd /path/to/project/directory`__
+1. Navigate to the directory:
 
-```
-eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
-```
+&nbsp;&nbsp;&nbsp;&nbsp;__`cd /path/to/dir/xServer`__
 
+    ```
+            eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
+    ```
+
+2. 
 
