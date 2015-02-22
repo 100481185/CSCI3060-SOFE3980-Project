@@ -2,7 +2,8 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ===============
 ---
 
-<pre><span color: green>
+<pre>
+<span color: green>Hello</span>
                               
                         
                         ------------------------------
@@ -11,7 +12,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
                         Nicholas De Souza     <a href="nicholas.desouza@uoit.net">@nicholas</a>
                         Bradley Hamilton      <a href="bradley.hamilton@uoit.net">@bradley</a>
                         Fuad Tareq            <a href="fuad.tareq@uoit.net">@Fuad</a>
-</span></pre>
+</pre>
 ---
 Installation:
 -------------
@@ -22,6 +23,7 @@ Installation:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [xStream.zip][id2] \] 
  
 *   Option2: Clone the github repository:
+
 
     In terminal type:
 
