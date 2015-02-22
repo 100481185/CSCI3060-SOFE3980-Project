@@ -8,7 +8,7 @@
 
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 =================
-------------------
+---
 ```python 
 <h2>DevTeam</h2>        
 --------------------------------                  
@@ -17,7 +17,7 @@ Nicholas De Souza   [@nicholas][]
  Bradley Hamilton   [@bradley][]     
     Fuad    Tareq   [@fuad][]                       
 ```
-__________________
+***
 =================             
 Installation:           
 --------------           
