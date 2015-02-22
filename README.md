@@ -50,7 +50,7 @@ like `` `this` ``.
     
 ###Navigate to the directory:
 
-__`cd /path/to/project/directory`__
+__`cd /path/to/project/directory`______
 
 ```
 eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
