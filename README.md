@@ -16,7 +16,8 @@ xStream Project:
 
 
 ---
-![Alt text][id1]
+
+[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
 
 Installation:
 -------------
