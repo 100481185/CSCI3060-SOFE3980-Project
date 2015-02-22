@@ -39,12 +39,9 @@ sudo git clone http://github.com/ncdesouza/xStream
 ```
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
+[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
     
-[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
-    "zip"
-        
-    
-####Navigate to the directory:
+####&nbsp;&nbsp;&nbsp;Navigate to the directory:
 
 __`cd /path/to/project/directory`__
 
