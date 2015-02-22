@@ -1,10 +1,10 @@
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
 [wdgt]: (https://magnum.travis-ci.com/ncdesouza/xstream)
-[@Mohammad]: <mohammad.ali3@uoit.net>   
-[@Nicholas]: <nicholas.desouza@uoit.net>
-[@Bradley]: <bradley.hamilton@uoit.net>
-[@Fuad]: <fuad.tareq@uoit.net>  
+[@mohammad]: <mohammad.ali3@uoit.net>   
+[@nicholas]: <nicholas.desouza@uoit.net>
+[@bradley]: <bradley.hamilton@uoit.net>
+[@fuad]: <fuad.tareq@uoit.net>  
 
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 =================
