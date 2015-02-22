@@ -2,7 +2,7 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
 ===============
 ---
 
-      `__CSCI3060/SOFE3980:__`   
+`      `__`CSCI3060/SOFE3980:`__`  ` 
    
     Software Quality and Assurance
 
