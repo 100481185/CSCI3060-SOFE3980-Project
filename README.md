@@ -19,10 +19,6 @@ xStream Project:
 
 [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
 
-
-"And here's to you, <span style="background-color:green">Mrs. Robinson</span>, Jesus loves you more than you will know."
-
-
 Installation:2
 -------------
 Download the zip:
@@ -36,8 +32,6 @@ __In terminal type:__
 ```bash
 sudo git clone http://github.com/ncdesouza/xStream
 ```
-    <span style="background-color:purple">http://github.com/ncdesouza/xstream.git</span>
-
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
     
