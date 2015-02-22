@@ -3,7 +3,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ---
              
 ```
-`__`Developers:`__`       
+__`Developers:`__       
   -------------------------------                  
   Mohammad Ali        [@mohammed][eml1]     
   Nicholas De Souza   [@nicholas][eml2]     
