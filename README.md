@@ -1,4 +1,4 @@
-xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]  <sub><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sub>
+xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 ===============
 ---
 
