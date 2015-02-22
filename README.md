@@ -1,20 +1,18 @@
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 =================
----
-```
-
+---             
+```         
 Developers:     
   -------------------------------                  
-\>  Mohammad Ali        [@mohammed][eml1]     
+>   Mohammad Ali        [@mohammed][eml1]     
     Nicholas De Souza   [@nicholas][eml2]     
     Bradley Hamilton    [@bradley][eml3]     
     Fuad Tareq          [@fuad][eml4]                
-
-```
----
-Installation:
-----------------
-###Get the source:
+```             
+---             
+Installation:           
+-------------           
+###Get the source:          
 
     There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
 
