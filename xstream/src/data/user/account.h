@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <list>
+#include "session.h"
 
 
 using namespace std;
