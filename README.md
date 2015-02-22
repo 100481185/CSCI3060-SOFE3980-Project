@@ -37,7 +37,7 @@ There are two options main methods to obtain the source code.
     In terminal type:
      
 ```bash
-\&nbsp;\&nbsp;\&nbsp;\&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream.git`__
+/&nbsp;/&nbsp;/&nbsp;/&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream.git`__
 ```
 
     
