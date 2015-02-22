@@ -3,14 +3,15 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ---
 
 
-```python    
-/<h1/>DevTeam/</h1/>
+      
+<h1>DevTeam</h1>        
 --------------------------------                  
-    Mohammad Ali      [@mohammed][]     
-    Nicholas De Souza [@nicholas][]     
-    Bradley Hamilton  [@bradley] []     
-    Fuad Tareq        [@fuad][]                
-  
+Mohammad Ali [@mohammed][]     
+Nicholas De Souza [@nicholas][]     
+Bradley Hamilton [@bradley] []     
+FuadTareq [@fuad][]                         
+
+```python 
 ```
              
 ---             
@@ -23,8 +24,8 @@ There are two options main methods to obtain the source code.
 
 * Option1: Download the zip:
 
-  \[ [xStream.zip][id2] \] 
-* Option2: Clone the github repository:
+&nbsp;&nbsp;&nbsp;&nbsp;__[![xStream.zip][id2]]__ 
+&nbsp;&nbsp;&nbsp;&nbsp; Option2: Clone the github repository:
     In terminal type:
      ```bash
       sudo git clone http://github.com/ncdesouza/xStream.git
@@ -33,7 +34,7 @@ There are two options main methods to obtain the source code.
     
 ###Compiling the source
 
-   &nbsp;&nbsp;&nbsp;&nbsp;
+   
 
 1. Navigate to __${SOURCE_ROOT}__ directory:
 
@@ -50,8 +51,8 @@ There are two options main methods to obtain the source code.
 
 
 
-[id01]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
-[id02]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
+[id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
+[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
 [wdgt]: (https://magnum.travis-ci.com/ncdesouza/xstream)
 [@Mohammad]: <mohammad.ali3@uoit.net>   
 [@Nicholas]: <nicholas.desouza@uoit.net>

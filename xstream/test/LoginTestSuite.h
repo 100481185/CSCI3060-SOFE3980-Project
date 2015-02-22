@@ -16,7 +16,7 @@ protected:
     virtual void SetUp() {
         loggedIn_ = true;
         permission_;
-        ifstream fd;
+//        ifstream fd;
         fd.open(USERACCOUNT_TXT);
         if (fd.is_open()) {
             ptr = accounts.begin();
