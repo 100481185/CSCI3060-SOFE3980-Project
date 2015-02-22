@@ -8,19 +8,11 @@ xStream Project:[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.
                              ------------------------------
 
                         Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
-                        Nicholas De Souza     [@nicholas][n]
-                        Bradley Hamilton      [@bradley][b]
-                        Fuad Tareq            [@Fuad][f]
+                        Nicholas De Souza     <a href="nicholas.desouza@uoit.net">@nicholas</a>
+                        Bradley Hamilton      <a href="bradley.hamilton@uoit.net">@bradley</a>
+                        Fuad Tareq            <a href="fuad.tareq@uoit.net">@Fuad</a>
 </pre>
 ---
-
-
-[m]: 
-[n]: <nicholas.desouza@uoit.net>
-[b]: <bradley.hamilton@uoit.net>
-[f]: <fuad.tareq@uoit.net>
-
-
 Installation:
 -------------
 ###Get the source:
