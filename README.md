@@ -2,7 +2,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 ===============
 ---
 ```
-`&nbsp;&nbsp;&nbsp;&nbsp;__*`Authors`*__   
+&nbsp;&nbsp;&nbsp;&nbsp;__*Authors*__   
 --------------------------------
 
 &nbsp;&nbsp;&nbsp;&nbsp;Mohammad Ali        <a href="mohammad.ali3@uoit.net">@Mohommad</a>`        
@@ -33,7 +33,7 @@ There are two options methods to obtain the source code. For developers, and for
     
 ###Compiling the source
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__sudo git clone http://github.com/ncdesouza/xStream__
+   &nbsp;&nbsp;&nbsp;&nbsp;__sudo git clone http://github.com/ncdesouza/xStream__
 
 
 1. Navigate to ${SOURCE_ROOT} directory:
