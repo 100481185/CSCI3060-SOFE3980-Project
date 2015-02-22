@@ -24,13 +24,12 @@ Installation:
 
 ###Get the source:
 
-> Download the zip:
+
+*   Option1: Download the zip:
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [xStream.zip][id2] \] 
-
-    or alternatively, 
-
-> Clone the github repository:
+ 
+*   Option2: Clone the github repository:
 
     In terminal type:
 
