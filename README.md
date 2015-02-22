@@ -1,16 +1,15 @@
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 ===============
 ---
-
-<code>
-    &nbsp;&nbsp;&nbsp;&nbsp;__*`Authors`*__     
+```
+&nbsp;&nbsp;&nbsp;&nbsp;__*Authors*__   
     --------------------------------
-
-    &nbsp;&nbsp;&nbsp;&nbsp;Mohammad Ali        <a href="mohammad.ali3@uoit.net">@Mohommad</a>`        
-    &nbsp;&nbsp;&nbsp;/,&nbsp;Nicholas De Sopuza  <a href="nicholas.desouza@uoit.net">@Nicholas</a>    
-    &nbsp;&nbsp;&nbsp;&nbsp;Bradley Hamilton    <a href="bradley.hamilton@uoit.net">@Bradley</a>    
-    &nbsp;&nbsp;&nbsp;&nbsp;Fuad Tareq          <a href="fuad.tareq@uoit.net">@Fuad</a>    
-</code>
+    
+    /&nbsp;/&nbsp;/&nbsp;/&nbsp;Mohammad Ali       <a href="mohammad.ali3@uoit.net">@Mohommad</a>`        
+    /&nbsp;/&nbsp;/&nbsp;/,&nbsp;Nicholas De Souza  <a href="nicholas.desouza@uoit.net">@Nicholas</a>    
+    /&nbsp;/&nbsp;/&nbsp;/&nbsp;Bradley Hamilton    <a href="bradley.hamilton@uoit.net">@Bradley</a>    
+    /&nbsp;/&nbsp;/&nbsp;/&nbsp;Fuad Tareq          <a href="fuad.tareq@uoit.net">@Fuad</a>    
+```
 ---
 
 Installation:
@@ -27,6 +26,11 @@ There are two options methods to obtain the source code. For developers, and for
 
     In terminal type:
 
+    &nbsp;&nbsp;&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream`__
+    
+    
+         
+
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
@@ -34,7 +38,6 @@ There are two options methods to obtain the source code. For developers, and for
     
 ###Compiling the source
 
-   &nbsp;&nbsp;&nbsp;&nbsp;__sudo git clone http://github.com/ncdesouza/xStream__
 
 
 1. Navigate to ${SOURCE_ROOT} directory:
@@ -46,6 +49,6 @@ There are two options methods to obtain the source code. For developers, and for
     &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
     
 3. CMake
-    cd  
+cd ../ 
 
 
