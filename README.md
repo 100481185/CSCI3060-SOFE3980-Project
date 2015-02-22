@@ -1,16 +1,14 @@
 xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
 ===============
 ---
-<span style="color:green;"> Hello </span>
-
-<pre>           
-         ------------------------------
+        ------------------------------
         Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
         Nicholas De Souza     <a href="nicholas.desouza@uoit.net">@nicholas</a>
         Bradley Hamilton      <a href="bradley.hamilton@uoit.net">@bradley</a>
         Fuad Tareq            <a href="fuad.tareq@uoit.net">@Fuad</a>
-    </pre>
 ---
+<span style="color:green;"> Hello </span>
+
 Installation:
 -------------
 ###Get the source:
