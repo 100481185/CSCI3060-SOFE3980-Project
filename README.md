@@ -23,7 +23,7 @@ Installation:2
 -------------
 Download the zip:
 
-&nbsp;&nbsp;&nbsp;&nbsp;[zip][id2] 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[ [zip][id2] \] 
 
 or alternatively, clone the github repository:
 
