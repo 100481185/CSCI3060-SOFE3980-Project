@@ -35,7 +35,7 @@ Installation:
 __In terminal type:__
 
 ```bash
-sudo git clone http://github.com/ncdesouza/xStream
+            sudo git clone http://github.com/ncdesouza/xStream
 ```
 
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
