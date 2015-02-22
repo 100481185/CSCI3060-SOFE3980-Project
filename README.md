@@ -1,10 +1,9 @@
-xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]                                                            
+xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][mid]     <b>CSCI3060/SOFE3980:</b> <i>Software Quality and Assurance</i>
 ===============
 ---
 
 <pre><span style="color: green">
-                                <b>CSCI3060/SOFE3980:</b>
-                        <i>Software Quality and Assurance</i>
+                                
                         ------------------------------
 
                         Mohammad Ali          <a href="mohammad.ali3@uoit.net">@mohommad</a>
