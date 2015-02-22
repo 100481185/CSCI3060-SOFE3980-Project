@@ -1,5 +1,5 @@
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
-[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip>     
+[xStream.zip]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/mirror.zip>     
 [wdgt]: (https://magnum.travis-ci.com/ncdesouza/xstream)
 [@mohammad]: <mohammad.ali3@uoit.net>   
 [@nicholas]: <nicholas.desouza@uoit.net>
@@ -31,7 +31,7 @@ There are two options main methods to obtain the source code.
     > K  
 * Option1: Download the zip:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][id2] ]__ 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][] ]__ 
 
 * Option2: Clone the github repository:
     In terminal type:
