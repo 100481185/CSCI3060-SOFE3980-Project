@@ -12,11 +12,9 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 
 ```
              
----
-___
-             
+---             
 Installation:           
---------------           
+-------------           
 ###Get the source:          
 
     There are two options methods to obtain the source code. For developers, and for those who want to maintain the most current version the recommended  option is the second  
