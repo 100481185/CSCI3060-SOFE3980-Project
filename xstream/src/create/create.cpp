@@ -32,8 +32,9 @@ int create(){
 		return -1;
 	}
 
+	//update list of accounts here (if necessary)
+	
 	Write_Regular("01", username_new, type_new, credit_new);
-	//call WriteRegular with code = 01
 	return 0;
 }
 
