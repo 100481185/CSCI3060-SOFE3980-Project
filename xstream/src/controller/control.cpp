@@ -29,7 +29,7 @@ int control() {
 
     switch (cmdManager(cmd)) {
         case LOGIN:
-            return login(session);
+            return login(session.,);
         case LOGOUT:
 //            return logout();
         case CREATE:

@@ -18,14 +18,14 @@ Bradley  Hamilton [@bradley][]
 Fuad     Tareq    [@fuad][]                       
 ```
 ***
-=================             
+===
 Installation:           
 --------------           
 ###Get the source:          
 
 There are two options main methods to obtain the source code.  
 
-######&nbsp;&nbsp;&nbsp;&nbsp;__Disclosure__
+######&nbsp;&nbsp;&nbsp;&nbsp;\*note\[1\]
     > Either method is valid and will work.Developers and for those who want to maintain 
       the most current version the recommended  option is the second.  
     > K  
@@ -54,6 +54,7 @@ There are two options main methods to obtain the source code.
     &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
     
 3. CMake
+    * Navigate
     cd  
 
 
