@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
 #include "transaction.h"
 
 string line;
@@ -13,7 +12,7 @@ int Write_Regular(string code, string username, string type_, float credit){
 
 	if (!file.is_open()) return -1;
 
-	//add code and username
+	//add code and username_
 	line = code + " " + username;
 	if (username.length() < 15){
 		for (int i = 0; i < (15 - username.length()); i++){
@@ -45,15 +44,15 @@ int Write_Refund(string code, string username_buyer, string username_seller, flo
 
 	if (!file.is_open()) return -1;
 
-	//add code and buyer's username
+	//add code and buyer's username_
 	line = code + " " + username_buyer;
 	if (username_buyer.length() < 15){
 		for (int i = 0; i < (15 - username_buyer.length()); i++){
 			line = line + " ";
 		}
 	}
-	
-	//add seller's username
+
+	//add seller's username_
 	line = code + " " + username_seller;
 	if (username_seller.length() < 15){
 		for (int i = 0; i < (15 - username_seller.length()); i++){
@@ -90,7 +89,7 @@ int Write_BuySell(string code, string event, string username_seller, int tickets
 		}
 	}
 
-	//add seller's username
+	//add seller's username_
 	line = code + " " + username_seller;
 	if (username_seller.length() < 15){
 		for (int i = 0; i < (15 - username_seller.length()); i++){

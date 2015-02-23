@@ -1,19 +1,15 @@
 #include "control.h"
 #include "../login/login.h"
 #include "../xstream.h"
-#include "../data/session.h"
 
 
 using namespace std;
 
 
-static Session session = Session();
-
-
 int cmdManager(std::string cmd) {
-    if ((!(session.getloggedIn())) && (cmd == "login")) {
+    if ((!(session.isLoggedIn())) && (cmd == "login")) {
         return LOGIN;
-    } else if (session.getloggedIn()) {
+    } else if (session.isLoggedIn()) {
 
     } else {
         cout << INVALID;
@@ -29,7 +25,7 @@ int control() {
 
     switch (cmdManager(cmd)) {
         case LOGIN:
-            return login(session.,);
+            return login();
         case LOGOUT:
 //            return logout();
         case CREATE:

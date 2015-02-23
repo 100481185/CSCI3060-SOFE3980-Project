@@ -7,7 +7,7 @@
 #include <fstream>
 
 
-int login(bool *loggedIn, string *permission);
+int login();
 
 int openFile(std::string const fileName);
 

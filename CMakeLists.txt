@@ -17,6 +17,8 @@ set(SOURCE_FILES
                  xstream/src/login/login.h
                  xstream/src/logout/logout.cpp
                  xstream/src/logout/logout.h
+                 xstream/src/data/session.cpp
+                 xstream/src/data/session.h
                  xstream/src/data/user/account.cpp
                  xstream/src/data/user/account.h
                  xstream/src/data/daily/transaction.cpp
