@@ -4,13 +4,13 @@
 #include <iostream>
 #include "../data/user/account.h"
 
-int logout(bool *loggedIn, string *user, string *permission);
+int logout(session *use);
 
 int read(string const fileName);
 
 Account load(std::string record);
 
-int check(std::string name, bool *loggedIn, std::string *permission);
+int check(std::string name, session *use);
 
 
 #endif

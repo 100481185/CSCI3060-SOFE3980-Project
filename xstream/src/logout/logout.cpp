@@ -7,18 +7,17 @@
 #include "../data/daily/transaction.h"
 #include "../data/user/account.h"
 
-
-int logout(bool *loggedIn, string *user, string *permission) {
+session sess;
+int logout(session *use) {
+	sess = *use;
 	std::cout << USERACCNT << std::endl;
 	if (read(USERACCNT) < 0) {
 		return -1;
 	}
 
-	std::string username = *user; 
-	if (check(username, loggedIn, permission) < 0) {
+	if (check(sess.getName(), use) < 0) {
 		return -1;
 	}
-	*user = "";
 	return 0;
 }
 
@@ -51,11 +50,12 @@ Account load(std::string record) {
 	return user;
 }
 
-int check(std::string name, bool *loggedIn, std::string *permission) {
+int check(std::string name, session *use) {
 	for (ptr = accounts.begin(); ptr != accounts.end(); ptr++) {
 		if ((*ptr).getName() == name) {
-			*permission = "";
-			*loggedIn = false;
+			sess.setloggedIn(false);
+			sess.setType("");
+			sess.setName("");
 			Write_Regular("00", (*ptr).getName(), (*ptr).getType(), (*ptr).getCredit());
 			return 0;
 		}
