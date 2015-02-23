@@ -15,7 +15,7 @@ class UserAccountTest : public ::testing::Test
 protected:
     virtual void SetUp() {
         loggedIn_ = true;
-        permission_ = '';
+        permission_;
         ifstream fd;
         fd.open(USERACCOUNT_TXT);
         if (fd.is_open()) {

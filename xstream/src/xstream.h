@@ -1,6 +1,8 @@
 #ifndef XSTREAM_XSTREAM_H
 #define XSTREAM_XSTREAM_H
 
+#include "data/session.h"
+
 // Command Constants
 #define LOGIN        11
 #define LOGOUT       00
@@ -19,7 +21,6 @@
 #define SS "sell-standard"
 
 
-
 // Error Messages
 #define TOOMUCH         "the amount exceeds the transaction limit (MAX=$1000.00)."
 #define BADCREDIT       "you do not have enough credit to complete that command."
@@ -30,5 +31,6 @@
 
 bool printMsg(int powerOff);
 
+extern Session session;
 
 #endif

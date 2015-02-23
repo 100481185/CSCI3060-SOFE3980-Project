@@ -10,16 +10,13 @@ using namespace std;
 #define USERACCOUNT_TXT "../xstream/src/data/user/UserAccounts.txt"
 
 class Account {
-    std::string username;
-    std::string type_;
-    float credit;
 public:
     Account(std::string, std::string, float);
 
     void setValues(std::string, std::string, float);
 
     std::string getName() {
-        return username;
+        return username_;
     }
 
     std::string getType() {
@@ -29,6 +26,11 @@ public:
     float getCredit() {
         return credit;
     }
+
+private:
+    std::string username_;
+    std::string type_;
+    float credit;
 };
 
 string const USERACCNT = "UserAccounts.txt";

@@ -7,8 +7,8 @@ Account::Account(string username, string type_, float credit) {
 }
 
 void Account::setValues(string userName, string Type_, float Credit) {
-    username = userName;
-    type_ = Type_;
-    credit = Credit;
+    this->username_ = userName;
+    this->type_ = Type_;
+    this->credit = Credit;
 }
 

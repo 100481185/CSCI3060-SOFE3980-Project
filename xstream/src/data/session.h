@@ -1,30 +1,36 @@
-class session
+#ifndef XSTREAM_DATA_SESSION_H
+#define XSTREAM_DATA_SESSION_H
+
+#include <bits/stl_map.h>
+
+using namespace std;
+
+class Session
 {
-
-private:
-    string name_;
-    bool loggedIn_ = false;
-    string type_;
-
-    std::map<int, Data()> transactions;
-
 public:
-    string getName() {
-        return name_;
-    }
-    void setName(string name);
-    
-    bool getloggedIn(){
-        return loggedIn_;
-    }
+    Session();
 
-    void setloggedIn(bool status);
-    
-    string getType(){
-        return type_;
-    }
+    void setLoggedIn(bool loggedIn);
 
-    void setType(char *type_);
+    bool isLoggedIn() const;
 
-    void commit()
+    void setName(std::string name);
+
+    std::string getName() const;
+
+    void setType(std::string type);
+
+    std::string getType() const;
+
+    void setCredit(float credit);
+
+    float getCredit();
+private:
+    bool loggedIn_;
+    std::string name_;
+    std::string type_;
+    float credit_;
+//    std::map<int, Transaction()> transactions_;
 };
+
+#endif

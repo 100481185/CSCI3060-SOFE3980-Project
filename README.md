@@ -1,41 +1,64 @@
-<link rel="stylesheet" href="/path/to/styles/default.css">
-<script src=src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-xStream Project: 
-===============
----
-
-                                     CSCI3060/SOFE3980: 
-                               Software Quality and Assurance
-                               ------------------------------
-                            Mohammad Ali    <mohammad.ali3@uoit.net>
-                       Nicholas De Souza    <nicholas.desouza@uoit.net>
-                        Bradley Hamilton    <bradley.hamilton@uoit.net>
-                              Fuad Tareq    <fuad.tareq@uoit.net>
-
-
----
-
-[![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)](https://magnum.travis-ci.com/ncdesouza/xstream)
-
-Installation:
--------------
-Download the [zip][id2] 
-or 
-alternativly clone the the repository:
-
-
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
-    
-[id2]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/master.zip> 
-    "zip"
-        
-    
-###Navigate to the directory:
+[xStream.zip]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/mirror.zip>     
+[wdgt]: (https://magnum.travis-ci.com/ncdesouza/xstream)
+[@mohammad]: <mohammad.ali3@uoit.net>   
+[@nicholas]: <nicholas.desouza@uoit.net>
+[@bradley]: <bradley.hamilton@uoit.net>
+[@fuad]: <fuad.tareq@uoit.net>  
 
-__`cd /path/to/project/directory`__
+xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr)][wdgt]  <sup><sub>CSCI3060/SOFE3980: Software Quality and Assurance</sub></sup>
+=================
+---
+```html 
+__DevelopmentTeam__        
+--------------------------------                  
+Mohammad Ali      [@mohammad][]     
+Nicholas De Souza [@nicholas][]     
+Bradley  Hamilton [@bradley][]     
+Fuad     Tareq    [@fuad][]                       
+```
+***
+===
+Installation:           
+--------------           
+###Get the source:          
 
+There are two options main methods to obtain the source code.  
+
+######&nbsp;&nbsp;&nbsp;&nbsp;\*note\[1\]
+    > Either method is valid and will work.Developers and for those who want to maintain 
+      the most current version the recommended  option is the second.  
+    > K  
+* Option1: Download the zip:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][] ]__ 
+
+* Option2: Clone the github repository:
+    In terminal type:
+     
+```bash
+/&nbsp;/&nbsp;/&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream.git`__
 ```
-eg. cd /home/nicholas/Downloads/CSCI3060-SOFE3980-Project
-```
+
+    
+###Compiling the source
+
+   
+
+1. Navigate to __${SOURCE_ROOT}__ directory:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/<dir>/xServer`__
+
+2. Make build directory:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
+    
+3. CMake
+    * Navigate
+    cd  
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+ 
