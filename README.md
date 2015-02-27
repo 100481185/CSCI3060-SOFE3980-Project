@@ -43,22 +43,32 @@ There are two options main methods to obtain the source code.
     
 ###Compiling the source
 
-   
-
 1. Navigate to __${SOURCE_ROOT}__ directory:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/&{Source_Root}`__
+    `cd /<path>/<to>/&{Source_Root}`
 
-2. Make build directory:
+2. Run CMake:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__`mkdir build`__
+    In terminal type:
     
-3. CMake
-    * Navigate
-    cd  
+    `cmake ./`
+    
+3. Run make
+    
+    In terminal type:
+    
+    `sudo make` 
+    
+    
+###Run program
 
+1. Navigate to __${Source_Root}/xstream__ directory:
+  
+    `cd /path/to/${Source_Root}/xstream`
+  
+2. Run program:
 
+    `bin/xstream`
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
  
