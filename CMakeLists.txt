@@ -7,9 +7,11 @@ include_directories(xstream/include)
 
 include_directories(xstream/data)
 
-set(CMAKE_BINARY_DIR build)
+set(CMAKE_BINARY_DIR xstream/build)
 
-set(CMAKE_SOURCE_DIR src)
+set(EXECUTABLE_OUTPUT_PATH xstream/bin)
+
+set(CMAKE_SOURCE_DIR xstream/src)
 
 set(SOURCE_FILES xstream/src/main.cpp
                  xstream/src/xstream.cpp
