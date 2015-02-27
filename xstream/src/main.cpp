@@ -40,7 +40,7 @@ int main() {
     string cmd;
     int check;
     while (true) {
-        cout << session.logged_in() << endl;
+        cout << "command >>" << endl;
         cin >> cmd;
         switch (cmdManager(cmd)) {
             case LOGIN:
