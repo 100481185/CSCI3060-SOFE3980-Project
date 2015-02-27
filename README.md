@@ -10,7 +10,7 @@ xStream Project: <br> [![Build Status](https://magnum.travis-ci.com/ncdesouza/xs
 =================
 ---
 ```html 
-__DevelopmentTeam__        
+DevelopmentTeam        
 --------------------------------                  
 Mohammad Ali      [@mohammad][]     
 Nicholas De Souza [@nicholas][]     
@@ -36,9 +36,9 @@ There are two options main methods to obtain the source code.
 * Option2: Clone the github repository:
     In terminal type:
      
-```bash
-/&nbsp;/&nbsp;/&nbsp;&nbsp;__`sudo git clone http://github.com/ncdesouza/xStream.git`__
-```
+    ```bash
+    sudo git clone https://github.com/100481185/CSCI3060-SOFE3980-Project.git
+    ```
 
     
 ###Compiling the source
@@ -47,7 +47,7 @@ There are two options main methods to obtain the source code.
 
 1. Navigate to __${SOURCE_ROOT}__ directory:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/<dir>/xServer`__
+    &nbsp;&nbsp;&nbsp;&nbsp;__`cd /<path>/<to>/&{Source_Root}`__
 
 2. Make build directory:
 
