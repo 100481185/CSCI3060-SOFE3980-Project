@@ -40,32 +40,28 @@ There are two options main methods to obtain the source code.
 
 ###Compiling the source
 
-1. Navigate to __${SOURCE_ROOT}__ directory:
+1. Navigate to __${SOURCE_ROOT}__ directory using terminal:
 
-    `cd /<path>/<to>/${Source_Root}`
+    __`cd /<path>/<to>/${Source_Root}`__
 
-2. Run CMake:
-
-    In terminal type:
+2. To run CMake type the command:
     
-    `cmake ./`
+   __`cmake ./`__
     
-3. Run make
+3. To run make type the command:
     
-    In terminal type:
-    
-    `sudo make` 
+    __`sudo make`__ 
     
     
 ###Run program
 
-1. Navigate to __${Source_Root}/xstream__ directory:
+1. Navigate to __${Source_Root}/xstream__ directory using terminal:
   
-    `cd /path/to/${Source_Root}/xstream`
+    __`cd /path/to/${Source_Root}/xstream`__
   
-2. Run program:
+2. To run the program type the command:
 
-    `bin/xstream`
+    __`bin/xstream`__
 
 
  
