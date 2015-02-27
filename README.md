@@ -37,7 +37,7 @@ There are two options main methods to obtain the source code.
     In terminal type:
      
     ```bash
-    sudo git clone http://github.com/ncdesouza/xStream.git
+    sudo git clone https://github.com/100481185/CSCI3060-SOFE3980-Project.git
     ```
 
     
