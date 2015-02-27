@@ -25,10 +25,6 @@ Installation:
 
 There are two options main methods to obtain the source code.  
 
-######&nbsp;&nbsp;&nbsp;&nbsp;\*note\[1\]
-    > Either method is valid and will work.Developers and for those who want to maintain 
-      the most current version the recommended  option is the second.  
-    > K  
 * Option1: Download the zip:
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__[ [xStream.zip][] ]__ 
@@ -40,12 +36,13 @@ There are two options main methods to obtain the source code.
     sudo git clone https://github.com/100481185/CSCI3060-SOFE3980-Project.git
     ```
 
-    
+######&nbsp;&nbsp;&nbsp;&nbsp;\*note The directory you unzipped or cloned will be refered to as __${SOURCE_ROOT}__ 
+
 ###Compiling the source
 
 1. Navigate to __${SOURCE_ROOT}__ directory:
 
-    `cd /<path>/<to>/&{Source_Root}`
+    `cd /<path>/<to>/${Source_Root}`
 
 2. Run CMake:
 
