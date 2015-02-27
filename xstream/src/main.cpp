@@ -48,6 +48,7 @@ int main() {
                 break;
             case LOGOUT:
                 check = session.Logout();
+		break;
             case CREATE:
                 check = session.Create();
                 break;
