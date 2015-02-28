@@ -32,7 +32,7 @@ public:
 private:
     User *logged_in_;
     Accounts *accounts_;
-    Transactions *commits_;
+    Transactions *transactions_;
 //    Tickets * tickets;
 };
 
