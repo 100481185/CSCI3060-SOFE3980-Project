@@ -22,6 +22,7 @@ set(SOURCE_FILES xstream/src/main.cpp
                  xstream/src/user.cpp
                  xstream/src/commit.cpp
                  xstream/data/UserAccounts.txt
+                 xstream/data/DailyTransactions.txt
 )
 
 add_executable(xstream ${SOURCE_FILES})
