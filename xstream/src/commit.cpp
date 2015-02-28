@@ -6,11 +6,13 @@ Commit::Commit(int code) {
 
 
 Refund::Refund(int code, string buyer_name, string seller_name, double credit) :
-        Commit(code) {
+        Commit(code),
+        buyer_name_(buyer_name),
+        seller_name_(seller_name) {
 
     // Format attributes
-    sprintf(buyer_name_, NAME_FORMAT, buyer_name.c_str());
-    sprintf(seller_name_, NAME_FORMAT, seller_name.c_str());
+    buyer_name_.resize(NAME_SIZE, BLANK);
+    seller_name_.resize(NAME_SIZE, BLANK);
     if (credit == int(credit))
         sprintf(credit_, CREDIT_WO_DEC_FORMAT, (int) credit);
     else
@@ -30,15 +32,16 @@ string Refund::commit() {
 BuySell::BuySell(int code, string event_name, string seller_name, int num_tickets, double price) :
         Commit(code),
         event_name_(event_name),
-        seller_name_(seller_name),
-        num_tickets_(to_string(num_tickets)),
-        price_(to_string(price)) {
+        seller_name_(seller_name) {
 
     // format attributes to correct sizes
-    event_name_.resize(EVENT_SIZE, ' ');
-    seller_name_.resize(NAME_SIZE, ' ');
-    num_tickets_.resize(NUMTIC_SIZE, '0');
-    price_.resize(PRICE_SIZE, '0');
+    event_name_.resize(EVENT_SIZE, BLANK);
+    seller_name_.resize(NAME_SIZE, BLANK);
+    sprintf(num_tickets_, NUMTIC_FORMAT, num_tickets);
+    if (price == int(price))
+        sprintf(price_, PRICE_WO_DEC_FORMAT, (int) price);
+    else
+        sprintf(price_, PRICE_W_DEC_FORMAT, price);
 
     // format the entire string - XX_EEEEEEEEEEEEEEEEEEE_SSSSSSSSSSSSS_TTT_PPPPPP
     stringstream temp;
@@ -57,8 +60,8 @@ Regular::Regular(int code, string name, string type, double credit) :
         type_(type) {
 
     // format attributes
-    name_.resize(NAME_SIZE, ' ');
-    type_.resize(TYPE_SIZE, ' ');
+    name_.resize(NAME_SIZE, BLANK);
+    type_.resize(TYPE_SIZE, BLANK);
     if (credit == int(credit))
         sprintf(credit_, CREDIT_WO_DEC_FORMAT, (int) credit);
     else

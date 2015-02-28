@@ -6,19 +6,21 @@
 
 using namespace std;
 
-#define CODE_SIZE 2
-#define TYPE_SIZE 2
-#define NAME_SIZE 15
+#define CODE_SIZE   2
+#define TYPE_SIZE   2
+#define NAME_SIZE   15
 #define CREDIT_SIZE 9
-#define EVENT_SIZE 19
+#define EVENT_SIZE  19
 #define NUMTIC_SIZE 3
-#define PRICE_SIZE 6
+#define PRICE_SIZE  6
 
-#define CODE_FORMAT "%02i"
-#define NAME_FORMAT "%15s"
-#define TYPE_FORMAT "%2s"
-#define CREDIT_W_DEC_FORMAT "%09.2f"
-#define CREDIT_WO_DEC_FORMAT "%09i"
+#define BLANK                   ' '
+#define CODE_FORMAT             "%02i"
+#define CREDIT_W_DEC_FORMAT     "%09.2f"
+#define CREDIT_WO_DEC_FORMAT    "%09i"
+#define NUMTIC_FORMAT           "%03i"
+#define PRICE_W_DEC_FORMAT      "%06.2f"
+#define PRICE_WO_DEC_FORMAT     "%06i"
 
 
 class Commit
@@ -44,8 +46,8 @@ public:
     string commit();
 
 private:
-    char buyer_name_[NAME_SIZE];
-    char seller_name_[NAME_SIZE];
+    string buyer_name_;
+    string seller_name_;
     char credit_[CREDIT_SIZE];
 };
 
@@ -58,10 +60,10 @@ public:
     string commit();
 
 private:
-    string num_tickets_;
-    string price_;
-    string seller_name_;
     string event_name_;
+    string seller_name_;
+    char num_tickets_[NUMTIC_SIZE];
+    char price_[PRICE_SIZE];
 };
 
 
@@ -77,7 +79,6 @@ private:
     string type_;
     char credit_[CREDIT_SIZE];
 };
-
 
 #endif // XSTREAM_COMMIT_H
 
