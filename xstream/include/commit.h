@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define CODE_SIZE 0
+#define CODE_SIZE 2
 #define TYPE_SIZE 2
 #define NAME_SIZE 15
 #define CREDIT_SIZE 9
