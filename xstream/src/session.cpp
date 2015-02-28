@@ -3,7 +3,7 @@
 
 Session::Session() {
     logged_in_ = NULL;
-    commits_ = new Transactions;
+    transactions_ = new Transactions;
 }
 
 bool Session::logged_in() const {
@@ -28,11 +28,14 @@ int Session::Login() {
 }
 
 int Session::Logout() {
-    // format all transactions
-    commits_->convert_data();
+    // Create a transaction for logout
+    transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
+
+    // format all transactions for txt file
+    transactions_->convert_data();
 
     // Write the daily transaction file
-    commits_->WriteData();
+    transactions_->WriteData();
 
     // change logged in status
     logged_in_ = NULL;
@@ -69,7 +72,7 @@ int Session::Create() {
     // update list of accounts here (if necessary)
     accounts_->new_user(name, type, credit);
     // create a transaction record of the event
-    commits_->regular(CREATE, name, type, credit);
+    transactions_->regular(CREATE, name, type, credit);
     return 0;
 }
 
