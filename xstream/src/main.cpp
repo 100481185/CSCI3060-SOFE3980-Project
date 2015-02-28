@@ -31,10 +31,6 @@ int cmdManager(std::string cmd) {
 
 int main() {
 
-//    list<Commit> commits;
-
-//    commits.push_back(Regular(0, "nick", "AA", 2.00));
-
     cout << "Xstream >> " << endl;
 
     string cmd;
@@ -48,7 +44,7 @@ int main() {
                 break;
             case LOGOUT:
                 check = session.Logout();
-		break;
+                break;
             case CREATE:
                 check = session.Create();
                 break;
