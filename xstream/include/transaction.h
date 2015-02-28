@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define TRANSACTIONS "data/DailyTransaction.txt"
+#define TRANSACTIONS "data/DailyTransactions.txt"
 
 class Transactions : public Data
 {

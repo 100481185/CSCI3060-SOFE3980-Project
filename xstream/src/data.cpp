@@ -47,12 +47,13 @@ int Data::ReadData() {
 int Data::WriteData() {
     if (this->OpenFile())
     {
-        list<string>::iterator data_ptr = data().begin();
-        while (data_ptr != this->data().end())
+        list<string>::iterator data_ptr = data_.begin();
+        for (data_ptr; data_ptr != data_.end(); data_ptr++)
         {
+            string d = *(data_ptr);
             try
             {
-                *data_file_ << *(data_ptr) << "/n";
+                *data_file_ << d << '\n';
             } catch  (exception &e)
             {
                 cout << e.what() << endl;
