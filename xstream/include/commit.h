@@ -5,20 +5,28 @@
 
 using namespace std;
 
+#define CODE_SIZE 0
+#define TYPE_SIZE 2
+#define NAME_SIZE 15
+#define CREDIT_SIZE 9
+#define EVENT_SIZE 19
+#define NUMTIC_SIZE 3
+#define PRICE_SIZE 6
+
+
 class Commit
 {
 public:
     Commit(int code);
 
-    int code();
+//    string code();
 
     virtual string commit() {
         return commit_;
     }
 
     string commit_;
-private:
-    int code_;
+    string code_;
 
 };
 
@@ -33,7 +41,7 @@ public:
 private:
     string buyer_name_;
     string seller_name_;
-    double credit_;
+    string credit_;
 };
 
 
@@ -45,8 +53,8 @@ public:
     string commit();
 
 private:
-    int num_tickets_;
-    double price_;
+    string num_tickets_;
+    string price_;
     string seller_name_;
     string event_name_;
 };
@@ -62,7 +70,7 @@ public:
 private:
     string name_;
     string type_;
-    double credit_;
+    string credit_;
 };
 
 

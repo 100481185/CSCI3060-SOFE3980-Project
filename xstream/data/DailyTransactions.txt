@@ -1,2 +1,4 @@
-1 User2 AA 900.000000
-n
+ User1           AA 999999999
+ User1           AA 999999999
+ User2           AA 900.00000
+ User1           AA 999999999
