@@ -1,7 +1,8 @@
 #ifndef XSTREAM_COMMIT_H
 #define XSTREAM_COMMIT_H
 
-#include <iostream>
+#include <sstream>
+#include <string.h>
 
 using namespace std;
 
@@ -13,20 +14,24 @@ using namespace std;
 #define NUMTIC_SIZE 3
 #define PRICE_SIZE 6
 
+#define CODE_FORMAT "%02i"
+#define NAME_FORMAT "%15s"
+#define TYPE_FORMAT "%2s"
+#define CREDIT_W_DEC_FORMAT "%09.2f"
+#define CREDIT_WO_DEC_FORMAT "%09i"
+
 
 class Commit
 {
 public:
     Commit(int code);
 
-//    string code();
-
     virtual string commit() {
         return commit_;
     }
 
     string commit_;
-    string code_;
+    char code_[CODE_SIZE];
 
 };
 
@@ -39,9 +44,9 @@ public:
     string commit();
 
 private:
-    string buyer_name_;
-    string seller_name_;
-    string credit_;
+    char buyer_name_[NAME_SIZE];
+    char seller_name_[NAME_SIZE];
+    char credit_[CREDIT_SIZE];
 };
 
 
@@ -70,7 +75,7 @@ public:
 private:
     string name_;
     string type_;
-    string credit_;
+    char credit_[CREDIT_SIZE];
 };
 
 
