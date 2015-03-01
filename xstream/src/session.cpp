@@ -43,6 +43,7 @@ int Session::Logout() {
     return 0;
 }
 
+// TODO: Validate Input
 int Session::Create() {
     std::cout << "<< Create new user >>\n";
 

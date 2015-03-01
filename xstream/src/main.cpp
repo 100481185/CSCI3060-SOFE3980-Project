@@ -21,6 +21,8 @@ int cmdManager(std::string cmd) {
 
         } else if (cmd == "create") {
             return CREATE;
+        } else if (cmd == "delete") {
+            return DELETE;
         }
 
 

@@ -16,9 +16,12 @@ Accounts::Accounts() :
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
 
             // get attributes from line
-            string name = (*data_ptr).substr(0, 14);
+            string name = (*data_ptr).substr(0, 15);
             string type = (*data_ptr).substr(16, 2);
             double credit = stod((*data_ptr).substr(19, 9));
+
+            // trim whitespace from name
+            name.erase(name.find_last_not_of(' ') + 1);
 
             // create a new user in memory
             new_user(name, type, credit);
@@ -27,11 +30,6 @@ Accounts::Accounts() :
 }
 
 User *Accounts::find(string name) {
-
-    // resize name to match width
-    // TODO: figure out why its not 15
-    name.resize(14, ' ');
-
     // search for name in accounts
     map<string, User>::iterator it = accounts_.find(name);
 
@@ -39,15 +37,17 @@ User *Accounts::find(string name) {
     if (it == accounts_.end())
         return NULL;
     else
-        // return address of
+        // return address of User
         return &it->second;
 }
 
 void Accounts::new_user(string name, string type, double credit) {
+    // create a account with key=name and value=User
     accounts_.insert(pair<string, User>(name, User(name, type, credit)));
 }
 
 int Accounts::del_user(string name) {
+    // delete account with key=name
     accounts_.erase(name);
     return 0;
 }
