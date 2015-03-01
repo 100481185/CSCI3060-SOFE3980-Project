@@ -3,10 +3,7 @@
 using namespace std;
 
 Accounts::Accounts() :
-        Data() {
-
-    set_file_name(USER_ACCOUNTS);
-
+        Data(USER_ACCOUNTS) {
     if (ReadData() == 0) {
 
         // create an iterator that points to each line in file
@@ -41,13 +38,28 @@ User *Accounts::find(string name) {
         return &it->second;
 }
 
-void Accounts::new_user(string name, string type, double credit) {
+int Accounts::new_user(string name, string type, double credit) {
     // create a account with key=name and value=User
     accounts_.insert(pair<string, User>(name, User(name, type, credit)));
+    return 0;
 }
 
 int Accounts::del_user(string name) {
     // delete account with key=name
     accounts_.erase(name);
+    return 0;
+}
+
+int Accounts::write_accounts() {
+    // clear data buffer
+    data_.clear();
+    // create a pointer to the start of accounts
+    map<string, User>::iterator ptr = accounts_.begin();
+    for (ptr; ptr != accounts_.end(); ptr++) {
+        // get the formatted string version of the account
+        // pointed to by ptr and insert it into data
+        data_.push_front(ptr->second.user());
+    }
+    WriteData();
     return 0;
 }

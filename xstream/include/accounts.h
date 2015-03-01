@@ -22,10 +22,12 @@ public:
 
     User *find(string name);
 
-    void new_user(string name, string type, double credit);
+    int new_user(string name, string type, double credit);
 
     int del_user(string name);
 //    int add_credit(string name, double amount);
+
+    int write_accounts();
 
 
 private:
