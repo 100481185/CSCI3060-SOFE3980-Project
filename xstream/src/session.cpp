@@ -10,6 +10,7 @@ bool Session::logged_in() const {
     return (logged_in_ != NULL);
 }
 
+// TODO: Create Login test suite
 int Session::Login() {
     // initialize accounts
     accounts_ = new Accounts;
@@ -27,6 +28,7 @@ int Session::Login() {
     return 0;
 }
 
+// TODO: Create Logout test suite
 int Session::Logout() {
     // Create a transaction for logout
     transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
@@ -43,7 +45,8 @@ int Session::Logout() {
     return 0;
 }
 
-// TODO: Validate Input
+// TODO: Validate Create() Input
+// TODO: Create test suite
 int Session::Create() {
     std::cout << "<< Create new user >>\n";
 
@@ -77,6 +80,7 @@ int Session::Create() {
     return 0;
 }
 
+// TODO: Create Delete test suite
 int Session::Delete() {
     std::cout << "<< Delete user >>\n";
 
@@ -90,13 +94,15 @@ int Session::Delete() {
         return -1;
     }
 
-    // Find user account
-    User *temp = accounts_->find(name);
+    // Check if user exists
     // Validate that user exists
-    if (temp == NULL) {
+    if (accounts_->find(name) == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
     }
+
+    // make a local copy of User
+    User temp = *accounts_->find(name);
 
     // delete account from memory
     int check = accounts_->del_user(name);
@@ -108,7 +114,6 @@ int Session::Delete() {
     }
 
     // create a transaction record of the event
-    transactions_->regular(DELETE, temp->name(),
-                           temp->type(), temp->credit());
+    transactions_->regular(DELETE, temp.name(), temp.type(), temp.credit());
     return 0;
 }

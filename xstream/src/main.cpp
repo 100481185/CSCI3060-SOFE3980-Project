@@ -53,6 +53,7 @@ int main() {
                 break;
             case DELETE:
                 check = session.Delete();
+                break;
             case SELL:
             case BUY:
             case REFUND:
