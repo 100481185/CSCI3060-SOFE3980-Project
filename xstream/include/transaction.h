@@ -7,22 +7,51 @@
 
 using namespace std;
 
+// relative path for file that contains Transaction data.
 #define TRANSACTIONS "data/DailyTransactions.txt"
 
+/*
+Transactions:
+    Creates and handles transaction records for the session.
+    Store all transactions into memory during a session and
+    at end of session writes memory to DailyTransaction file.
+ */
 class Transactions : public Data
 {
 public:
+    /*
+    Constructor:
+        sets file name to DailyTransactions file.
+     */
     Transactions();
 
-    int convert_data();
-
+    /*
+    refund:
+        creates a Refund object and inserts it into memory.
+        Return 0 on success, -1 on failure.
+     */
     int refund(int code, string username, string type_, double credit);
 
+    /*
+    buy_sell:
+        creates a BuySell object and inserts it into memory.
+        Return 0 on success, -1 on failure.
+     */
     int buy_sell(int code, string buyer_name, string seller_name, int num_tickets, double price);
 
+    /*
+    regular:
+        creates a Regular object and inserts it into memory.
+        Return 0 on success, -1 on failure.
+     */
     int regular(int code, string name, string type, double credit);
 
-//    int Write_Refund(string code, string username, string type_, float credit);
+    /*
+    write_transactions():
+        writes the transactions in memory to DailyTransactions file.
+        Returns 0 in success, -1 on failure.
+     */
+    int write_transactions();
 
 private:
     list<Commit> commits_;

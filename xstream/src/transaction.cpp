@@ -21,11 +21,12 @@ int Transactions::regular(int code, string name, string type, double credit) {
 	return 0;
 }
 
-int Transactions::convert_data() {
+int Transactions::write_transactions() {
 	list<Commit>::iterator ptr = commits_.begin();
 	for (ptr; ptr != commits_.end(); ptr++) {
 		data_.push_back(ptr->commit());
 	}
 	return 0;
 }
+
 

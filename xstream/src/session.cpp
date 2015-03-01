@@ -34,7 +34,7 @@ int Session::Logout() {
     transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
 
     // format all transactions for txt file
-    transactions_->convert_data();
+    transactions_->write_transactions();
 
     // Write the daily transaction file
     transactions_->WriteData();
