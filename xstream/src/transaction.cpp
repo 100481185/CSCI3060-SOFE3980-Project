@@ -22,10 +22,16 @@ int Transactions::regular(int code, string name, string type, double credit) {
 }
 
 int Transactions::write_transactions() {
+	// create a pointer to the start of the
+	// transactions list
 	list<Commit>::iterator ptr = commits_.begin();
 	for (ptr; ptr != commits_.end(); ptr++) {
+		// get the formatted string version of
+		// the transaction and insert into data
 		data_.push_back(ptr->commit());
 	}
+	// write the data to file.
+	if (WriteData() > 0) return -1; // return -2 on bad write
 	return 0;
 }
 

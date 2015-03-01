@@ -33,11 +33,8 @@ int Session::Logout() {
     // Create a transaction for logout
     transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
 
-    // format all transactions for txt file
+    // write transactions to DailyTransactions file
     transactions_->write_transactions();
-
-    // Write the daily transaction file
-    transactions_->WriteData();
 
     // change logged in status
     logged_in_ = NULL;

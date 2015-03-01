@@ -48,12 +48,17 @@ public:
 
     /*
     write_transactions():
-        writes the transactions in memory to DailyTransactions file.
+        converts transactions in memory to a list<string> then
+        writes the list to the DailyTransactions file.
         Returns 0 in success, -1 on failure.
      */
     int write_transactions();
 
 private:
+    /*
+    commits_:
+        a list containing all the transactions of the session.
+     */
     list<Commit> commits_;
 };
 
