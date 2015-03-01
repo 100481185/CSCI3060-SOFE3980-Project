@@ -1,8 +1,7 @@
 #include "../include/transaction.h"
 
 Transactions::Transactions() :
-		Data() {
-	set_file_name(TRANSACTIONS);
+		Data(TRANSACTIONS) {
 }
 
 int Transactions::refund(int code, string username, string type, double credit) {
@@ -22,8 +21,7 @@ int Transactions::regular(int code, string name, string type, double credit) {
 }
 
 int Transactions::write_transactions() {
-	// create a pointer to the start of the
-	// transactions list
+	// create a pointer to the start of transactions
 	list<Commit>::iterator ptr = commits_.begin();
 	for (ptr; ptr != commits_.end(); ptr++) {
 		// get the formatted string version of
