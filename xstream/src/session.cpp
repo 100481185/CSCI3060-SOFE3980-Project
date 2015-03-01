@@ -18,7 +18,7 @@ int Session::Login() {
     std::cout << "Please enter your username: \n";
     std::cin >> name;
 
-    logged_in_ = (accounts_->find(name));
+    logged_in_ = accounts_->find(name);
     if (!logged_in()) {
         cout << "Invalid username" << endl;
         return -1;
@@ -77,5 +77,37 @@ int Session::Create() {
 }
 
 int Session::Delete() {
+    std::cout << "<< Delete user >>\n";
+
+    string name;
+    std::cout << "Please enter the name of the user you would like to delete: \n";;
+    cin >> name;
+
+    // Validate input
+    if (name.size() > 15) {
+        cout << INVALID << INPUTTOOLARGE << endl;
+        return -1;
+    }
+
+    // Find user account
+    User *temp = accounts_->find(name);
+    // Validate that user exists
+    if (temp == NULL) {
+        cout << INVALID << NAMEDOESNOTEXIST << endl;
+        return -1;
+    }
+
+    // delete account from memory
+    int check = accounts_->del_user(name);
+
+    // Validate from memory account was deleted
+    if (check < 0) {
+        cout << MEMORYERROR << USERNOTDELETED << endl;
+        return -2;
+    }
+
+    // create a transaction record of the event
+    transactions_->regular(DELETE, temp->name(),
+                           temp->type(), temp->credit());
     return 0;
 }

@@ -23,6 +23,7 @@ int cmdManager(std::string cmd) {
             return CREATE;
         }
 
+
     } else {
         cout << INVALID;
     }
@@ -49,6 +50,7 @@ int main() {
                 check = session.Create();
                 break;
             case DELETE:
+                check = session.Delete();
             case SELL:
             case BUY:
             case REFUND:

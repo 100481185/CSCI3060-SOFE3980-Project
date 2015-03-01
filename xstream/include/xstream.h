@@ -13,16 +13,23 @@
 #define END          22
 
 
-// Error Messages
-#define TOOMUCH         "the amount exceeds the transaction limit (MAX=$1000.00)."
-#define BADCREDIT       "you do not have enough credit to complete that command."
-#define ALREADYLOGGED   "you must log out to preform that task."
-#define BADACCESS       "incorrect permissions."
-#define INVALIDTYPE     "type error"
-#define NOTLOGGED       "command only available to logged in user."
-#define INVALID         "Invalid input: "
+// Generic Error Messages
+#define INPUTTOOLARGE       "Exceed max size of field."
+#define INVALIDTYPE         "type error"
+#define NOTLOGGED           "command only available to logged in user."
+#define INVALID             "Invalid input: "
+#define MEMORYERROR         "Memory error: "
 
 // Create Error Msgs
-#define NAMEEXISTS      "That name conflicts with a name on the system"
+#define NAMEEXISTS          "That name conflicts with a name on the system"
+
+// Delete Error Msgs
+#define NAMEDOESNOTEXIST    "User does not exist"
+#define USERNOTDELETED      "User not deleted"
+
+#define TOOMUCH             "the amount exceeds the transaction limit (MAX=$1000.00)."
+#define BADCREDIT           "you do not have enough credit to complete that command."
+#define ALREADYLOGGED       "you must log out to preform that task."
+#define BADACCESS           "incorrect permissions."
 
 #endif
