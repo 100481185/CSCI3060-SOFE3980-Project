@@ -1,29 +1,10 @@
 #include "../include/data.h"
 
-Data::Data() {
-}
-
-void Data::set_file_name(string file_name) {
-    file_name_ = file_name;
-}
-
-int Data::OpenFile() {
-    try {
-        data_file_ = new fstream(file_name_);
-    } catch (exception &e) {
-        cout << e.what() << endl;
-    }
-    bool open = data_file_->is_open();
-    return open;
-}
-
-int Data::CloseFile() {
-    data_file_->close();
-    return 0;
+Data::Data(string file_name) : file_name_(file_name) {
 }
 
 int Data::ReadData() {
-    if (OpenFile()) {
+    if (OpenFile('r')) {
         std::string line;
         while (getline(*data_file_, line)) {
             try
@@ -45,31 +26,37 @@ int Data::ReadData() {
 }
 
 int Data::WriteData() {
-    if (this->OpenFile())
-    {
+    if (this->OpenFile('w')) {
         list<string>::iterator data_ptr = data_.begin();
-        for (data_ptr; data_ptr != data_.end(); data_ptr++)
-        {
-            string d = *(data_ptr);
-            try
-            {
-                *data_file_ << d << '\n';
-            } catch  (exception &e)
-            {
-                cout << e.what() << endl;
-                this->CloseFile();
-                return -1;
-            }
+        for (data_ptr; data_ptr != data_.end(); data_ptr++) {
+            *data_file_ << *(data_ptr) << '\n';
         }
-    this->CloseFile();
+
+        this->CloseFile();
+
+    } else {
+        cout << OPEN << ERROR << endl;
+        return -1;
     }
-    return -1;
+    return 0;
 }
 
-void Data::set_data(std::list<std::string> data) {
-    this->data_ = data;
+int Data::OpenFile(char flag) {
+    try {
+        if (flag == 'w') {
+            data_file_ = new fstream(file_name_);
+        } else if (flag == 'r')
+            data_file_ = new fstream(file_name_);
+        else
+            __throw_bad_exception();
+    } catch (exception &e) {
+        cout << e.what() << endl;
+    }
+    bool open = data_file_->is_open();
+    return open;
 }
 
-std::list<std::string> Data::data() {
-    return this->data_;
+int Data::CloseFile() {
+    data_file_->close();
+    return 0;
 }
