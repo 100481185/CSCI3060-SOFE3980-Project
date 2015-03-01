@@ -34,6 +34,9 @@ int Session::Logout() {
     // Create a transaction for logout
     transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
 
+    // write updated accounts to UserAccounts file
+    accounts_->write_accounts();
+
     // write transactions to DailyTransactions file
     transactions_->write_transactions();
 
@@ -113,5 +116,29 @@ int Session::Delete() {
 
     // create a transaction record of the event
     transactions_->regular(DELETE, temp.name(), temp.type(), temp.credit());
+    return 0;
+}
+
+// TODO: Implement Sell()
+// TODO: Sell test suite
+int Session::Sell() {
+    return 0;
+}
+
+// TODO: Implement Buy()
+// TODO: Buy test suite
+int Session::Buy() {
+    return 0;
+}
+
+// TODO: Implement Refund()
+// TODO: Refund test suite
+int Session::Refund() {
+    return 0;
+}
+
+// TODO: Implement AddCredit()
+// TODO: AddCredit test suite
+int Session::AddCredit() {
     return 0;
 }
