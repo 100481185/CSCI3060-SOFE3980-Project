@@ -1,7 +1,9 @@
 #ifndef XSTREAM_USER_ACCOUNT_H
 #define XSTREAM_USER_ACCOUNT_H
 
+#include "xstream.h"
 #include <iostream>
+#include <sstream>
 #include <list>
 
 using namespace std;
@@ -14,17 +16,17 @@ public:
 
     User(string name, string type, double credit);
 
-    void set_name(string name);
-
     string name();
-
-    void setType(string type);
 
     string type() const;
 
-    void setCredit(double credit);
-
     double credit();
+
+    string user() const;
+
+    void set_name(string name);
+    void setType(string type);
+    void setCredit(double credit);
 
 private:
     string name_;
