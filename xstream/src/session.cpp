@@ -10,6 +10,7 @@ bool Session::logged_in() const {
     return (logged_in_ != NULL);
 }
 
+// TODO: Validate input
 // TODO: Create Login test suite
 int Session::Login() {
     // initialize accounts
