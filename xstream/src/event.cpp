@@ -37,7 +37,8 @@ string Event::event() const {
     char tmp_price[6];
 
     // format tmp attribute containers
-    tmp_name.resize(EVENT_SIZE, BLANK);
+    tmp_event.resize(EVENT_SIZE, BLANK);
+    tmp_seller.resize(EVENT_SIZE, BLANK);
     // format number of tickets as an int
     sprintf(tmp_num_tickets, NUMTIC_FORMAT, (int) num_tickets_);
     // if price does not have a decimal
@@ -55,11 +56,11 @@ string Event::event() const {
     return tmp.str();
 }
 
-void Event::setType(int num_tickets) {
+void Event::setNumTickets(int num_tickets) {
     num_tickets_ = num_tickets;
 }
 
-void setSeller(string seller){
+void Event::setSeller(string seller){
     seller_ = seller;
 }
 

@@ -19,8 +19,8 @@ Tickets::Tickets() :
             double price = stod((*data_ptr).substr(38, 6));
 
             // trim whitespace from event and seller name
-            event.erase(name.find_last_not_of(' ') + 1);
-            seller.erase(name.find_last_not_of(' ') + 1);
+            event.erase(event.find_last_not_of(' ') + 1);
+            seller.erase(seller.find_last_not_of(' ') + 1);
 
             // create a new user in memory
             new_event(event, seller, num_tic, price);
@@ -40,7 +40,7 @@ Event *Tickets::find_event(string event) {
         return &it->second;
 }
 
-int Accounts::new_event(string event, string seller, int num_tic, double price) {
+int Tickets::new_event(string event, string seller, int num_tic, double price) {
     // create an event with key=event_name and value=Event
     tickets_.insert(pair<string, Event>(event, Event(event, seller, num_tic, price)));
     return 0;
@@ -54,7 +54,7 @@ int Tickets::write_events() {
     for (ptr; ptr != tickets_.end(); ptr++) {
         // get the formatted string version of the account
         // pointed to by ptr and insert it into data
-        data_.push_front(ptr->second.user());
+        data_.push_front(ptr->second.event());
     }
     WriteData();
     return 0;

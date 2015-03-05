@@ -13,8 +13,9 @@ bool Session::logged_in() const {
 // TODO: Validate input
 // TODO: Create Login test suite
 int Session::Login() {
-    // initialize accounts
+    // initialize accounts and event data
     accounts_ = new Accounts;
+    tickets_ = new Tickets;
 
     std::string name;
     std::cout << "Please enter your username: \n";
@@ -36,6 +37,9 @@ int Session::Logout() {
 
     // write updated accounts to UserAccounts file
     accounts_->write_accounts();
+
+    // write updated events to AvailableTickets file
+    tickets_->write_events();
 
     // write transactions to DailyTransactions file
     transactions_->write_transactions();

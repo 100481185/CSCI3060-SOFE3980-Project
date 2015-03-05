@@ -3,6 +3,7 @@
 
 #include "../include/user.h"
 #include "../include/accounts.h"
+#include "../include/tickets.h"
 #include "../include/transaction.h"
 
 /*
@@ -55,7 +56,7 @@ private:
     User *logged_in_;
     Accounts *accounts_;
     Transactions *transactions_;
-//    Tickets * tickets;
+    Tickets * tickets_;
 };
 
 #endif // XSTREAM_SESSION_H
