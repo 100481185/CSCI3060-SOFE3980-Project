@@ -38,9 +38,9 @@ string Event::event() const {
 
     // format tmp attribute containers
     tmp_event.resize(EVENT_SIZE, BLANK);
-    tmp_seller.resize(EVENT_SIZE, BLANK);
+    tmp_seller.resize(NAME_SIZE, BLANK);
     // format number of tickets as an int
-    sprintf(tmp_num_tickets, NUMTIC_FORMAT, (int) num_tickets_);
+    sprintf(tmp_num_tickets, NUMTIC_FORMAT, num_tickets_);
     // if price does not have a decimal
     if (price_ == int(price_))
         // format it as an int

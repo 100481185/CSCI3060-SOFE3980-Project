@@ -45,6 +45,15 @@
 #define NAMEDOESNOTEXIST    "User does not exist"
 #define USERNOTDELETED      "User not deleted"
 
+// Buy Error Msgs
+#define EVENTDOESNOTEXIST   "Event does not exist."
+#define INSUFFICIENTFUNDS   "The price exceeds the credit for this account."
+
+//Sell Error Msgs
+#define EVENTEXISTS         "That event conflicts with an event on the system."
+#define PRICETOOHIGH	    "Price per ticket is too high (MAX=$1000.00)."
+#define TOOMUCHTICKETS      "Number of tickets exceeds maximum limit (MAX=100)."
+
 #define TOOMUCH             "the amount exceeds the transaction limit (MAX=$1000.00)."
 #define BADCREDIT           "you do not have enough credit to complete that command."
 #define ALREADYLOGGED       "you must log out to preform that task."

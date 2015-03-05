@@ -133,7 +133,6 @@ int Session::Delete() {
     return 0;
 }
 
-// TODO: Implement Sell()
 // TODO: Sell test suite
 int Session::Sell() {
     if(logged_in_->type() == "BS"){
@@ -141,10 +140,47 @@ int Session::Sell() {
 	return -1;
     }
     std::cout << "<< Sell tickets for event >>\n";
+
+    string event;
+    std::cout << "Please enter the name of the event: \n";;
+    cin >> event;
+
+    // Validate input
+    if (event.size() > EVENT_SIZE) {
+        cout << INVALID << INPUTTOOLARGE << endl;
+        return -1;
+    }
+
+    // Check if event exists
+    // Validate that event exists
+    if (tickets_->find_event(event) != NULL) {
+        cout << INVALID << NAMEEXISTS << endl;
+        return -1;
+    }
+
+    double price;
+    std::cout << "Please enter price per ticket: \n";
+    std::cin >> price;
+    if (price >= 1000) {
+	std::cout << PRICETOOHIGH << std::endl;
+        return -1;
+    } 
+
+    int num_tickets;
+    std::cout << "Please enter number of tickets to be available: \n";
+    std::cin >> num_tickets;
+    if (num_tickets > 100) {
+	std::cout << TOOMUCHTICKETS << std::endl;
+        return -1;
+    } 
+    
+    // update list of events
+    tickets_->new_event(event, logged_in_->name(), num_tickets, price);
+    // create a transaction record of the event
+    transactions_->buy_sell(SELL, event, logged_in_->name(), num_tickets, price);
     return 0;
 }
 
-// TODO: Implement Buy()
 // TODO: Buy test suite
 int Session::Buy() {
     if(logged_in_->type() == "SS"){
@@ -152,10 +188,67 @@ int Session::Buy() {
 	return -1;
     }
     std::cout << "<< Purchase tickets to event >>\n";
+
+    string event;
+    std::cout << "Please enter the name of the event: \n";;
+    cin >> event;
+
+    // Validate input
+    if (event.size() > EVENT_SIZE) {
+        cout << INVALID << INPUTTOOLARGE << endl;
+        return -1;
+    }
+
+    // Check if event exists
+    // Validate that event exists
+    Event *e = tickets_->find_event(event);
+    if (e == NULL) {
+        cout << INVALID << NAMEDOESNOTEXIST << endl;
+        return -1;
+    }
+
+    string seller;
+    std::cout << "Please enter the name of the seller: \n";;
+    cin >> seller;
+    User *seller_ = accounts_->find(seller);
+    if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
+        cout << INVALID << NAMEDOESNOTEXIST << endl;
+        return -1;
+    }
+
+    int num_tickets;
+    std::cout << "Please enter number of tickets to purchase: \n";
+    std::cin >> num_tickets;
+    if (num_tickets > 100 || num_tickets > e->num_tickets()) {
+	std::cout << TOOMUCHTICKETS << std::endl;
+        return -1;
+    } 
+    std::cout << "This event costs " << e->price() << " dollars per ticket." << endl;
+
+    double total_cost = (num_tickets * e->price());
+    std::cout << "The total cost for your purchase is " << total_cost << " dollars." << endl;
+    std::cout << "Would you like to confirm this purchase? (Y/N)" << endl;
+
+    string decision;
+    std::cin >> decision;
+    if(decision != "Y"){
+	std::cout << "Transaction cancelled." << std::endl;
+	return -1;
+    }
+
+    if(total_cost > logged_in_->credit()){
+	std::cout << INSUFFICIENTFUNDS << std::endl;
+	return -1;
+    }
+
+    e->setNumTickets(e->num_tickets() - num_tickets);
+    logged_in_->setCredit(logged_in_->credit() - total_cost);
+    // create a transaction record of the event
+    transactions_->buy_sell(BUY, event, logged_in_->name(), num_tickets, e->price());
+
     return 0;
 }
 
-// TODO: Implement Refund()
 // TODO: Refund test suite
 int Session::Refund() {
     if(logged_in_->type() != "AA"){
@@ -198,7 +291,6 @@ int Session::Refund() {
     return 0;
 }
 
-// TODO: Implement AddCredit()
 // TODO: AddCredit test suite
 int Session::AddCredit() {
     std::cout << "<< Add Credit >>\n";

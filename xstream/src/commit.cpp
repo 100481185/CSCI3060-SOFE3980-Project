@@ -1,4 +1,5 @@
 #include "../include/commit.h"
+#include <iostream>
 
 Commit::Commit(int code) {
     sprintf(code_, CODE_FORMAT, code);
@@ -37,7 +38,11 @@ BuySell::BuySell(int code, string event_name, string seller_name, int num_ticket
     // format attributes to correct sizes
     event_name_.resize(EVENT_SIZE, BLANK);
     seller_name_.resize(NAME_SIZE, BLANK);
+
     sprintf(num_tickets_, NUMTIC_FORMAT, num_tickets);
+    string num = std::string(num_tickets_);
+    num.resize(NUMTIC_SIZE, BLANK);
+
     if (price == int(price))
         sprintf(price_, PRICE_WO_DEC_FORMAT, (int) price);
     else
@@ -45,7 +50,7 @@ BuySell::BuySell(int code, string event_name, string seller_name, int num_ticket
 
     // format the entire string - XX_EEEEEEEEEEEEEEEEEEE_SSSSSSSSSSSSS_TTT_PPPPPP
     stringstream temp;
-    temp << code_ << ' ' << event_name_ << ' ' << seller_name_ << ' ' << num_tickets_ << ' ' << price_;
+    temp << code_ << ' ' << event_name_ << ' ' << seller_name_ << ' ' << num << ' ' << price_;
     commit_ = temp.str();
 }
 
