@@ -4,8 +4,8 @@ Transactions::Transactions() :
 		Data(TRANSACTIONS) {
 }
 
-int Transactions::refund(int code, string username, string type, double credit) {
-	commits_.push_back(Refund(code, username, type, credit));
+int Transactions::refund(int code, string buyer, string seller, double credit) {
+	commits_.push_back(Refund(code, buyer, seller, credit));
 	return 0;
 }
 

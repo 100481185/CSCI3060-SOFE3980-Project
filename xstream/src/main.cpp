@@ -18,14 +18,19 @@ int cmdManager(std::string cmd) {
     } else if (session.logged_in()) {
         if (cmd == "logout") {
             return LOGOUT;
-
         } else if (cmd == "create") {
             return CREATE;
         } else if (cmd == "delete") {
             return DELETE;
-        }
-
-
+	} else if (cmd == "sell") {
+	    return SELL;
+	} else if (cmd == "buy") {
+	    return BUY;
+        } else if (cmd == "refund") {
+	    return REFUND;
+	} else if (cmd == "addcredit") {
+	    return ADDCREDIT;
+	}
     } else {
         cout << INVALID;
     }
@@ -55,9 +60,17 @@ int main() {
                 check = session.Delete();
                 break;
             case SELL:
+		check = session.Sell();
+		break;
             case BUY:
+		check = session.Buy();
+		break;
             case REFUND:
+		check = session.Refund();
+		break;
             case ADDCREDIT:
+		check = session.AddCredit();
+		break;
             case END:
                 return 0;
             default:

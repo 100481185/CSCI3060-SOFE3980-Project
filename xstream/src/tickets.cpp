@@ -13,10 +13,10 @@ Tickets::Tickets() :
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
 
             // get attributes from line
-            string event = (*data_ptr).substr(0, 19);
-            string seller = (*data_ptr).substr(20, 13);
-            int num_tic = stoi((*data_ptr).substr(34, 3));
-            double price = stod((*data_ptr).substr(38, 6));
+            string event = (*data_ptr).substr(0, EVENT_SIZE);
+            string seller = (*data_ptr).substr(20, NAME_SIZE);
+            int num_tic = stoi((*data_ptr).substr(36, NUMTIC_SIZE));
+            double price = stod((*data_ptr).substr(40, PRICE_SIZE));
 
             // trim whitespace from event and seller name
             event.erase(event.find_last_not_of(' ') + 1);

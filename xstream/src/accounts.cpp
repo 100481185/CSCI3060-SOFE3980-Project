@@ -13,9 +13,9 @@ Accounts::Accounts() :
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
 
             // get attributes from line
-            string name = (*data_ptr).substr(0, 15);
-            string type = (*data_ptr).substr(16, 2);
-            double credit = stod((*data_ptr).substr(19, 9));
+            string name = (*data_ptr).substr(0, NAME_SIZE);
+            string type = (*data_ptr).substr(16, TYPE_SIZE);
+            double credit = stod((*data_ptr).substr(19, CREDIT_SIZE));
 
             // trim whitespace from name
             name.erase(name.find_last_not_of(' ') + 1);
