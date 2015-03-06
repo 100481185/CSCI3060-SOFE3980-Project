@@ -42,6 +42,7 @@ public:
         logs the current user out of the session and writes
         all transactions, account changes and ticket changes to
         their respective files
+        Return 0 on success or -int for error
      */
     int Logout();
 
@@ -50,6 +51,7 @@ public:
         enables admin users to create a new user. The method
         creates a new account in memory and then writes the new
         user to UserAccounts file
+        Return 0 on success or -int for error
      */
     int Create();
 
@@ -58,9 +60,15 @@ public:
         enables admin users to delete a user account. The method
         deletes the account in memory and then writes the deleted
         account to the UserAccounts file
+        Return 0 on success or -int for error
      */
     int Delete();
 
+    /*
+    Sell:
+        enables a user with permission to sell tickets to post tickets
+        to an event for sale.
+     */
     int Sell();
 
     int Buy();
