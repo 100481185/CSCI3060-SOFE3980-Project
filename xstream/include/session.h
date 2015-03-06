@@ -28,6 +28,10 @@ public:
      */
     bool logged_in() const;
 
+    /*
+    command:
+        starts a session
+     */
     int command(string cmd);
 
 

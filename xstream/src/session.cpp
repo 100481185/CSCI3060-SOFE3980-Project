@@ -11,31 +11,36 @@ bool Session::logged_in() const {
 }
 
 int Session::command(string cmd) {
-    if (cmd == "end") {
-        return 0;
-    }
-    if (cmd == "login" && !logged_in()) {
-        return LOGIN;
+    if (!logged_in()) {
+        if (cmd == "login")
+            return Login();
+        if (cmd == "end")
+            return 2;
 
     } else if (logged_in()) {
-        if (cmd == "logout") {
-            return Login();
-        } else if (cmd == "create") {
+
+        if (cmd == "logout")
+            return Logout();
+
+        else if (cmd == "create")
             return Create();
-        } else if (cmd == "delete") {
+
+        else if (cmd == "delete")
             return Delete();
-        } else if (cmd == "sell") {
+
+        else if (cmd == "sell")
             return Sell();
-        } else if (cmd == "buy") {
+
+        else if (cmd == "buy")
             return Buy();
-        } else if (cmd == "refund") {
+
+        else if (cmd == "refund")
             return Refund();
-        } else if (cmd == "addcredit") {
+
+        else if (cmd == "addcredit")
             return AddCredit();
-        }
-    } else {
+    } else
         cout << INVALID;
-    }
     cout << NOTLOGGED << endl;
     return 0;
 }

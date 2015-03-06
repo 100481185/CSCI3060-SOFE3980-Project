@@ -13,6 +13,7 @@ int main() {
         do {
             std::cout << "command >>";
             std::cin >> cmd;
+
             logout = session.command(cmd);
 
             // shuts the system down when
