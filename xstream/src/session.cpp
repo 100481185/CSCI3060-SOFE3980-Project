@@ -10,6 +10,36 @@ bool Session::logged_in() const {
     return (logged_in_ != NULL);
 }
 
+int Session::command(string cmd) {
+    if (cmd == "end") {
+        return 0;
+    }
+    if (cmd == "login" && !logged_in()) {
+        return LOGIN;
+
+    } else if (logged_in()) {
+        if (cmd == "logout") {
+            return Login();
+        } else if (cmd == "create") {
+            return Create();
+        } else if (cmd == "delete") {
+            return Delete();
+        } else if (cmd == "sell") {
+            return Sell();
+        } else if (cmd == "buy") {
+            return Buy();
+        } else if (cmd == "refund") {
+            return Refund();
+        } else if (cmd == "addcredit") {
+            return AddCredit();
+        }
+    } else {
+        cout << INVALID;
+    }
+    cout << NOTLOGGED << endl;
+    return 0;
+}
+
 // TODO: Validate input
 // TODO: Create Login test suite
 int Session::Login() {

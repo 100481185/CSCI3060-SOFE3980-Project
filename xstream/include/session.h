@@ -24,15 +24,25 @@ public:
 
     /*
     logged_in:
-        Return false if logged_in_ points to NULL
+        RETURN false if logged_in_ points to NULL
      */
     bool logged_in() const;
+
+    int command(string cmd);
+
+
+
+private:
+    User *logged_in_;
+    Accounts *accounts_;
+    Transactions *transactions_;
+    Tickets * tickets_;
 
     /*
     Login:
         enables a user to login to a session. Prompts
         user for username.
-        Return 0 on success, -1 on invalid input,
+        RETURN 0 on success, -1 on invalid input,
                -2 on invalid username
      */
     int Login();
@@ -42,7 +52,7 @@ public:
         logs the current user out of the session and writes
         all transactions, account changes and ticket changes to
         their respective files
-        Return 0 on success or -int for error
+        RETURN 0 on success or -int for error
      */
     int Logout();
 
@@ -51,7 +61,7 @@ public:
         enables admin users to create a new user. The method
         creates a new account in memory and then writes the new
         user to UserAccounts file
-        Return 0 on success or -int for error
+        RETURN 0 on success or -int for error
      */
     int Create();
 
@@ -60,28 +70,27 @@ public:
         enables admin users to delete a user account. The method
         deletes the account in memory and then writes the deleted
         account to the UserAccounts file
-        Return 0 on success or -int for error
+        RETURN 0 on success or -int for error
      */
     int Delete();
 
     /*
     Sell:
-        enables a user with permission to sell tickets to post tickets
-        to an event for sale.
+        enables users with sell privileges and are logged to sell
+        tickets to an event. the method creates post tickets to an event for sale.
+        RETURN 0 on success or -int for error
      */
     int Sell();
 
+    /*
+    Buy:
+        enables a u
+     */
     int Buy();
 
     int Refund();
 
     int AddCredit();
-
-private:
-    User *logged_in_;
-    Accounts *accounts_;
-    Transactions *transactions_;
-    Tickets * tickets_;
 };
 
 #endif // XSTREAM_SESSION_H
