@@ -20,9 +20,12 @@ public:
 
     int write_events();
 
+    int print_tickets();
+
 
 private:
     map<string, Event> tickets_;
+
 };
 
 

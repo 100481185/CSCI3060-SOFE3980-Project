@@ -28,7 +28,8 @@ int Session::Login() {
     cout << "Welcome " << logged_in_->name() << endl;
 
     // read in ticket file
-    tickets_ = new Tickets; // TODO: Blank txt files
+    tickets_ = new Tickets;
+    tickets_->print_tickets();
     return 0;
 }
 
@@ -36,9 +37,6 @@ int Session::Login() {
 int Session::Logout() {
     // Create a transaction for logout
     transactions_->regular(LOGOUT, logged_in_->name(), logged_in_->type(), logged_in_->credit());
-
-    // write updated accounts to UserAccounts file
-    accounts_->write_accounts();
 
     // write updated events to AvailableTickets file
     tickets_->write_events();
@@ -89,6 +87,8 @@ int Session::Create() {
     accounts_->new_user(name, type, credit);
     // create a transaction record of the event
     transactions_->regular(CREATE, name, type, credit);
+    // write updated accounts to UserAccounts file
+    accounts_->write_accounts();
     return 0;
 }
 
@@ -132,6 +132,8 @@ int Session::Delete() {
 
     // create a transaction record of the event
     transactions_->regular(DELETE, temp.name(), temp.type(), temp.credit());
+    // write updated accounts to UserAccounts file
+    accounts_->write_accounts();
     return 0;
 }
 

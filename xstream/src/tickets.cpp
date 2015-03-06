@@ -11,7 +11,6 @@ Tickets::Tickets() :
 
         // for each line in file until EOF
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
-            cout << (*data_ptr != "") << endl;
             if ((*data_ptr) != "") {
                 // get attributes from line
                 string event = (*data_ptr).substr(0, EVENT_SIZE);
@@ -59,5 +58,13 @@ int Tickets::write_events() {
         data_.push_front(ptr->second.event());
     }
     WriteData();
+    return 0;
+}
+
+int Tickets::print_tickets() {
+    map<string, Event>::iterator ptr = tickets_.begin();
+    for (ptr; ptr != tickets_.end(); ptr++) {
+        cout << (*ptr).second.event() << endl;
+    }
     return 0;
 }

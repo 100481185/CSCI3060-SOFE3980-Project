@@ -37,11 +37,28 @@ public:
      */
     int Login();
 
-
+    /*
+    Logout:
+        logs the current user out of the session and writes
+        all transactions, account changes and ticket changes to
+        their respective files
+     */
     int Logout();
 
+    /*
+    Create:
+        enables admin users to create a new user. The method
+        creates a new account in memory and then writes the new
+        user to UserAccounts file
+     */
     int Create();
 
+    /*
+    Delete:
+        enables admin users to delete a user account. The method
+        deletes the account in memory and then writes the deleted
+        account to the UserAccounts file
+     */
     int Delete();
 
     int Sell();
