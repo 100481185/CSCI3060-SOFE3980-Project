@@ -13,9 +13,8 @@ bool Session::logged_in() const {
 // TODO: Validate input
 // TODO: Create Login test suite
 int Session::Login() {
-    // initialize accounts and event data
+    // initialize accounts
     accounts_ = new Accounts;
-    tickets_ = new Tickets;
 
     std::string name;
     std::cout << "Please enter your username: \n";
@@ -27,6 +26,9 @@ int Session::Login() {
         return -1;
     }
     cout << "Welcome " << logged_in_->name() << endl;
+
+    // read in ticket file
+    tickets_ = new Tickets; // TODO: Blank txt files
     return 0;
 }
 
@@ -136,10 +138,10 @@ int Session::Delete() {
 // TODO: Sell test suite
 int Session::Sell() {
     if(logged_in_->type() == "BS"){
-	std::cout << BADACCESS << std::endl;
-	return -1;
+        std::cout << BADACCESS << std::endl;
+        return -1;
     }
-    std::cout << "<< Sell tickets for event >>\n";
+    cout << "<< Sell tickets for event >>" << endl;
 
     string event;
     std::cout << "Please enter the name of the event: \n";;

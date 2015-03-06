@@ -11,7 +11,6 @@ Accounts::Accounts() :
 
         // for each line in file until EOF
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
-
             // get attributes from line
             string name = (*data_ptr).substr(0, NAME_SIZE);
             string type = (*data_ptr).substr(16, TYPE_SIZE);

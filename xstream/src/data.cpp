@@ -9,6 +9,9 @@ int Data::ReadData() {
         while (getline(*data_file_, line)) {
             try
             {
+                if (line.substr(0, 3) == "END") {
+                    break;
+                }
                 data_.push_back(line);
             }
             catch (exception &e)

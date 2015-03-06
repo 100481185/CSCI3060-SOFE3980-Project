@@ -63,5 +63,8 @@ There are two options main methods to obtain the source code.
 
     __`bin/xstream`__
 
+###Code Style
+This is a reference to code style used in the this project.
+__http://google-styleguide.googlecode.com/svn/trunk/cppguide.html__
 
  

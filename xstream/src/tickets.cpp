@@ -11,19 +11,21 @@ Tickets::Tickets() :
 
         // for each line in file until EOF
         for (data_ptr; data_ptr != data_.end(); data_ptr++) {
+            cout << (*data_ptr != "") << endl;
+            if ((*data_ptr) != "") {
+                // get attributes from line
+                string event = (*data_ptr).substr(0, EVENT_SIZE);
+                string seller = (*data_ptr).substr(20, NAME_SIZE);
+                int num_tic = stoi((*data_ptr).substr(36, NUMTIC_SIZE));
+                double price = stod((*data_ptr).substr(40, PRICE_SIZE));
 
-            // get attributes from line
-            string event = (*data_ptr).substr(0, EVENT_SIZE);
-            string seller = (*data_ptr).substr(20, NAME_SIZE);
-            int num_tic = stoi((*data_ptr).substr(36, NUMTIC_SIZE));
-            double price = stod((*data_ptr).substr(40, PRICE_SIZE));
+                // trim whitespace from event and seller name
+                event.erase(event.find_last_not_of(' ') + 1);
+                seller.erase(seller.find_last_not_of(' ') + 1);
 
-            // trim whitespace from event and seller name
-            event.erase(event.find_last_not_of(' ') + 1);
-            seller.erase(seller.find_last_not_of(' ') + 1);
-
-            // create a new user in memory
-            new_event(event, seller, num_tic, price);
+                // create a new user in memory
+                new_event(event, seller, num_tic, price);
+            }
         }
     }
 }
