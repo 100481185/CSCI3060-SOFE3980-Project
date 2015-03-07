@@ -31,6 +31,6 @@ set(SOURCE_FILES xstream/src/main.cpp
 
 add_executable(xstream ${SOURCE_FILES})
 
-configure_file(xstream/data/UserAccounts.txt xstream/bin)
-configure_file(xstream/data/DailyTransactions.txt xstream/bin)
-configure_file(xstream/data/AvailableTickets.txt xstream/bin)
+configure_file(xstream/data/UserAccounts.txt xstream/bin/)
+configure_file(xstream/data/DailyTransactions.txt xstream/bin/)
+configure_file(xstream/data/AvailableTickets.txt xstream/bin/)
