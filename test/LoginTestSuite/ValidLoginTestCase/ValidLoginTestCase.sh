@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 source ../../TestCase.sh;
 
-program=./../../../build/xstream/
+program_dir=./../../../build/xstream/
 
 function ValidLoginTestCase() {
-     TestCase ${program} $(pwd)
+     TestCase ${program_dir} $(pwd)
 }
 
 ValidLoginTestCase

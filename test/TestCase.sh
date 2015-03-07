@@ -7,7 +7,6 @@ function TestCase {
     cd $2
     ./xstream -s < input.txt > output.txt
     #diff -u -I " " $1/output.txt $1/expected.txt
-
 }
 
 function clean {
