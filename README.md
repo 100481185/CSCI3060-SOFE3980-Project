@@ -46,24 +46,33 @@ There are two options main methods to obtain the source code.
 
     __`cd /<path>/<to>/${Source_Root}`__
 
-2. To run CMake type the command:
+
+2. To make a build directory, type the command:
+
+    __`mkdir build`__
     
-   __`cmake ./`__
+3. To navigate into __build__ directory, type the command
+
+    __`cd build`__
+
+4. To run CMake type the command:
     
-3. To run make type the command:
+   __`cmake ..`__
+    
+5. To run make type the command:
     
     __`sudo make`__ 
     
     
 ###Run program
 
-1. Navigate to __${Source_Root}/xstream__ directory using terminal:
+1. Navigate to __${Source_Root}/build/xstream__ directory using terminal:
   
-    __`cd /path/to/${Source_Root}/xstream`__
+    __`cd /path/to/${Source_Root}/build/xstream`__
   
 2. To run the program type the command:
 
-    __`bin/xstream`__
+    __`./xstream`__
 
 ###Code Style
 This is a reference to code style used in the this project.
