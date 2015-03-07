@@ -1,7 +1,8 @@
 #include "../include/xstream.h"
 #include "../include/session.h"
 
-Session::Session() {
+Session::Session(bool silent) {
+    silent_ = silent;
     logged_in_ = NULL;
     transactions_ = new Transactions;
 }
@@ -52,7 +53,8 @@ int Session::Login() {
     accounts_ = new Accounts;
 
     std::string name;
-    std::cout << "Please enter your username: \n";
+    if (!silent_)
+        std::cout << ">> Please enter your username: \n";
     std::cin >> name;
 
     logged_in_ = accounts_->find(name);
@@ -60,7 +62,11 @@ int Session::Login() {
         cout << "Invalid username" << endl;
         return -1;
     }
-    cout << "Welcome " << logged_in_->name() << endl;
+
+    if (!silent_)
+        cout << ">> Welcome " << logged_in_->name() << endl;
+    else
+        cout << logged_in_->name() << endl;
 
     // read in ticket file
     tickets_ = new Tickets;
@@ -93,10 +99,11 @@ int Session::Create() {
 	return -1;
     }
 
-    std::cout << "<< Create new user >>\n";
-
+    if (!silent_)
+        std::cout << ">> Create new user <<\n";
+    if (!silent_)
+        std::cout << ">> Please enter the name of the new user: \n";;
     string name;
-    std::cout << "Please enter the name of the new user: \n";;
     cin >> name;
     if ((name.size() > NAME_SIZE) || (accounts_->find(name) != NULL)) {
         cout << INVALID << NAMEEXISTS << endl;
@@ -104,15 +111,17 @@ int Session::Create() {
     }
 
     string type;
-    std::cout << "Please enter type: \n";
+    if (!silent_)
+        std::cout << ">>Please enter type: \n";
     std::cin >> type;
     if (type.length() != TYPE_SIZE) {
         cout << INVALID << INVALIDTYPE << endl;
         return -1;
     }
 
+    if (!silent_)
+        std::cout << ">>Please enter credit: \n";
     double credit;
-    std::cout << "Please enter credit: \n";
     std::cin >> credit;
     if (credit >= 999999999) {
         return -1;
@@ -134,10 +143,10 @@ int Session::Delete() {
 	return -1;
     }
 
-    std::cout << "<< Delete user >>\n";
+    std::cout << ">> Delete user <<\n";
 
     string name;
-    std::cout << "Please enter the name of the user you would like to delete: \n";;
+    std::cout << ">> Please enter the name of the user you would like to delete: \n";;
     cin >> name;
 
     // Validate input
@@ -178,10 +187,10 @@ int Session::Sell() {
         std::cout << BADACCESS << std::endl;
         return -1;
     }
-    cout << "<< Sell tickets for event >>" << endl;
+    cout << ">> Sell tickets for event <<" << endl;
 
     string event;
-    std::cout << "Please enter the name of the event: \n";;
+    std::cout << ">> Please enter the name of the event: \n";;
     cin >> event;
 
     // Validate input
@@ -198,7 +207,7 @@ int Session::Sell() {
     }
 
     double price;
-    std::cout << "Please enter price per ticket: \n";
+    std::cout << ">> Please enter price per ticket: \n";
     std::cin >> price;
     if (price >= 1000) {
 	std::cout << PRICETOOHIGH << std::endl;
@@ -206,7 +215,7 @@ int Session::Sell() {
     } 
 
     int num_tickets;
-    std::cout << "Please enter number of tickets to be available: \n";
+    std::cout << ">> Please enter number of tickets to be available: \n";
     std::cin >> num_tickets;
     if (num_tickets > 100) {
 	std::cout << TOOMUCHTICKETS << std::endl;
@@ -226,10 +235,10 @@ int Session::Buy() {
 	std::cout << BADACCESS << std::endl;
 	return -1;
     }
-    std::cout << "<< Purchase tickets to event >>\n";
+    std::cout << ">> Purchase tickets to event >>\n";
 
     string event;
-    std::cout << "Please enter the name of the event: \n";;
+    std::cout << ">> Please enter the name of the event: \n";;
     cin >> event;
 
     // Validate input
@@ -247,7 +256,7 @@ int Session::Buy() {
     }
 
     string seller;
-    std::cout << "Please enter the name of the seller: \n";;
+    std::cout << ">> Please enter the name of the seller: \n";;
     cin >> seller;
     User *seller_ = accounts_->find(seller);
     if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
@@ -256,22 +265,22 @@ int Session::Buy() {
     }
 
     int num_tickets;
-    std::cout << "Please enter number of tickets to purchase: \n";
+    std::cout << ">> Please enter number of tickets to purchase: \n";
     std::cin >> num_tickets;
     if (num_tickets > 100 || num_tickets > e->num_tickets()) {
 	std::cout << TOOMUCHTICKETS << std::endl;
         return -1;
     } 
-    std::cout << "This event costs " << e->price() << " dollars per ticket." << endl;
+    std::cout << ">> This event costs " << e->price() << " dollars per ticket." << endl;
 
     double total_cost = (num_tickets * e->price());
-    std::cout << "The total cost for your purchase is " << total_cost << " dollars." << endl;
-    std::cout << "Would you like to confirm this purchase? (Y/N)" << endl;
+    std::cout << ">> The total cost for your purchase is " << total_cost << " dollars." << endl;
+    std::cout << ">> Would you like to confirm this purchase? (Y/N)" << endl;
 
     string decision;
     std::cin >> decision;
     if(decision != "Y"){
-	std::cout << "Transaction cancelled." << std::endl;
+	std::cout << ">>Transaction cancelled." << std::endl;
 	return -1;
     }
 
@@ -295,10 +304,10 @@ int Session::Refund() {
 	return -1;
     }
 
-    std::cout << "<< Issue credit between accounts >>\n";
+    std::cout << ">> Issue credit between accounts >>\n";
 
     string buyer;
-    std::cout << "Please enter the name of the buyer: \n";;
+    std::cout << ">> Please enter the name of the buyer: \n";;
     cin >> buyer;
     User *buyer_ = accounts_->find(buyer);
     if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
@@ -307,7 +316,7 @@ int Session::Refund() {
     }
 
     string seller;
-    std::cout << "Please enter the name of the seller: \n";;
+    std::cout << ">> Please enter the name of the seller: \n";;
     cin >> seller;
     User *seller_ = accounts_->find(seller);
     if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
@@ -316,7 +325,7 @@ int Session::Refund() {
     }
 
     double credit;
-    std::cout << "Please enter credit to be transferred: \n";
+    std::cout << ">> Please enter credit to be transferred: \n";
     std::cin >> credit;
     if (credit >= 999999999 || credit > seller_->credit() || credit + buyer_->credit() >= 999999999) {
         return -1;
@@ -332,12 +341,12 @@ int Session::Refund() {
 
 // TODO: AddCredit test suite
 int Session::AddCredit() {
-    std::cout << "<< Add Credit >>\n";
+    std::cout << ">> Add Credit >>\n";
     User *buyer_;
     
     if(logged_in_->type() == "AA"){
 	    string buyer;
-	    std::cout << "Please enter the name of the buyer: \n";;
+	    std::cout << ">> Please enter the name of the buyer: \n";;
 	    cin >> buyer;
 	    buyer_ = accounts_->find(buyer);
 	    if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
@@ -348,7 +357,7 @@ int Session::AddCredit() {
     } else buyer_ = logged_in_;	
 
     double credit;
-    std::cout << "Please enter credit to be added: \n";
+    std::cout << ">> Please enter credit to be added: \n";
 
     std::cin >> credit;
     if (credit > 1000 || credit + buyer_->credit() >= 999999999) {

@@ -20,7 +20,7 @@ public:
         sets logged_in_ to NULL and creates the new
         Transactions memory
      */
-    Session();
+    Session(bool silent);
 
     /*
     logged_in:
@@ -37,6 +37,7 @@ public:
 
 
 private:
+    bool silent_;
     User *logged_in_;
     Accounts *accounts_;
     Transactions *transactions_;

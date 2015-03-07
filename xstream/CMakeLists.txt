@@ -1,7 +1,7 @@
-#set(CMAKE_CURRENT_BINARY_DIR)
-#set(EXECUTABLE_OUTPUT_PATH )
 
-file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/xstream/data)
+
+message(STATUS ${PROJECT_BIN_DIR})
+
 
 set(SOURCE_FILES src/main.cpp
                  src/session.cpp
@@ -18,7 +18,3 @@ set(SOURCE_FILES src/main.cpp
 )
 
 add_executable(xstream ${SOURCE_FILES})
-
-configure_file(data/UserAccounts.txt ${XSTREAM_BINARY_DIR}/xstream/data)
-configure_file(data/DailyTransactions.txt ${XSTREAM_BINARY_DIR}/xstream/data)
-configure_file(data/AvailableTickets.txt ${XSTREAM_BINARY_DIR}/xstream/data)

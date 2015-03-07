@@ -2,18 +2,26 @@
 
 using namespace std;
 
-int main() {
-    Session session;
+int main(int argc, char **argv) {
+    bool silent;
+    if(argc > 1)
+        silent = (strcmp(argv[1], "-s") == 0);
+    else
+        silent = false;
+
+    Session session(silent);
+
     int logged_in = 0;
     int shutdown = 0;
     string cmd;
 
-
     do {
-        cout << ">>  xstream  <<" << endl;
+        if (!silent)
+            cout << ">>  xstream  <<" << endl;
 
         do {
-            std::cout << "command >>" << endl;
+            if (!silent)
+                std::cout << "command >>" << endl;
             std::cin >> cmd;
 
             logged_in = session.command(cmd);
