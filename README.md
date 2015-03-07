@@ -1,6 +1,6 @@
 [id1]: <https://magnum.travis-ci.com/ncdesouza/xstream.svg?token=WZRVmSR43sduJMwFxmyr>
 [xStream.zip]: <https://github.com/100481185/CSCI3060-SOFE3980-Project/archive/mirror.zip>     
-[wdgt]: (https://magnum.travis-ci.com/ncdesouza/XSTREAM)
+[wdgt]: <https://magnum.travis-ci.com/ncdesouza/XSTREAM>
 [@mohammad]: <mohammad.ali3@uoit.net>   
 [@nicholas]: <nicholas.desouza@uoit.net>
 [@bradley]: <bradley.hamilton@uoit.net>
