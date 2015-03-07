@@ -1,5 +1,0 @@
-Xstream >> 
-command >>
-Please enter your username:
-Welcome User1
-command >>

@@ -13,7 +13,7 @@ set(EXECUTABLE_OUTPUT_PATH xstream/bin)
 
 set(CMAKE_SOURCE_DIR xstream/src)
 
-set(SOURCE_FILES ../test/main.cpp
+set(SOURCE_FILES ../main.cpp
                  xstream/src/xstream.cpp
                  xstream/src/session.cpp
                  xstream/src/data.cpp

@@ -1,5 +1,5 @@
-#ifndef XSTREAM_USER_ACCOUNT_H
-#define XSTREAM_USER_ACCOUNT_H
+#ifndef XSTREAM_INCLUDE_USER_H
+#define XSTREAM_INCLUDE_USER_H
 
 #include "xstream.h"
 #include <iostream>
@@ -34,4 +34,5 @@ private:
     double credit_;
 };
 
-#endif // XSTREAM_USER_ACCOUNT_H
+#endif // XSTREAM_INCLUDE_USER_H
+

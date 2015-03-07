@@ -82,7 +82,7 @@ int Session::Logout() {
     // change logged in status
     logged_in_ = NULL;
 
-    return 0;
+    return 1;
 }
 
 // TODO: Validate Create() Input

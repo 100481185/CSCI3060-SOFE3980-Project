@@ -4,25 +4,26 @@ using namespace std;
 
 int main() {
     Session session;
-    int logout = 0;
+    int logged_in = 0;
     int shutdown = 0;
     string cmd;
 
+
     do {
-        cout << ">>  xstream  << \n";
+        cout << ">>  xstream  <<" << endl;
+
         do {
-            std::cout << "command >>";
+            std::cout << "command >>" << endl;
             std::cin >> cmd;
 
-            logout = session.command(cmd);
+            logged_in = session.command(cmd);
 
             // shuts the system down when
-            // cmd is end
-            if (logout == 2) {
-                logout = 1;
+            if (logged_in == 2) {
+                logged_in = 1;
                 shutdown = 1;
             }
-        } while (!logout);
+        } while (session.logged_in());
     } while (!shutdown);
 
     return 0;
