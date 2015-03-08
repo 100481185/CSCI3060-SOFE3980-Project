@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(XSTREAM)
 
-
-
 if(${PROJECT_BINARY_DIR} MATCHES "/home/nicholas/.clion10/system/cmake/generated")
     file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/build)
     file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/build/data)
