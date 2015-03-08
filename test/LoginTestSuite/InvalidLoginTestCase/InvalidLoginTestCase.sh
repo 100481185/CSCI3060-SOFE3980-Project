@@ -7,5 +7,5 @@ function InvalidLoginTestCase {
     TestCase ${TDIR}
 }
 
-setup
+
 InvalidLoginTestCase

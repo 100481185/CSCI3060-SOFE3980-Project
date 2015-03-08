@@ -1,6 +1,1 @@
->>  xstream  <<
-command >>
->> Please enter your username: 
 Invalid username
->>  xstream  <<
-command >>

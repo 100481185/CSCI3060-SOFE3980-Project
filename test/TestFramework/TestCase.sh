@@ -20,7 +20,9 @@ function TestCase {
     cleanTest $1
     cd ${DIR}/../test_build
     ./xstream -s < $1/input.txt :> $1/output.txt
-    diff $1/output.txt $1/expected.txt
+    if [ $? ]; then
+        diff $1/output.txt $1/expected.txt >> ${DIR}/../failure_table.txt
+    fi
     cp ${DIR}/../test_build/data $1/data -R
     cd ${DIR}
 }
