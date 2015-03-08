@@ -9,11 +9,6 @@
 
 // path to the UserAccount.txt file
 #define USER_ACCOUNTS "data/UserAccounts.txt"
-// User Type Constants
-#define AA "admin"
-#define FS "full-standard"
-#define BS "buy-standard"
-#define SS "sell-standard"
 
 /*
 Accounts:

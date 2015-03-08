@@ -8,6 +8,13 @@
 
 using namespace std;
 
+
+// User Type Constants
+#define AA "admin"
+#define FS "full-standard"
+#define BS "buy-standard"
+#define SS "sell-standard"
+
 /*
 User:
     Represents a single user account in the userAccounts file.  Obtains
