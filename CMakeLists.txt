@@ -8,23 +8,23 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
-configure_file(xstream/data/UserAccounts.txt ${PROJECT_BINARY_DIR}/data)
-configure_file(xstream/data/DailyTransactions.txt ${PROJECT_BINARY_DIR}/data)
-configure_file(xstream/data/AvailableTickets.txt ${PROJECT_BINARY_DIR}/data)
+configure_file(data/UserAccounts.txt ${PROJECT_BINARY_DIR}/data)
+configure_file(data/DailyTransactions.txt ${PROJECT_BINARY_DIR}/data)
+configure_file(data/AvailableTickets.txt ${PROJECT_BINARY_DIR}/data)
 
 
-set(SOURCE_FILES xstream/src/main.cpp
-                 xstream/src/session.cpp
-                 xstream/src/data.cpp
-                 xstream/src/transaction.cpp
-                 xstream/src/accounts.cpp
-                 xstream/src/user.cpp
-                 xstream/src/commit.cpp
-		         xstream/src/tickets.cpp
-		         xstream/src/event.cpp
-                 xstream/data/UserAccounts.txt
-                 xstream/data/DailyTransactions.txt
-		         xstream/data/AvailableTickets.txt
+set(SOURCE_FILES src/main.cpp
+                 src/session.cpp
+                 src/data.cpp
+                 src/transaction.cpp
+                 src/accounts.cpp
+                 src/user.cpp
+                 src/commit.cpp
+		         src/tickets.cpp
+		         src/event.cpp
+                 data/UserAccounts.txt
+                 data/DailyTransactions.txt
+		         data/AvailableTickets.txt
 )
 
 add_executable(xstream ${SOURCE_FILES})
