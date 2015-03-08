@@ -7,6 +7,5 @@ function ValidLoginTestCase() {
      TestCase ${TDIR}
 }
 
-
-setup
+#setup
 ValidLoginTestCase

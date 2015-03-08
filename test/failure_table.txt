@@ -1,0 +1,239 @@
+1c1,3
+< /home/nicholas/Desktop/XSTREAM/test/LoginTestSuite/ValidLoginTestCase/../../TestFramework/TestCase.sh: line 20: ./xstream: No such file or directory
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+1c1,3
+< /home/nicholas/Desktop/XSTREAM/test/LoginTestSuite/ValidLoginTestCase/../../TestFramework/TestCase.sh: line 20: ./xstream: No such file or directory
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1c1,3
+< Invalid username
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1,4c1
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< >> Welcome User2
+---
+> User2
+7,9d3
+< command >>
+< >>  xstream  <<
+< command >>
+1,6c1,3
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< Invalid username
+< >>  xstream  <<
+< command >>
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1,4c1
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< >> Welcome User2
+---
+> User2
+7,9d3
+< command >>
+< >>  xstream  <<
+< command >>
+1,6c1,3
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< Invalid username
+< >>  xstream  <<
+< command >>
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1,4c1
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< >> Welcome User2
+---
+> User2
+7,9d3
+< command >>
+< >>  xstream  <<
+< command >>
+1,6c1,3
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< Invalid username
+< >>  xstream  <<
+< command >>
+---
+> User2
+> test1               User1           032 050.02
+> test2               User1           001 090.76
+\ No newline at end of file
+1,4c1
+< >>  xstream  <<
+< command >>
+< >> Please enter your username: 
+< >> Welcome User2
+---
+> User2
+7,9d3
+< command >>
+< >>  xstream  <<
+< command >>
