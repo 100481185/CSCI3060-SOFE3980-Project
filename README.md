@@ -107,11 +107,29 @@ For example:
     
 2. To run the TestSuite, type the command
 
-    ```bash
-    bash <Name>TestSuite.sh
-    ```
+    __`bash <Name>TestSuite.sh`__
+    
+#####__OPTION 2: All__
+```bash
+TestCases are organized by functionality into test suites. To
+access a test case you first need to navigate to its respective
+test suite, or include it in command 1. 
+See OPTION 2 for more information about test suites. 
+All TestCases are pre-fixed with the name of the TestCase. 
+For example:
+    if NAME of the TestCase is 'ValidLogin',
+    then the TestCase is named:`
+        ValidLoginTestCase
+```
+1. Navigate to the TestCase directory,
 
-3. 
+   using terminal, type the command:
+
+    __`cd /path/to/xstream/test/<<Name>TestSuite/<NAME>TestCase`__
+    
+2. To run the TestSuite, type the command
+
+    __`bash <Name>TestCase.sh`__
 
 
     
