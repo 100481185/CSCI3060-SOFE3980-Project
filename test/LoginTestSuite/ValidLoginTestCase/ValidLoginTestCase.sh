@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-source ../../TestCase.sh;
 
-program_dir=./../../../build/xstream/
+TDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+source ${TDIR}/../../TestFramework/TestCase.sh;
 
 function ValidLoginTestCase() {
-     TestCase ${program_dir} $(pwd)
+     TestCase ${TDIR}
 }
+
+
 
 ValidLoginTestCase
