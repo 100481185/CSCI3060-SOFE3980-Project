@@ -267,7 +267,7 @@ int Session::Buy() {
     int num_tickets;
     std::cout << ">> Please enter number of tickets to purchase: \n";
     std::cin >> num_tickets;
-    if (num_tickets > 100 || num_tickets > e->num_tickets()) {
+    if (num_tickets > e->num_tickets() || (num_tickets > 4 && logged_in_->type() != "AA")) {
 	std::cout << TOOMUCHTICKETS << std::endl;
         return -1;
     } 

@@ -47,7 +47,7 @@ public:
     int regular(int code, string name, string type, double credit);
 
     /*
-    write_transactions():
+    write_transactions:
         converts transactions in memory to a list<string> then
         writes the list to the DailyTransactions file.
         Returns 0 in success, -1 on failure.

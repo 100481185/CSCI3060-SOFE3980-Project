@@ -6,15 +6,20 @@
 #include <string>
 #include <list>
 
+// File IO Constants
 #define OPEN        "OpenFile(char flag): "
 #define CLOSE       "ClosrFile(): "
 #define READ        "ReadData(): "
 #define WRITE       "WriteData(): "
-
 #define ERROR       "error"
 
 using namespace std;
 
+/*
+Data:
+    Handles file I/O actions to read/write data to/from UserAccounts, AvailableTickets,
+    and DailyTransactions in order to obtain and update information during transactions.
+ */
 class Data
 {
 public:
@@ -24,10 +29,24 @@ public:
      */
     Data(string file_name);
 
+    /*
+    ReadData: 
+	Handles reading of data from file to memory
+	Return 0 on success, -1 on failure
+    */
     int ReadData();
 
+    /*
+    WriteData:
+	Handles writing of data from memory to file
+	Return 0 on success, -1 on failure
+    */
     int WriteData();
 
+    /*
+    data_:
+	list containing lines of data from a text file
+    */
     std::list<std::string> data_;
 
 

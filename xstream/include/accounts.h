@@ -15,22 +15,58 @@
 #define BS "buy-standard"
 #define SS "sell-standard"
 
+/*
+Accounts:
+    Creates and handles all current and new accounts.
+    Store all account information into memory during a session and,
+    after the create, delete, refund, addcredit, buy and logout transactions, 
+    writes memory to UserAccounts file.
+ */
 class Accounts : public Data
 {
 public:
+    /*
+    Constructor:
+        sets file name to UserAccount file.
+     */
     Accounts();
 
+    /*
+    find:
+	Searches through map to find username (which is the key)
+        Returns address of account in success, NULL on failure.
+     */
     User *find(string name);
 
+    /*
+    new_user:
+	Creates user account and inserts it into memory.
+        Returns 0 in success, -1 on failure.
+     */
     int new_user(string name, string type, double credit);
 
+    /*
+    del_user:
+	Deletes user account from memory.
+        Returns 0 in success, -1 on failure.
+     */
     int del_user(string name);
-//    int add_credit(string name, double amount);
 
+    /*
+    write_accounts:
+        converts account information in memory to a map<string, Event> then
+        writes the map to the AvailableTickets file.
+        Returns 0 in success, -1 on failure.
+     */
     int write_accounts();
 
 
 private:
+    /*
+    accounts_:
+        a map (with the name as a key and the account itself as a value)
+	 containing all account information.
+     */
     map<string, User> accounts_;
 };
 
