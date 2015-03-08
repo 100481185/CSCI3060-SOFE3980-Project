@@ -192,7 +192,8 @@ int Session::Delete() {
     }
 
     // user cannot delete their own account
-    if (name == logged_in_->name) {
+    if (name == logged_in_->name()) {
+	cout << INVALID << SELFDELETE << endl;
 	return -1;
     }
 
