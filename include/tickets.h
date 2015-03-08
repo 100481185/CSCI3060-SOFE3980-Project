@@ -1,7 +1,7 @@
 #ifndef XSTREAM_EVENTS_H
 #define XSTREAM_EVENTS_H
 
-#include "../include/data.h"
+#include "data.h"
 #include "event.h"
 #include <iostream>
 #include <string>

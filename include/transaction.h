@@ -1,7 +1,7 @@
 #ifndef XSTREAM_DAILY_TRANSACTIONS_H
 #define XSTREAM_DAILY_TRANSACTIONS_H
 
-#include "../include/data.h"
+#include "data.h"
 #include "../include/commit.h"
 #include <iostream>
 

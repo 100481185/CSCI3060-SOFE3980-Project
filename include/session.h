@@ -1,10 +1,10 @@
 #ifndef XSTREAM_SESSION_H
 #define XSTREAM_SESSION_H
 
-#include "../include/user.h"
-#include "../include/accounts.h"
-#include "../include/tickets.h"
-#include "../include/transaction.h"
+#include "user.h"
+#include "accounts.h"
+#include "tickets.h"
+#include "transaction.h"
 
 /*
 Session:

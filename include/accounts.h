@@ -1,7 +1,7 @@
 #ifndef XSTREAM_USER_ACCOUNTS_H
 #define XSTREAM_USER_ACCOUNTS_H
 
-#include "../include/data.h"
+#include "data.h"
 #include "user.h"
 #include <iostream>
 #include <string>
