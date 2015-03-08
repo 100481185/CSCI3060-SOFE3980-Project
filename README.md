@@ -38,7 +38,7 @@ There are two options main methods to obtain the source code.
     sudo git clone https://github.com/100481185/CSCI3060-SOFE3980-Project.git
     ```
 
-######&nbsp;&nbsp;&nbsp;&nbsp;\*note The directory you unzipped or cloned will be refered to as __${SOURCE_ROOT}__ 
+######&nbsp;&nbsp;&nbsp;&nbsp;\*note The directory you unzipped or cloned will be referred to as __${SOURCE_ROOT}__ 
 
 ###Compiling the source
 
@@ -68,7 +68,7 @@ There are two options main methods to obtain the source code.
 
 1. Navigate to __${Source_Root}/build/xstream__ directory using terminal:
   
-    __`cd /path/to/${Source_Root}/build/xstream`__
+    __`cd /path/to/${Source_Root}/build`__
   
 2. To run the program type the command:
 
