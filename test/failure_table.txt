@@ -3,3 +3,63 @@
 ---
 > Invalid username
 \ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file
+1c1
+< Invalid username
+---
+> Invalid username
+\ No newline at end of file

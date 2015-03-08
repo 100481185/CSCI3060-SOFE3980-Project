@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+SDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 LoginTestSuite() {
-      bash ./ValidLoginTestCase/ValidLoginTestCase.sh
-      bash ./InvalidLoginTestCase/InvalidLoginTestCase.sh
+      bash ${SDIR}/ValidLoginTestCase/ValidLoginTestCase.sh
+      bash ${SDIR}/InvalidLoginTestCase/InvalidLoginTestCase.sh
 }
 
 
