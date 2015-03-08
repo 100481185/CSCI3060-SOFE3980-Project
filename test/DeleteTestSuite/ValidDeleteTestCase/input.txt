@@ -1,0 +1,8 @@
+login
+User1
+delete
+User2
+logout
+login
+User2
+end

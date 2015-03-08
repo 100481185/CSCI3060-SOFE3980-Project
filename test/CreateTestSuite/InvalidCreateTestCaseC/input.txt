@@ -1,0 +1,7 @@
+login
+User1
+create
+testuser
+ABC
+logout
+end
