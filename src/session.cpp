@@ -20,6 +20,10 @@ int Session::command(string cmd) {
 
     } else if (logged_in()) {
 
+        if (!silent_) {
+            tickets_->print_tickets();
+        }
+
         if (cmd == "logout")
             return Logout();
 
@@ -70,7 +74,7 @@ int Session::Login() {
 
     // read in ticket file
     tickets_ = new Tickets;
-    tickets_->print_tickets();
+
     return 0;
 }
 
@@ -88,6 +92,11 @@ int Session::Logout() {
     // change logged in status
     logged_in_ = NULL;
 
+    if (!silent_) {
+        cout << "Logout Successfull";
+    } else {
+        cout << logged_in() << endl;
+    }
     return 1;
 }
 
@@ -99,10 +108,11 @@ int Session::Create() {
 	return -1;
     }
 
-    if (!silent_)
+    if (!silent_) {
         std::cout << ">> Create new user <<\n";
-    if (!silent_)
         std::cout << ">> Please enter the name of the new user: \n";;
+    }
+
     string name;
     cin >> name;
     if ((name.size() > NAME_SIZE) || (accounts_->find(name) != NULL)) {
@@ -110,9 +120,10 @@ int Session::Create() {
         return -1;
     }
 
-    string type;
     if (!silent_)
         std::cout << ">>Please enter type: \n";
+
+    string type;
     std::cin >> type;
     if (type.length() != TYPE_SIZE) {
         cout << INVALID << INVALIDTYPE << endl;
@@ -121,6 +132,7 @@ int Session::Create() {
 
     if (!silent_)
         std::cout << ">>Please enter credit: \n";
+
     double credit;
     std::cin >> credit;
     if (credit >= 999999999) {
@@ -133,6 +145,17 @@ int Session::Create() {
     transactions_->regular(CREATE, name, type, credit);
     // write updated accounts to UserAccounts file
     accounts_->write_accounts();
+
+    User *test = accounts_->find(name);
+    if (!logged_in_) {
+        cout << "Create " << (*accounts_->find(name)).name() << " was Succesfull" << endl;
+    } else {
+        cout << test->name() << endl;
+        cout << test->type() << endl;
+        cout << test->credit() << endl;
+    }
+
+
     return 0;
 }
 
@@ -143,10 +166,11 @@ int Session::Delete() {
 	return -1;
     }
 
-    std::cout << ">> Delete user <<\n";
-
+    if (!silent_) {
+        std::cout << ">> Delete user <<\n";
+        std::cout << ">> Please enter the name of the user you would like to delete: \n";;
+    }
     string name;
-    std::cout << ">> Please enter the name of the user you would like to delete: \n";;
     cin >> name;
 
     // Validate input
@@ -187,10 +211,13 @@ int Session::Sell() {
         std::cout << BADACCESS << std::endl;
         return -1;
     }
-    cout << ">> Sell tickets for event <<" << endl;
+
+    if (!silent_) {
+        cout << ">> Sell tickets for event <<" << endl;
+        std::cout << ">> Please enter the name of the event: \n";;
+    }
 
     string event;
-    std::cout << ">> Please enter the name of the event: \n";;
     cin >> event;
 
     // Validate input
@@ -206,16 +233,23 @@ int Session::Sell() {
         return -1;
     }
 
+
+    if (!silent_) {
+        std::cout << ">> Please enter price per ticket: \n";
+    }
+
     double price;
-    std::cout << ">> Please enter price per ticket: \n";
     std::cin >> price;
     if (price >= 1000) {
 	std::cout << PRICETOOHIGH << std::endl;
         return -1;
-    } 
+    }
+
+    if (!silent_) {
+        std::cout << ">> Please enter number of tickets to be available: \n";
+    }
 
     int num_tickets;
-    std::cout << ">> Please enter number of tickets to be available: \n";
     std::cin >> num_tickets;
     if (num_tickets > 100) {
 	std::cout << TOOMUCHTICKETS << std::endl;
@@ -235,10 +269,13 @@ int Session::Buy() {
 	std::cout << BADACCESS << std::endl;
 	return -1;
     }
-    std::cout << ">> Purchase tickets to event >>\n";
+
+    if (!silent_) {
+        std::cout << ">> Purchase tickets to event >>\n";
+        std::cout << ">> Please enter the name of the event: \n";;
+    }
 
     string event;
-    std::cout << ">> Please enter the name of the event: \n";;
     cin >> event;
 
     // Validate input
@@ -255,27 +292,41 @@ int Session::Buy() {
         return -1;
     }
 
+
+    if (!silent_) {
+        std::cout << ">> Please enter the name of the seller: \n";;
+    }
+
     string seller;
-    std::cout << ">> Please enter the name of the seller: \n";;
     cin >> seller;
+
     User *seller_ = accounts_->find(seller);
     if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
     }
 
+    if (!silent_) {
+        std::cout << ">> Please enter number of tickets to purchase: \n";
+    }
+
     int num_tickets;
-    std::cout << ">> Please enter number of tickets to purchase: \n";
     std::cin >> num_tickets;
     if (num_tickets > e->num_tickets() || (num_tickets > 4 && logged_in_->type() != "AA")) {
 	std::cout << TOOMUCHTICKETS << std::endl;
         return -1;
-    } 
-    std::cout << ">> This event costs " << e->price() << " dollars per ticket." << endl;
-
+    }
     double total_cost = (num_tickets * e->price());
-    std::cout << ">> The total cost for your purchase is " << total_cost << " dollars." << endl;
-    std::cout << ">> Would you like to confirm this purchase? (Y/N)" << endl;
+
+
+    if (!silent_) {
+        std::cout << ">> This event costs " << e->price() << " dollars per ticket." << endl;
+        std::cout << ">> The total cost for your purchase is " << total_cost << " dollars." << endl;
+        std::cout << ">> Would you like to confirm this purchase? (Y/N)" << endl;
+    } else {
+        std::cout << e->price() << endl;
+        std::cout << total_cost << endl;
+    }
 
     string decision;
     std::cin >> decision;
@@ -293,7 +344,6 @@ int Session::Buy() {
     logged_in_->setCredit(logged_in_->credit() - total_cost);
     // create a transaction record of the event
     transactions_->buy_sell(BUY, event, logged_in_->name(), num_tickets, e->price());
-
     return 0;
 }
 
@@ -304,10 +354,12 @@ int Session::Refund() {
 	return -1;
     }
 
-    std::cout << ">> Issue credit between accounts >>\n";
+    if (!silent_) {
+        std::cout << ">> Issue credit between accounts >>\n";
+        std::cout << ">> Please enter the name of the buyer: \n";;
+    }
 
     string buyer;
-    std::cout << ">> Please enter the name of the buyer: \n";;
     cin >> buyer;
     User *buyer_ = accounts_->find(buyer);
     if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
@@ -315,8 +367,11 @@ int Session::Refund() {
         return -1;
     }
 
+    if (!silent_) {
+        std::cout << ">> Please enter the name of the seller: \n";;
+    }
+
     string seller;
-    std::cout << ">> Please enter the name of the seller: \n";;
     cin >> seller;
     User *seller_ = accounts_->find(seller);
     if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
@@ -324,8 +379,11 @@ int Session::Refund() {
         return -1;
     }
 
+    if (!silent_) {
+        std::cout << ">> Please enter credit to be transferred: \n";
+    }
+
     double credit;
-    std::cout << ">> Please enter credit to be transferred: \n";
     std::cin >> credit;
     if (credit >= 999999999 || credit > seller_->credit() || credit + buyer_->credit() >= 999999999) {
         return -1;
@@ -341,12 +399,20 @@ int Session::Refund() {
 
 // TODO: AddCredit test suite
 int Session::AddCredit() {
-    std::cout << ">> Add Credit >>\n";
+
+    if (!silent_) {
+        std::cout << ">> Add Credit >>\n";
+    }
+
+
     User *buyer_;
-    
     if(logged_in_->type() == "AA"){
-	    string buyer;
-	    std::cout << ">> Please enter the name of the buyer: \n";;
+
+        if (!silent_) {
+            std::cout << ">> Please enter the name of the buyer: \n";;
+        }
+
+        string buyer;
 	    cin >> buyer;
 	    buyer_ = accounts_->find(buyer);
 	    if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
@@ -354,17 +420,28 @@ int Session::AddCredit() {
 	        return -1;
 	    }
 
-    } else buyer_ = logged_in_;	
+    } else buyer_ = logged_in_;
+
+
+    if (!silent_) {
+        std::cout << ">> Please enter credit to be added: \n";
+    }
 
     double credit;
-    std::cout << ">> Please enter credit to be added: \n";
-
     std::cin >> credit;
     if (credit > 1000 || credit + buyer_->credit() >= 999999999) {
         return -1;
     } 
 
     buyer_->setCredit(buyer_->credit() + credit);
+
+    if (!silent_) {
+        cout << "$" << credit << " added to "<< buyer_->name() << ": credit=$" << buyer_->credit() << endl;
+    } else {
+        cout << buyer_->name() << endl;
+        cout << buyer_->credit() << endl;
+    }
+
     // create a transaction record of the event
     transactions_->regular(ADDCREDIT, buyer_->name(), buyer_->type(), buyer_->credit());
 
