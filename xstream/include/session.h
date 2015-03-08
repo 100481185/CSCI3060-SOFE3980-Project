@@ -37,10 +37,15 @@ public:
 
 
 private:
+    // silent_: determines whether to include prompts in the command line
     bool silent_;
+    // logged_in_: account currently logged in
     User *logged_in_;
+    // accounts_: list of accounts from UserAccounts
     Accounts *accounts_;
+    // transactions_: list of transactions made in a session
     Transactions *transactions_;
+    // tickets_: list of events from AvailableTickets
     Tickets * tickets_;
 
     /*
@@ -89,12 +94,32 @@ private:
 
     /*
     Buy:
-        enables a u
+        enables users with buy privileges to purchase tickets to an event.  The method
+	subtracts the number of tickets purchased from the ones available for the event.
+	It also subtracts the total cost from the current user's credit.  The updated
+	information for the event as well as the current user is written to AvailableTickets
+	and UserAccounts respectively.
+	RETURN 0 on success or -int for error
      */
     int Buy();
 
+    /*
+    Refund:
+	enables users to exchange credit between accounts.  The method subtracts
+	the amount from one user's credit and adds that amount to the other user's
+	credit, and then writes the updated information to the UserAccounts file
+	RETURN 0 on success or -int for error
+    */
     int Refund();
 
+    /*
+    AddCredit:
+	enables users to add credit into their own account or the account of their choice.
+	The method adds the credit (not exceeding $1000.000) to either their own account or 
+	an account of their choice (admin only).  Once the credit is added, the updated
+	information is added to the UserAccounts file.
+	RETURN 0 on success or -int for error
+    */
     int AddCredit();
 };
 
