@@ -38,14 +38,13 @@ There are two options main methods to obtain the source code.
     sudo git clone https://github.com/100481185/CSCI3060-SOFE3980-Project.git
     ```
 
-######&nbsp;&nbsp;&nbsp;&nbsp;\*note The directory you unzipped or cloned will be referred to as __${SOURCE_ROOT}__ 
-
 ###Compiling the source
 
-1. Navigate to __${SOURCE_ROOT}__ directory using terminal:
+1. Navigate to xstream directory you just cloned or unzipped, 
+   
+   using terminal, type the command:
 
-    __`cd /<path>/<to>/${Source_Root}`__
-
+    __`cd /<path>/<to>/xstream`__
 
 2. To make a build directory, type the command:
 
@@ -63,17 +62,59 @@ There are two options main methods to obtain the source code.
     
     __`sudo make`__ 
     
-    
-###Run program
+###Run the program
+1. Navigate to the build directory, 
 
-1. Navigate to __${Source_Root}/build/xstream__ directory using terminal:
+   using terminal, type the command:
   
-    __`cd /path/to/${Source_Root}/build`__
+    __`cd /path/to/xstream/build`__
   
 2. To run the program type the command:
 
     __`./xstream`__
 
+###Run the tests
+
+    OPTIONS:
+        1. All
+        2. TestSuite
+        3. TestCase
+
+#####__OPTION 1: All__
+
+1. Navigate to the test directory,
+
+   using terminal, type the command:
+
+    __`cd /path/to/xstream/test`__
+    
+2. type
+3. 
+
+#####__OPTION 2: All__
+```bash
+All TestSuites are pre-fixed with the name of the suite. 
+For example:
+    if NAME of the TestSuite is 'Login',
+    then the TestSuite is named:`
+        LoginTestSuite
+```
+1. Navigate to the TestSuite directory,
+
+   using terminal, type the command:
+
+    __`cd /path/to/xstream/test/<Name>TestSuite`__
+    
+2. To run the TestSuite, type the command
+
+    ```bash
+    bash <Name>TestSuite.sh
+    ```
+
+3. 
+
+
+    
 ###Code Style
 This is a reference to code style used in the this project.
 
