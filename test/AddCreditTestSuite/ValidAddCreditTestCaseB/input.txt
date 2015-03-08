@@ -1,0 +1,6 @@
+login
+User4
+addcredit
+109.99
+logout
+end

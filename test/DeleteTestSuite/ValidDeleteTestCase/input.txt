@@ -4,5 +4,5 @@ delete
 User2
 logout
 login
-User2
+newuser
 end
