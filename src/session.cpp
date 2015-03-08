@@ -20,10 +20,6 @@ int Session::command(string cmd) {
 
     } else if (logged_in()) {
 
-        if (!silent_) {
-            tickets_->print_tickets();
-        }
-
         if (cmd == "logout")
             return Logout();
 
@@ -74,6 +70,10 @@ int Session::Login() {
 
     // read in ticket file
     tickets_ = new Tickets;
+
+    if (!silent_) {
+        tickets_->print_tickets();
+    }
 
     return 0;
 }

@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-build/
+build/*
+script/*
 
 ### C template
 # Object files
