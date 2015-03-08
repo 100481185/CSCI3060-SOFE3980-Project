@@ -43,6 +43,7 @@
 
 // Delete Error Msgs
 #define NAMEDOESNOTEXIST    "User does not exist"
+#define SELFDELETE	    "User cannot delete itself"
 #define USERNOTDELETED      "User not deleted"
 
 // Buy Error Msgs

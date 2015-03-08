@@ -115,7 +115,11 @@ int Session::Create() {
 
     string name;
     cin >> name;
-    if ((name.size() > NAME_SIZE) || (accounts_->find(name) != NULL)) {
+    if ((name.size() > NAME_SIZE)){
+	cout << INVALID << INPUTTOOLARGE << endl;
+	return -1;
+    }
+    if (accounts_->find(name) != NULL) {
         cout << INVALID << NAMEEXISTS << endl;
         return -1;
     }
@@ -136,6 +140,7 @@ int Session::Create() {
     double credit;
     std::cin >> credit;
     if (credit >= 999999999) {
+	cout << INVALID << INPUTTOOLARGE << endl;
         return -1;
     }
 
@@ -184,6 +189,11 @@ int Session::Delete() {
     if (accounts_->find(name) == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
+    }
+
+    // user cannot delete their own account
+    if (name == logged_in_->name) {
+	return -1;
     }
 
     // make a local copy of User
@@ -301,7 +311,11 @@ int Session::Buy() {
     cin >> seller;
 
     User *seller_ = accounts_->find(seller);
-    if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
+    if (seller.size() > NAME_SIZE) {
+	cout << INVALID << INPUTTOOLARGE << endl;
+    }
+
+    if (seller_ == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
     }
@@ -362,7 +376,11 @@ int Session::Refund() {
     string buyer;
     cin >> buyer;
     User *buyer_ = accounts_->find(buyer);
-    if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
+    if (buyer.size() > NAME_SIZE) {
+	cout << INVALID << INPUTTOOLARGE << endl;
+    } 
+
+    if (buyer_ == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
     }
@@ -374,7 +392,11 @@ int Session::Refund() {
     string seller;
     cin >> seller;
     User *seller_ = accounts_->find(seller);
-    if ((seller.size() > NAME_SIZE) || (seller_ == NULL)) {
+    if (seller.size() > NAME_SIZE) {
+	cout << INVALID << INPUTTOOLARGE << endl;
+    }
+
+    if (seller_ == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
     }
@@ -386,6 +408,7 @@ int Session::Refund() {
     double credit;
     std::cin >> credit;
     if (credit >= 999999999 || credit > seller_->credit() || credit + buyer_->credit() >= 999999999) {
+	cout << INVALID << INPUTTOOLARGE << endl;
         return -1;
     }    
 
@@ -415,7 +438,12 @@ int Session::AddCredit() {
         string buyer;
 	    cin >> buyer;
 	    buyer_ = accounts_->find(buyer);
-	    if ((buyer.size() > NAME_SIZE) || (buyer_ == NULL)) {
+    	    if (buyer.size() > NAME_SIZE) {
+	    	cout << INVALID << INPUTTOOLARGE << endl;
+    		return -1;
+	    } 
+
+	    if (buyer_ == NULL) {
 	        cout << INVALID << NAMEDOESNOTEXIST << endl;
 	        return -1;
 	    }
@@ -430,6 +458,7 @@ int Session::AddCredit() {
     double credit;
     std::cin >> credit;
     if (credit > 1000 || credit + buyer_->credit() >= 999999999) {
+	cout << INVALID << INPUTTOOLARGE << endl;
         return -1;
     } 
 
