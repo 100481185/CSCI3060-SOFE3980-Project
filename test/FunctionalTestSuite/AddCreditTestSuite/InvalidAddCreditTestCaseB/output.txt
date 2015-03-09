@@ -1,0 +1,1 @@
+/home/nicholas/Desktop/xstream/test/FunctionalTestSuite/AddCreditTestSuite/InvalidAddCreditTestCaseB/../../../TestFramework/TestCase.sh: line 75: ./xstream: No such file or directory
