@@ -7,5 +7,5 @@ function ValidAddCreditTestCaseA {
     TestCase ${TDIR}
 }
 
-
+setup
 ValidAddCreditTestCaseA

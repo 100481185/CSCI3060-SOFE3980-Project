@@ -7,5 +7,5 @@ function ValidRefundTestCase {
     TestCase ${TDIR}
 }
 
-
+setup
 ValidRefundTestCase

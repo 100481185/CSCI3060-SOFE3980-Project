@@ -49,6 +49,7 @@
 // Buy Error Msgs
 #define EVENTDOESNOTEXIST   "Event does not exist."
 #define INSUFFICIENTFUNDS   "The price exceeds the credit for this account."
+#define NOTSELLER	    "This user is not the seller for the event."
 
 //Sell Error Msgs
 #define EVENTEXISTS         "That event conflicts with an event on the system."
