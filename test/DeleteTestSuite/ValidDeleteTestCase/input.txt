@@ -1,7 +1,11 @@
 login
 User1
+create
+newuser
+FS
+999.99
 delete
-User2
+newuser
 logout
 login
 newuser
