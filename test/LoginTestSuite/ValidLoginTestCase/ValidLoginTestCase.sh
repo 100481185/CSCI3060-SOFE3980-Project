@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 TDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source ${TDIR}/../../TestFramework/TestCase.sh;
+TEST=$(basename ${TDIR}/)
 
-function ValidLoginTestCase() {
-     TestCase ${TDIR}
+source ${TDIR}/../../TestFramework/TestCase.sh ${TDIR} ${TEST};
+
+function ValidLoginTestCase {
+     TestCase
 }
 
-setup
 ValidLoginTestCase

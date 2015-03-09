@@ -1,7 +1,20 @@
 #!/bin/bash
+exec  > >(tee -a $1/output.txt) 2>&1
 
-exec 1> >(logger -s -t $(basename $0)) 2>&1
+#!/bin/bash
+log() {
+#	echo $1
+#	basename $0 .sh
+	echo "$@"
+}
 
-echo "stdout"
-echo "writting to stderr" >&2
+exit_err(){
+	echo `date +'%b %e %R: Exit Error: '` $1 "failed with exit status" $2
+}
 
+err() {
+	echo `date +'%b %e %R '` "$@"
+}
+
+#log "writting to stdout"
+#err "writting to stderr"

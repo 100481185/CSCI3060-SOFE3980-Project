@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 TDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source ${TDIR}/../../TestFramework/TestCase.sh;
+TEST=$(basename ${TDIR} .sh)
+
+source ${TDIR}/../../TestFramework/TestCase.sh ${TDIR} ${TEST};
 
 function InvalidLoginTestCase {
-    TestCase ${TDIR}
+    TestCase
 }
-
 
 InvalidLoginTestCase
