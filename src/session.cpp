@@ -314,11 +314,17 @@ int Session::Buy() {
     User *seller_ = accounts_->find(seller);
     if (seller.size() > NAME_SIZE) {
 	cout << INVALID << INPUTTOOLARGE << endl;
+	return -1;
     }
 
     if (seller_ == NULL) {
         cout << INVALID << NAMEDOESNOTEXIST << endl;
         return -1;
+    }
+
+    if (seller != e->seller()) {
+	cout << INVALID << NOTSELLER << endl;
+	return -1;
     }
 
     if (!silent_) {

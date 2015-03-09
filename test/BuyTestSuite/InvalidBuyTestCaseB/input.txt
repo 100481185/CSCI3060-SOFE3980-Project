@@ -1,0 +1,8 @@
+login
+User3
+buy
+AAAAAAAAAAAAAAAAAAAA
+buy
+nonevent
+logout
+end

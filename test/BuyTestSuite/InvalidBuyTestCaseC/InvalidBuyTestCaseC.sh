@@ -3,9 +3,11 @@
 TDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source ${TDIR}/../../TestFramework/TestCase.sh;
 
-function ValidAddCreditTestCaseA {
+function InvalidBuyTestCaseC {
     TestCase ${TDIR}
 }
 
-setup
-ValidAddCreditTestCaseA
+
+InvalidBuyTestCaseC
+
+

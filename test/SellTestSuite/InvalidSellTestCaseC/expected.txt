@@ -1,0 +1,3 @@
+User4
+Price per ticket is too high (MAX=$1000.00).
+0
