@@ -1,3 +1,0 @@
-01 newuser         FS 000999.99
-02 newuser         FS 000999.99
-00 User1           AA 999999817

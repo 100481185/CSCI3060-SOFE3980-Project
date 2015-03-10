@@ -23,6 +23,7 @@ function TestSuite {
 				echo $(basename ${TARGET} .sh)":" Failed
 			fi
 		fi
-	echo ${passed} "out of" ${num_tests} passed <&1
 	done
+	echo ${passed} "out of" ${num_tests} passed <&1
+
 }
