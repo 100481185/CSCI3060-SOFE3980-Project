@@ -25,21 +25,6 @@ STDERR="${TARGET}/error.out)"
 # set log to failure_table
 STDLOG="${TARGET}/failure.log"
 
-#awk'
-#{
-#    if (NF != 4) {
-#        error("Expected 4 fields");
-#    } else {
-#        print;
-#    }
-#}
-#
-#function error ( message ) {
-#    if (FILENAME != "-") {
-#        printf("%s: ", FILENAME) > '${STDLOG}';
-#    }
-#    printf("line # %d, %s, line: %s\n", NR, message, $0) > '${STDLOG}';
-#}'
 
 
 function input() {
@@ -51,8 +36,8 @@ awk	'BEGIN {
 function output() {
 	VAR=""
 	{
-		echo $0
-	} >> ${STDOUT} >&1
+		echo "$@"
+	} >> ${STDOUT} <&1
 }
 
 function error() {
@@ -70,9 +55,26 @@ function log() {
 	}
 }
 
-input >&1
-log "writting to stdout"
+#input >&1
+#log "writting to stdout"
 #err "writting to stderr"
 
+
+
+`awk'
+{
+    if (NF != 4) {
+        error("Expected 4 fields");
+    } else {
+        print;
+    }
+}
+
+function error ( message ) {
+    if (FILENAME != "-") {
+        printf("%s: ", FILENAME) > '${STDLOG}';
+    }
+    printf("line # %d, %s, line: %s\n", NR, message, $0) > '${STDLOG}';
+}'`
 
 

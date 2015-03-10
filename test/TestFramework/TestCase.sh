@@ -35,7 +35,7 @@ function setup {
     # remove the current TestBuild dir
     clean
     # remake the build
-    mkdir ${DIR}/../TestBuild && cd ${DIR}/../TestBuild
+    mkdir ${DIR}/../tBuild && cd ${DIR}/../tBuild
     cmake ${DIR}/../.. && make
 }
 
@@ -43,8 +43,8 @@ function setup {
 #   deletes the current build directory if
 #+  one exists.
 function clean {
-    if [ -d ${DIR}/../TestBuild ]; then
-        rm -r ${DIR}/../TestBuild
+    if [ -d ${DIR}/../tBuild ]; then
+        rm -r ${DIR}/../tBuild
     fi
 }
 

@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
     // while the program is still running
     do {
         if (!silent)
+            cout << endl;
             cout << ">>  xstream  <<" << endl;
 
         do {

@@ -8,7 +8,7 @@ Event::Event() {
 
 Event::Event(string event, string seller, int num_tickets , double price) :
         event_(event),
-	seller_(seller),
+	    seller_(seller),
         num_tickets_(num_tickets),
         price_(price) {
 }
