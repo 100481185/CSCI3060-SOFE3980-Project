@@ -5,13 +5,24 @@ using namespace std;
 int main(int argc, char **argv) {
     // determine whether dialog should be displayed during execution
     bool silent;
-    if(argc > 1)
+    string accounts_path;
+    string tickets_path;
+
+    if (argc > 1) {
         silent = (strcmp(argv[1], "-s") == 0);
-    else
+
+        int i = 1;
+        if (silent)
+            i = 2;
+
+        accounts_path = argv[i];
+        tickets_path = argv[i + 1];
+
+    } else
         silent = false;
 
     // create new Session
-    Session session(silent);
+    Session session(silent, accounts_path, tickets_path);
 
     int logged_in = 0;
     int shutdown = 0;

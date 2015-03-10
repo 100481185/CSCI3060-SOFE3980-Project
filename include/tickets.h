@@ -24,7 +24,7 @@ public:
     Constructor:
         sets file name to AvailableTickets file.
      */
-    Tickets();
+    Tickets(string path);
 
     /*
     find_event:

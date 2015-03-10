@@ -19,88 +19,100 @@
 #       None
 #
 
-BLACK='\033[0;30m'
-RED='\033[0;31m'
-BLUE='\033[0;35m'
-GREEN='\033[0;32m'
+# Normal Colors
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+
+# Background
+On_Black='\e[40m'       # Black
+On_Red='\e[41m'         # Red
+On_Green='\e[42m'       # Green
+On_Yellow='\e[43m'      # Yellow
+On_Blue='\e[44m'        # Blue
+On_Purple='\e[45m'      # Purple
+On_Cyan='\e[46m'        # Cyan
+On_White='\e[47m'       # White
+
+NC="\e[m"               # Color Reset
+
 
 LDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
 TARGET=$1
 
+
 # set stdin, stdout, and stderr.
-STDIN="${TARGET}/*.in)"
-STDOUT="${TARGET}/*.out"
-STDERR="${TARGET}/*.err)"
-# set log to failure_table
-STDLOG="${TARGET}/failure.log"
+STDIN="${TARGET}/$(basename ${TARGET} .sh).in"
+STDOUT="${TARGET}/$(basename ${TARGET} .sh).out"
+STDERR="${TARGET}/$(basename ${TARGET} .sh).err"
+STDLOG="${TARGET}/$(basename ${TARGET} .sh).log"
 
+#exec > ${STDOUT} 2> >(tee ${STDOUT} >&2)
 
-
-function input() {
+input() {
     {
-        $1
-	} <<< ${STDIN}
+    	$1 < ${STDIN}
+	} 0>& $(output)
 }
 
-function output() {
+
+
+output() {
 	VAR=""
 	{
-		echo "$@"
-	} >> ${STDOUT} <&1
-}
-
-function error() {
-	NAME=$(basename ${TARGET} .sh)
-	{
-		echo "$``{`RED`}``[$(date +"%D %T")] STD  ERROR: $@"
-	} >> ${STDERR} 2>&1
-}
-
-function log() {
-	MSG=${1:-"$@"}
-	VALUE=${2:-${@}}
-	{
+		echo "$[0]"
 		echo "$@"
 	}
 }
 
-#input >&1
-#log "writting to stdout"
-#err "writting to stderr"
+
+error() {
+	NAME="$(basename $(1) .sh)"
+	{
+		echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"
+	} 2>> ${STDERR}
+}
+
+
+log() {
+	MSG=${1:-"$@"}
+	VALUE=${2:-${@}}
+	{
+		echo "$@"
+	} &> ${STDLOG}
+}
 
 
 
-#`awk'
+#$(awk'
 #{
 #    if (NF != 4) {
 #        error("Expected 4 fields");
 #    } else {
 #        print;
 #    }
-#}
+#}')
 #
+#$(awk'
 #function error ( message ) {
 #    if (FILENAME != "-") {
 #        printf("%s: ", FILENAME) > '${STDLOG}';
 #    }
-#    printf("line # %d, %s, line: %s\n", NR, message, $0) > '${STDLOG}';
-#}'`
+#    printf("line # %d, %s, line: %s\n", NR, message, $0) > "$(${STDLOG})";
+#}')
 
-
-# Black        0;30
-# Dark Gray    1;30
-# Blue         0;34
-# Light Blue   1;34
-# Green        0;32
-# Light Green  1;32
-# Cyan         0;36
-# Light Cyan   1;36
-# Red          0;31
-# Light Red    1;31
-# Purple       0;35
-# Light Purple 1;35
-# Brown/Orange 0;33
-# Yellow       1;33
-# Light Gray   0;37
-# White        1;37

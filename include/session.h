@@ -20,7 +20,7 @@ public:
         sets logged_in_ to NULL and creates the new
         Transactions memory
      */
-    Session(bool silent);
+    Session(bool silent=false, string accounts_path=NULL, string tickets_path=NULL);
 
     /*
     logged_in:
@@ -38,7 +38,11 @@ public:
 
 private:
     // silent_: determines whether to include prompts in the command line
-    bool silent_;
+    bool silent_;           // argv[1]
+    // accounts_file_ : Is Null if defined in args, otherwise is:
+    string accounts_path_;  // argv[2]
+    // tickets_file_ : Is Null if defined in args, otherwise is:
+    string tickets_path_;   // argv[3]
     // logged_in_: account currently logged in
     User *logged_in_;
     // accounts_: list of accounts from UserAccounts

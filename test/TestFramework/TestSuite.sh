@@ -13,17 +13,14 @@ function TestSuite {
 	passed=0
 	for tests in `find . -maxdepth 1 -type d -name "*Test*"`;
 	do
-		if [ "$?" == 0 ]; then
-			((num_tests+=1))
-			bash ${tests}/${tests:2}.sh
-			if [ $? -eq 0 ]; then
-				echo $(basename ${TARGET} .sh)":" Passed
-				((passed+=1))
-			else
-				echo $(basename ${TARGET} .sh)":" Failed
-			fi
+		((num_tests+=1))
+		bash ${tests}/${tests:2}.sh
+		if [ $? -eq 0 ]; then
+			echo $(basename ${TARGET} .sh)":" Passed
+			((passed+=1))
+		else
+			echo $(basename ${TARGET} .sh)":" Failed
 		fi
 	done
 	echo ${passed} "out of" ${num_tests} passed <&1
-
 }

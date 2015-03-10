@@ -26,7 +26,40 @@ source ${DIR}/Logger.sh $1;
 readonly TARGET=$1
 
 # set the name of the test case
-readonly NAME=$(basename ${TARGET} .sh)
+readonly NAME="(basename ${TARGET} .sh)"
+
+
+# TestCase():
+#   creates a new test case which checks exit
+#+  status and the difference between stdout
+#+  and expected
+#   RETURN 0 on success, -int on failure
+function TestCase {
+    # remove the old data
+    cleanTest
+
+    cd "${DIR}/../Tbuild"
+
+    xstream=`./xstream`
+
+    while read line
+    do
+         $(xstream -s) | 4>(tee $(output))
+    done < $(input)
+
+    if [ $? -lt "0" ]; then
+        exit_err ${NAME} $?
+        pass=false
+    else
+        pass=true
+    fi
+
+    cp ${DIR}/../TestBuild/data ${TARGET}/data -R
+    cd ${DIR}
+    return 0
+}
+
+
 
 # setup():
 #   creates a new build from source can
@@ -36,7 +69,7 @@ function setup {
     clean
     # remake the build
     mkdir ${DIR}/../Tbuild && cd ${DIR}/../Tbuild
-    cmake ${DIR}/../.. && make
+    cmake ../.. && make
 }
 
 # clean():
@@ -58,31 +91,4 @@ function cleanTest {
     if [ -d ${TARGET}/data ]; then
         rm -r ${TARGET}/data
     fi
-}
-
-# TestCase():
-#   creates a new test case which checks exit
-#+  status and the difference between stdout
-#+  and expected
-#   RETURN 0 on success, -int on failure
-function TestCase {
-    # remove the old data
-    cleanTest
-
-    cd "${DIR}/../TestBuild"
-
-    xstream=`./xstream`
-#    ./xstream -s < ${TARGET}/input.txt : >> ${TARGET}/output.txt 2<&1
-    ${xstream} <& input 2>> output 2<&1
-
-    if [ $? -lt "0" ]; then
-        exit_err ${NAME} $?
-        pass=false
-    else
-        pass=true
-    fi
-
-    cp ${DIR}/../TestBuild/data ${TARGET}/data -R
-    cd ${DIR}
-    return 0
 }

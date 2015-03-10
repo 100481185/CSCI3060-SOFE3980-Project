@@ -1,5 +1,0 @@
-/home/nicholas/Desktop/xstream/test/ClassTestSuite/MainTestSuite/MainTestCase/../../../TestFramework/TestCase.sh: line 34: ./xstream: No such file or directory
-/home/nicholas/Desktop/xstream/test/ClassTestSuite/MainTestSuite/MainTestCase/../../../TestFramework/TestCase.sh: line 28: cd: /home/nicholas/Desktop/xstream/test/TestFramework/../Build: No such file or directory
-MainTestCase
-127
-cp: cannot stat ‘/home/nicholas/Desktop/xstream/test/TestFramework/../Build/data’: No such file or directory

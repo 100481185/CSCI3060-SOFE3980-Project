@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Accounts::Accounts() :
-        Data(USER_ACCOUNTS) {
+Accounts::Accounts(string path_to_file=USER_ACCOUNTS) :
+        Data(path_to_file) {
     if (ReadData() == 0) {
 
         // create an iterator that points to each line in file

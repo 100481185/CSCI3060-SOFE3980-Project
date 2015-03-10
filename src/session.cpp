@@ -1,8 +1,10 @@
 #include "../include/xstream.h"
 #include "../include/session.h"
 
-Session::Session(bool silent) {
+Session::Session(bool silent=false, string accounts_path=NULL, string tickets_path=NULL) {
     silent_ = silent;
+    accounts_path_ = accounts_path;
+    tickets_path_ = tickets_path;
     logged_in_ = NULL;
     transactions_ = new Transactions;
 }

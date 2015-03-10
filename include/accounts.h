@@ -24,7 +24,7 @@ public:
     Constructor:
         sets file name to UserAccount file.
      */
-    Accounts();
+    Accounts(string path_to_file);
 
     /*
     find:

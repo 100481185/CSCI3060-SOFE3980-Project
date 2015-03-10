@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Tickets::Tickets() :
-        Data(EVENTS) {
+Tickets::Tickets(string path_to_event=EVENTS) :
+        Data(path_to_event) {
     if (ReadData() == 0) {
 
         // create an iterator that points to each line in file
