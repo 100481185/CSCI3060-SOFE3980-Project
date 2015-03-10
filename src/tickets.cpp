@@ -63,6 +63,7 @@ int Tickets::write_events() {
 
 int Tickets::print_tickets() {
     map<string, Event>::iterator ptr = tickets_.begin();
+    // print ticket information during iteration through map of tickets
     for (ptr; ptr != tickets_.end(); ptr++) {
         cout << (*ptr).second.event() << endl;
     }

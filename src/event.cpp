@@ -46,7 +46,7 @@ string Event::event() const {
         // format it as an int
         sprintf(tmp_price, PRICE_WO_DEC_FORMAT, (int) price_);
     else
-        // format it with two .2 precession
+        // format it with two .2 precision
         sprintf(tmp_price, PRICE_W_DEC_FORMAT, price_);
 
     // format the entire string - EEEEEEEEEEEEEEEEEEE_SSSSSSSSSSSSS_TTT_PPPPPP

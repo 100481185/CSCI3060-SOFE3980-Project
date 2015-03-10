@@ -5,16 +5,19 @@ Transactions::Transactions() :
 }
 
 int Transactions::refund(int code, string buyer, string seller, double credit) {
+	// add returning object from Refund to commits_
 	commits_.push_back(Refund(code, buyer, seller, credit));
 	return 0;
 }
 
 int Transactions::buy_sell(int code, string event_name, string seller_name, int num_tickets, double price) {
+	// add returning object from BuySell to commits_
 	commits_.push_back(BuySell(code, event_name, seller_name, num_tickets, price));
 	return 0;
 }
 
 int Transactions::regular(int code, string name, string type, double credit) {
+	// add returning object from Regular to commits_
 	Regular reg(code, name, type, credit);
 	commits_.push_back(reg);
 	return 0;
