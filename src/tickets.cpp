@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Tickets::Tickets(string path_to_event=EVENTS) :
+Tickets::Tickets(string path_to_event) :
         Data(path_to_event) {
     if (ReadData() == 0) {
 

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Accounts::Accounts(string path_to_file=USER_ACCOUNTS) :
+Accounts::Accounts(string path_to_file) :
         Data(path_to_file) {
     if (ReadData() == 0) {
 
