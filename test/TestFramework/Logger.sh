@@ -29,9 +29,9 @@ LDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 TARGET=$1
 
 # set stdin, stdout, and stderr.
-STDIN="${TARGET}/input.in)"
-STDOUT="${TARGET}/output.out"
-STDERR="${TARGET}/error.out)"
+STDIN="${TARGET}/*.in)"
+STDOUT="${TARGET}/*.out"
+STDERR="${TARGET}/*.err)"
 # set log to failure_table
 STDLOG="${TARGET}/failure.log"
 
