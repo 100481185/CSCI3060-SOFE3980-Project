@@ -1,7 +1,0 @@
-login
-User4
-sell
-testevent
-1000.00
-logout
-end
