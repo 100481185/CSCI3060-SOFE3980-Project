@@ -18,13 +18,13 @@ function TestSuite {
 		do
 			((num_tests+=1))
 
-			bash ${ts}/${ts}.sh <&1
+			bash ${ts}/${ts:2}.sh
 
 			if [ $? -eq 0 ]; then
-				echo $(basename ${ts} .sh)":" Passed
+				echo $(basename ${TARGET} .sh)":" Passed
 				((passed+=1))
 			else
-				echo $(basename ${ts} .sh)":" Failed
+				echo $(basename ${TARGET} .sh)":" Failed
 			fi
 		done
 		echo ${passed} "out of" ${num_tests} passed <&1

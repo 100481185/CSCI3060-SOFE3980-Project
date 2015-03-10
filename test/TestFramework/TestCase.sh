@@ -3,9 +3,9 @@
 # TestCase, version 1
 #   library for testing c++ classes in bash.
 
-#################################
-# TestBuild a test case for a project
-# and provides testing utilities.
+##########################
+# A Test Case template for
+#+xstream project.
 # Globals:
 #   DIR
 #   TARGET
@@ -20,7 +20,7 @@
 readonly DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # link the logging module
-source ${DIR}/Logging.sh $1
+source ${DIR}/Logger.sh $1;
 
 # set the path to the calling directory
 readonly TARGET=$1
@@ -30,7 +30,7 @@ readonly NAME=$(basename ${TARGET} .sh)
 
 # setup():
 #   creates a new build from source can
-#   be called if test requires clean data
+#+  be called if test requires clean data
 function setup {
     # remove the current TestBuild dir
     clean
@@ -41,7 +41,7 @@ function setup {
 
 # clean():
 #   deletes the current build directory if
-#   one exists.
+#+  one exists.
 function clean {
     if [ -d ${DIR}/../TestBuild ]; then
         rm -r ${DIR}/../TestBuild
@@ -62,35 +62,27 @@ function cleanTest {
 
 # TestCase():
 #   creates a new test case which checks exit
-#   status and the difference between stdout
-#   and expected
+#+  status and the difference between stdout
+#+  and expected
 #   RETURN 0 on success, -int on failure
 function TestCase {
     # remove the old data
     cleanTest
 
-    cd ${DIR}/../TestBuild
+    cd "${DIR}/../TestBuild"
 
+    xstream=`./xstream`
 #    ./xstream -s < ${TARGET}/input.txt : >> ${TARGET}/output.txt 2<&1
-
-    ./xstream -s
-
+    ${xstream} <& input 2>> output 2<&1
 
     if [ $? -lt "0" ]; then
         exit_err ${NAME} $?
         pass=false
-    else 
+    else
         pass=true
     fi
-    
+
     cp ${DIR}/../TestBuild/data ${TARGET}/data -R
     cd ${DIR}
-
-    if [ ${pass} ]; then
-        return 0;
-    else
-        return 1;
-    fi
+    return 0
 }
-
-

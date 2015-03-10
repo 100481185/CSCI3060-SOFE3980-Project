@@ -1,5 +1,0 @@
-1c1
-< Invalid username
----
-> Invalid username
-\ No newline at end of file

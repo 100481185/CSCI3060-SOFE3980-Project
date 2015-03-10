@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 TDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source ${TDIR}/../../TestFramework/TestCase.sh;
+source "${TDIR}/../../TestCase.sh" ${TDIR};
 
 function TemplateTestCase {
-    TestCase ${TDIR}
+    TestCase
 }
 
-#TemplateTestCase #Uncomment to enable test
+setup
+TemplateTestCase #Uncomment to enable test
