@@ -26,7 +26,7 @@ source ${DIR}/Logger.sh $1;
 readonly TARGET=$1
 
 # set the name of the test case
-readonly NAME="(basename ${TARGET} .sh)"
+readonly NAME=$(basename "${TARGET}" .sh)
 
 
 # TestCase():
@@ -39,24 +39,22 @@ function TestCase {
     cleanTest
 
     cd "${DIR}/../Tbuild"
+    echo "${TARGET}/${NAME}".in
 
-    xstream=`./xstream`
+    xstream=`./xstream -s`
 
-    while read line
-    do
-         $(xstream -s) | 4>(tee $(output))
-    done < $(input)
+    ${xstream} < /home/nicholas/Desktop/xstream/test/FunctionalTestSuite/LoginTestSuite/ValidLoginTestCase/ValidLoginTestCase.in
+    # ${TARGET}/${NAME}.in
 
     if [ $? -lt "0" ]; then
-        exit_err ${NAME} $?
-        pass=false
+        pass=1
     else
-        pass=true
+        echo "$?"
     fi
 
-    cp ${DIR}/../TestBuild/data ${TARGET}/data -R
+    cp ${DIR}/../Tbuild/data ${TARGET}/data -R
     cd ${DIR}
-    return 0
+    return ${pass}
 }
 
 

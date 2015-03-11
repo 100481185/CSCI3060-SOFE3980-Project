@@ -7,6 +7,11 @@ SDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 source "${SDIR}/../../TestFramework/TestSuite.sh";
 
+
+if ! [ -d "${SDIR}/../../Tbuild" ]; then
+    echo "Failed"
+fi
+
 LoginTestSuite() {
     TestSuite
 }

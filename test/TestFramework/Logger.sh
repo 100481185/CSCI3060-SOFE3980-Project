@@ -62,22 +62,16 @@ STDOUT="${TARGET}/$(basename ${TARGET} .sh).out"
 STDERR="${TARGET}/$(basename ${TARGET} .sh).err"
 STDLOG="${TARGET}/$(basename ${TARGET} .sh).log"
 
-#exec > ${STDOUT} 2> >(tee ${STDOUT} >&2)
-
 input() {
     {
-    	$1 < ${STDIN}
-	} 0>& $(output)
+    	echo "@" < ${STDIN}
+	}
 }
 
-
-
 output() {
-	VAR=""
 	{
-		echo "$[0]"
 		echo "$@"
-	}
+	} 1>>${STDOUT} | tee 2>>${STDERR}
 }
 
 
@@ -85,7 +79,7 @@ error() {
 	NAME="$(basename $(1) .sh)"
 	{
 		echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"
-	} 2>> ${STDERR}
+	} >> ${STDERR} 2>&1
 }
 
 
@@ -96,6 +90,30 @@ log() {
 		echo "$@"
 	} &> ${STDLOG}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
