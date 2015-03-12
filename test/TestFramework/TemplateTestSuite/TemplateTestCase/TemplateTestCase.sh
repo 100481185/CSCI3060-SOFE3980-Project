@@ -7,5 +7,5 @@ function TemplateTestCase {
     TestCase
 }
 
-setup
+#setup
 TemplateTestCase #Uncomment to enable test

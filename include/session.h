@@ -20,7 +20,7 @@ public:
         sets logged_in_ to NULL and creates the new
         Transactions memory
      */
-    Session(bool silent=false, string accounts_path=NULL, string tickets_path=NULL);
+    Session(bool silent=false, string accounts_path="", string tickets_path="");
 
     /*
     logged_in:

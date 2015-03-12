@@ -7,5 +7,5 @@ function ValidDeleteTestCase() {
      TestCase ${TDIR}
 }
 
-setup
+
 ValidDeleteTestCase

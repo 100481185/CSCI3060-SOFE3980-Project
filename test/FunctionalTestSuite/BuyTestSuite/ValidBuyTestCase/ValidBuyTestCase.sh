@@ -8,5 +8,4 @@ function ValidBuyTestCase {
     TestCase
 }
 
-#setup
 ValidBuyTestCase

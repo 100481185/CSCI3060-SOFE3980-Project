@@ -2,24 +2,25 @@
 
 using namespace std;
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
     // determine whether dialog should be displayed during execution
     bool silent;
-    string accounts_path;
-    string tickets_path;
+    string accounts_path = "";
+    string tickets_path = "";
 
-    if (argc > 1) {
+    if (argc == 1) {
+        silent = false;
+    } else if (argc == 2){
+        silent = strcmp(argv[1], "-s") == 0;
+    } else {
         silent = (strcmp(argv[1], "-s") == 0);
 
         int i = 1;
         if (silent)
             i = 2;
-
         accounts_path = argv[i];
         tickets_path = argv[i + 1];
-
-    } else
-        silent = false;
+    }
 
     // create new Session
     Session session(silent, accounts_path, tickets_path);
@@ -31,7 +32,6 @@ int main(int argc, char **argv) {
     // while the program is still running
     do {
         if (!silent)
-            cout << endl;
             cout << ">>  xstream  <<" << endl;
 
         do {
@@ -48,6 +48,7 @@ int main(int argc, char **argv) {
                 shutdown = 1;
             }
         } while (session.logged_in());
+
     } while (!shutdown);
 
     return 0;

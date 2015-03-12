@@ -7,5 +7,5 @@ function ValidLogoutTestCase() {
      TestCase ${TDIR}
 }
 
-setup
+
 ValidLogoutTestCase

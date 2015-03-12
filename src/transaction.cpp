@@ -1,7 +1,7 @@
 #include "../include/transaction.h"
 
-Transactions::Transactions() :
-		Data(TRANSACTIONS) {
+Transactions::Transactions(string file) :
+		Data(file) {
 }
 
 int Transactions::refund(int code, string buyer, string seller, double credit) {

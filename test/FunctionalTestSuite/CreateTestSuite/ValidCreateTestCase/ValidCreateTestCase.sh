@@ -8,5 +8,5 @@ function ValidCreateTestCase() {
      TestCase
 }
 
-#setup
+
 ValidCreateTestCase

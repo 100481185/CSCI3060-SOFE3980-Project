@@ -7,6 +7,7 @@ if(${PROJECT_BINARY_DIR} MATCHES "/home/nicholas/.clion10/system/cmake/generated
     configure_file(data/UserAccounts.txt ${PROJECT_SOURCE_DIR}/build/data)
     configure_file(data/DailyTransactions.txt ${PROJECT_SOURCE_DIR}/build/data)
     configure_file(data/AvailableTickets.txt ${PROJECT_SOURCE_DIR}/build/data)
+
 else(${PROJECT_BINARY_DIR} MATCHES "/home/nicholas/.clion10/system/cmake/generated")
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
     file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)

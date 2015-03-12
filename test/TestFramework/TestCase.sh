@@ -7,26 +7,33 @@
 # A Test Case template for
 #+xstream project.
 # Globals:
-#   DIR
-#   TARGET
-#   NAME
+#   SRCDIR
+#   TARGETTESTDIR
+#   TESTNAME
 # Arguments:
 #   TARGET_PATH
 #   TARGET_NAME
 # Returns:
 #   None
 
-# set the DIR to the files directory
-readonly DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+# set the SRCDIR to the files directory
+readonly SRCDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-# link the logging module
-source ${DIR}/Logger.sh $1;
+# set calling command
+readonly PARENTCMD=$(ps $PPID | tail -n 1 | awk "{print \$6}")
 
 # set the path to the calling directory
-readonly TARGET=$1
+readonly TARGETTESTDIR=$1
 
 # set the name of the test case
-readonly NAME=$(basename "${TARGET}" .sh)
+readonly TESTNAME=$(basename "${TARGETTESTDIR}" .sh)
+
+# link the logging module
+#source ${SRCDIR}/Logger.sh $1;
+source "${SRCDIR}"/Setup.sh;
+source "${SRCDIR}"/Clean.sh;
+source "${SRCDIR}"/CleanTest.sh ${TARGETTESTDIR};
+source "${SRCDIR}"/Colours.sh;
 
 
 # TestCase():
@@ -35,58 +42,39 @@ readonly NAME=$(basename "${TARGET}" .sh)
 #+  and expected
 #   RETURN 0 on success, -int on failure
 function TestCase {
+
     # remove the old data
     cleanTest
 
-    cd "${DIR}/../Tbuild"
-    echo "${TARGET}/${NAME}".in
 
-    xstream=`./xstream -s`
-
-    ${xstream} < /home/nicholas/Desktop/xstream/test/FunctionalTestSuite/LoginTestSuite/ValidLoginTestCase/ValidLoginTestCase.in
-    # ${TARGET}/${NAME}.in
-
-    if [ $? -lt "0" ]; then
-        pass=1
-    else
-        echo "$?"
+    # build test directory if DNE
+    if ! [ -d "${SRCDIR}/../TestBuild" ]; then
+        setup
     fi
 
-    cp ${DIR}/../Tbuild/data ${TARGET}/data -R
-    cd ${DIR}
+    # navigate to test directory
+    cd "${SRCDIR}/../TestBuild"
+
+    ./xstream -s < "${TARGETTESTDIR}/${TESTNAME}.in" > "${TARGETTESTDIR}/${TESTNAME}.out"
+
+    TAB=""
+    if ! [ "${PARENTCMD}" = "-Xss2m" ]; then
+        TAB="\t"
+    fi
+
+    if [ $? -lt "0" ]; then
+        echo -e "${TAB}${Black}${TESTNAME}: ${Red}FAILED${NC}"
+        pass=1
+    else
+        echo -e "${TAB}${Black}${TESTNAME}: ${Green}PASSED""${NC}"
+        pass=0
+    fi
+
+    cp ${SRCDIR}/../TestBuild/data ${TARGETTESTDIR}/data -R
+    cd ${SRCDIR}
+
     return ${pass}
 }
 
 
 
-# setup():
-#   creates a new build from source can
-#+  be called if test requires clean data
-function setup {
-    # remove the current TestBuild dir
-    clean
-    # remake the build
-    mkdir ${DIR}/../Tbuild && cd ${DIR}/../Tbuild
-    cmake ../.. && make
-}
-
-# clean():
-#   deletes the current build directory if
-#+  one exists.
-function clean {
-    if [ -d ${DIR}/../Tbuild ]; then
-        rm -r ${DIR}/../Tbuild
-    fi
-}
-
-# cleanTest():
-#   cleans test data and output files
-function cleanTest {
-    if [ -f ${TARGET}/output.txt ]; then
-        rm ${TARGET}/output.txt
-    fi
-
-    if [ -d ${TARGET}/data ]; then
-        rm -r ${TARGET}/data
-    fi
-}

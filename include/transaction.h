@@ -23,7 +23,7 @@ public:
     Constructor:
         sets file name to DailyTransactions file.
      */
-    Transactions();
+    Transactions(string file=TRANSACTIONS);
 
     /*
     refund:

@@ -2,9 +2,19 @@
 #include "../include/session.h"
 
 Session::Session(bool silent, string accounts_path, string tickets_path) {
+
     silent_ = silent;
-    accounts_path_ = accounts_path;
-    tickets_path_ = tickets_path;
+
+    if (accounts_path == "")
+        accounts_path_ = USER_ACCOUNTS;
+    else
+        accounts_path_ = accounts_path;
+
+    if (tickets_path == "")
+        tickets_path_ = EVENTS;
+    else
+        tickets_path_ = tickets_path;
+
     logged_in_ = NULL;
     transactions_ = new Transactions;
 }
@@ -54,7 +64,7 @@ int Session::command(string cmd) {
 // TODO: Validate input
 int Session::Login() {
     // initialize accounts
-    accounts_ = new Accounts;
+    accounts_ = new Accounts(accounts_path_);
 
     // enter username
     std::string name;
@@ -75,7 +85,7 @@ int Session::Login() {
         cout << logged_in_->name() << endl;
 
     // read in ticket file
-    tickets_ = new Tickets;
+    tickets_ = new Tickets(tickets_path_);
 
     if (!silent_) {
         tickets_->print_tickets();
