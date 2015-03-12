@@ -20,7 +20,6 @@ CLEANDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #   deletes the current test build directory if
 #+  one exists.
 function clean {
-    echo "llife"
     if [ -d ${CLEANDIR}/../TestBuild ]; then
         rm -r "${CLEANDIR}"/../TestBuild
     fi

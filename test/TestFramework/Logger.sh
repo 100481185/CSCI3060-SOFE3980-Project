@@ -21,27 +21,23 @@
 
 LDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-source "${LDIR}"/TestColours.sh;
+source "${LDIR}"/Colours.sh;
 
 TARGET=$1
 
 
 # set stdin, stdout, and stderr.
-STDIN="${TARGET}/$(basename ${TARGET} .sh).in"
 STDOUT="${TARGET}/$(basename ${TARGET} .sh).out"
 STDERR="${TARGET}/$(basename ${TARGET} .sh).err"
 STDLOG="${TARGET}/$(basename ${TARGET} .sh).log"
 
-input() {
-    {
-    	echo "@" < ${STDIN}
-	}
-}
 
 output() {
 	{
-		echo "$@"
-	} 1>>${STDOUT} | tee 2>>${STDERR}
+		while read line; do
+			echo ${line}
+		done 1>${STDOUT} | tee 2>${STDERR}
+	}
 }
 
 

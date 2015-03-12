@@ -34,6 +34,7 @@ source "${SRCDIR}"/Setup.sh;
 source "${SRCDIR}"/Clean.sh;
 source "${SRCDIR}"/CleanTest.sh ${TARGETTESTDIR};
 source "${SRCDIR}"/Colours.sh;
+source ${SRCDIR}/Logger.sh ${TARGETTESTDIR};
 
 
 # TestCase():
@@ -46,6 +47,10 @@ function TestCase {
     # remove the old data
     cleanTest
 
+    TAB=""
+    if ! [ "${PARENTCMD}" = "-Xss2m" ]; then
+        TAB="\t"
+    fi
 
     # build test directory if DNE
     if ! [ -d "${SRCDIR}/../TestBuild" ]; then
@@ -55,20 +60,18 @@ function TestCase {
     # navigate to test directory
     cd "${SRCDIR}/../TestBuild"
 
-    ./xstream -s < "${TARGETTESTDIR}/${TESTNAME}.in" > "${TARGETTESTDIR}/${TESTNAME}.out"
+    ./xstream -s < "${TARGETTESTDIR}/${TESTNAME}.in" | output
+    #> "${TARGETTESTDIR}/${TESTNAME}.out"
 
-    TAB=""
-    if ! [ "${PARENTCMD}" = "-Xss2m" ]; then
-        TAB="\t"
-    fi
-
-    if [ $? -lt "0" ]; then
+    if [ $? -eq 1 ]; then
         echo -e "${TAB}${Black}${TESTNAME}: ${Red}FAILED${NC}"
         pass=1
     else
         echo -e "${TAB}${Black}${TESTNAME}: ${Green}PASSED""${NC}"
         pass=0
     fi
+
+
 
     cp ${SRCDIR}/../TestBuild/data ${TARGETTESTDIR}/data -R
     cd ${SRCDIR}
