@@ -136,6 +136,8 @@ For example:
 ###Code Style
 This is a reference to code style used in the this project.
 
-__http://google-styleguide.googlecode.com/svn/trunk/cppguide.html__
+__C++ http://google-styleguide.googlecode.com/svn/trunk/cppguide.html__
+
+__Bash http://google-styleguide.googlecode.com/svn/trunk/shell.xml__
 
  
