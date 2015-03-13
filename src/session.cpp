@@ -75,7 +75,7 @@ int Session::Login() {
     // confirm if username is available
     logged_in_ = accounts_->find(name);
     if (!logged_in()) {
-        cout << "Invalid username" << endl;
+        cerr << "Invalid username" << endl;
         return -1;
     }
 

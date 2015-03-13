@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/*
+
+ */
 int main(int argc, char *argv[]) {
     // determine whether dialog should be displayed during execution
     bool silent;

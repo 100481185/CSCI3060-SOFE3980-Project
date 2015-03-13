@@ -43,7 +43,7 @@ source ${SRCDIR}/Logger.sh ${TARGETTESTDIR};
 #+  and expected
 #   RETURN 0 on success, -int on failure
 function TestCase {
-
+    ########### Setup TestEnv #############
     # remove the old data
     cleanTest
 
@@ -60,18 +60,33 @@ function TestCase {
     # navigate to test directory
     cd "${SRCDIR}/../TestBuild"
 
+
+    #############  Run Command  #############
+    # record runtime stdout and stderr of cmd
+    # pass stdout from cmd to logger's function
+    # output which distributed streams
+
     ./xstream -s < "${TARGETTESTDIR}/${TESTNAME}.in" | output
-    #> "${TARGETTESTDIR}/${TESTNAME}.out"
+
+
+    #############    Run Tests   #############
+    pass=0
 
     if [ $? -eq 1 ]; then
-        echo -e "${TAB}${Black}${TESTNAME}: ${Red}FAILED${NC}"
         pass=1
-    else
-        echo -e "${TAB}${Black}${TESTNAME}: ${Green}PASSED""${NC}"
-        pass=0
     fi
 
+#    diff ${TARGETTESTDIR}/${TESTNAME}.exp ${TARGETTESTDIR}/${TESTNAME}.out > ${TARGETTESTDIR}/${TESTNAME}.log
 
+#    if [ $? -eq 0 ]; then
+#        pass=1
+#    fi
+
+    if [ ${pass} -eq 1 ]; then
+        echo -e "${TAB}${Black}${TESTNAME}: ${Red}FAILED${NC}"
+    else
+        echo -e "${TAB}${Black}${TESTNAME}: ${Green}PASSED""${NC}"
+    fi
 
     cp ${SRCDIR}/../TestBuild/data ${TARGETTESTDIR}/data -R
     cd ${SRCDIR}

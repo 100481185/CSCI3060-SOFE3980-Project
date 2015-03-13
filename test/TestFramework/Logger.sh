@@ -35,27 +35,28 @@ STDLOG="${TARGET}/$(basename ${TARGET} .sh).log"
 output() {
 	{
 		while read line; do
-			echo ${line}
-		done 1>${STDOUT} | tee 2>${STDERR}
+			echo ${line} >> ${STDOUT} 2>&1
+		done  #| tee 2>${STDERR}
+		# 1>${STDOUT} | tee 2>${STDERR}
 	}
 }
 
 
-error() {
-	NAME="$(basename $(1) .sh)"
-	{
-		echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"
-	} >> ${STDERR} 2>&1
-}
-
-
-log() {
-	MSG=${1:-"$@"}
-	VALUE=${2:-${@}}
-	{
-		echo "$@"
-	} &> ${STDLOG}
-}
+#error() {
+#	NAME="$(basename $(1) .sh)"
+#	{
+#		echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"
+#	} >> ${STDERR}
+#}
+#
+#
+#log() {
+#	MSG=${1:-"$@"}
+#	VALUE=${2:-${@}}
+#	{
+#		echo "$@"
+#	} &> ${STDLOG}
+#}
 
 
 
