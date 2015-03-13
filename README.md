@@ -140,4 +140,6 @@ __C++ http://google-styleguide.googlecode.com/svn/trunk/cppguide.html__
 
 __Bash http://google-styleguide.googlecode.com/svn/trunk/shell.xml__
 
+__Java http://google-styleguide.googlecode.com/svn/trunk/javaguide.html__
+
  
