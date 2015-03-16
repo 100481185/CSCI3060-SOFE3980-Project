@@ -25,8 +25,9 @@ public class User {
 	 * @param credit a double that represents a User's current amount of credit.
 	 */
 	public User(String name, String type, double credit) {
-		// TODO - implement User.User
-		throw new UnsupportedOperationException();
+        this.name = name;
+        this.type = type;
+        this.credit = credit;
 	}
 
 	public String getName() {
@@ -47,17 +48,20 @@ public class User {
 
 	/**
 	 * This method is responsible for validating and a a user account
-	 * from memory. It validates that name exists on the system and reports
-	 * errors to caller. If all business constraints are met it deletes the
-	 * user from memory.
-	 * @param name a string that represents the name of User
+	 * from memory. It validates that amount does not violate any business constraints
+     * and deletes the user from memory.
 	 * @param amount a double that represents the amount to remove from a Users
 	 * account
-	 * @return 0 on success, 1 on failure, 2 on InvalidNameError
+	 * @return 0 on success, 1 on failure, 2 on MaxAmountExceededError, 3 on
+     * MaxCreditLimitError
 	 */
-	public int addCredit(String name, double amount) {
-		// TODO - implement User.addCredit
-		throw new UnsupportedOperationException();
+	public int addCredit(double amount) {
+        if (amount < 0 || amount > 1000.00)
+            return 2;
+        if ((this.credit + amount) > 999999999)
+            return 3;
+        this.credit += amount;
+        return 0;
 	}
 
 	/**
@@ -66,14 +70,14 @@ public class User {
 	 * amount to be deducted is not greater than present amount .Any errors
 	 * are reported to the caller function. If all business constraints are
 	 * met it removes the amount of credit from the users account.
-	 * @param name a string that represents the name of User
 	 * @param amount a double that represents the amount to be deducted from a users account
-	 * @return 0 on success, 1 on failure, 2 on InvalidNameError, 3 on
-	 * AmountToLargeError
+	 * @return 0 on success, 1 on failure, 2 AmountExceedsCreditError
 	 */
-	public int removeCredit(String name, double amount) {
-		// TODO - implement User.removeCredit
-		throw new UnsupportedOperationException();
+	public int removeCredit(double amount) {
+        if ((this.credit - amount) < 0)
+            return 2;
+        this.credit -= amount;
+        return 0;
 	}
 
 }
