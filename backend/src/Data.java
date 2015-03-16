@@ -5,7 +5,10 @@ import java.io.*;
  * operation on a file. It provides inheriting classes safe read and
  * write methods that check and report errors. It also provides
  * subclasses with methods that can be overridden to extract data
- * from lines with their individual formatting. If two files are specified in the constructor the first file will be used for read operations and the second for write operations. If one file is specified it will be used for both read and write operations.
+ * from lines with their individual formatting. If two files are specified
+ * in the constructor the first file will be used for read operations and
+ * the second for write operations. If one file is specified it will
+ * be used for both read and write operations.
  */
 public class Data {
 
@@ -47,31 +50,36 @@ public class Data {
 	 * @return 0 on success, 1 on failure
 	 */
 	protected int readData() {
+        // initialize a buffer for reading
         BufferedReader bufferedReader = null;
         try {
+            // open a file for read access
             FileReader fileReader = new FileReader(this.readFilename);
-
+            // wrap it with the buffer
             bufferedReader = new BufferedReader(fileReader);
-
+            // create a tmp string line to hold the data
             String line;
+            // loops through the file until it reaches a blank line
             while ((line = bufferedReader.readLine()) != null) {
+                // send the line to decode for parsing
                 decode(line);
             }
-
         } catch (FileNotFoundException e) {
+            // TODO: implement FileNotFound error handle
             e.printStackTrace(System.err);
             return 1;
         } catch (IOException e) {
+            // TODO: implement IOException error handle
             e.printStackTrace(System.err);
             return 1;
         } finally {
-
+            // if file is open
             if (bufferedReader != null) {
-
                 try {
+                    // close the file
                     bufferedReader.close();
-
                 } catch (IOException e) {
+                    // TODO: implement IOException error handle
                     e.printStackTrace(System.err);
                 }
             }
@@ -88,28 +96,34 @@ public class Data {
 	 * @return 0 on success, 1 on failure.
 	 */
 	protected int writeData() {
+        // initialize a buffer for writing
         BufferedWriter bufferedWriter = null;
-        String line = null;
-
         try {
+            // open the file with write permission
             FileWriter fileWriter = new FileWriter(this.writeFilename);
-
+            // wrap it with the buffer
             bufferedWriter = new BufferedWriter(fileWriter);
-
+            // create a tmp string to store data
+            String line = null;
+            // calls encode until encode returns null
             while ((line = encode()) != null) {
+                // writes the line to file
                 bufferedWriter.write(line);
+                // writes a newline char
                 bufferedWriter.newLine();
             }
-
         } catch (IOException e) {
+            // TODO: Implement IOException handle
             e.printStackTrace(System.err);
         } finally {
-
             try {
+                // if file is open
                 if (bufferedWriter != null) {
+                    // close the file
                     bufferedWriter.close();
                 }
             } catch (IOException e) {
+                // TODO: Implement IOException handle
                 e.printStackTrace(System.err);
             }
         }
@@ -140,7 +154,8 @@ public class Data {
 	 * @return a string that represents a line of text to be written to file
 	 */
 	public String encode() {
-        return "Test";
+        // does nothing
+        return null;
 	}
 
 }
