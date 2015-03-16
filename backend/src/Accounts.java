@@ -32,6 +32,7 @@ public class Accounts extends Data {
      */
     public Accounts(String readFilename, String writeFilename) {
         super(readFilename, writeFilename);
+        this.users = null;
         // build user accounts in memory
         readData();
         this.userIterator = users.entrySet().iterator();
