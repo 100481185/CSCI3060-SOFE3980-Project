@@ -25,14 +25,15 @@ public class SellBuy extends Record {
 	/**
 	 * Constructor for SellBuy class. Inherits the constructor from Record
 	 * and sets the attribute code.
+     * @param code an integer representing the transaction number.
 	 * @param event a string that represents the name of the Event
 	 * @param seller a string that represents the name of the User
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
-	 * @param code an integer representing the transaction number.
 	 */
-	public SellBuy(String event, String seller, int numTickets, double price, int code) {
-		// TODO - implement SellBuy.SellBuy
+	public SellBuy(int code, String event, String seller, int numTickets, double price) {
+        super(code);
+        // TODO - implement SellBuy.SellBuy
 		throw new UnsupportedOperationException();
 	}
 

@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This class represents a AvailableTickets file, in memory. It
@@ -10,97 +11,144 @@ import java.util.*;
 public class Tickets extends Data {
 
 	/**
-	 * a map with key, seller name, and value, Event, that
-	 * represents the Available tickets file
+	 * a list of Events that represents the AvailableTickets file
 	 */
-	public Collection<Map<string, Event>> events;
+	public List<Event> events;
 	/**
-	 * an iterator of the event map
+	 * an iterator of the event list
 	 */
 	private Iterator<Event> eventIterator;
 
 	/**
 	 * Constructor for Tickets class. Calls super class Data to set
 	 * filenames.
-	 * @param readFileName a string representing the path of the existing
-	 * AvailableTickets file to be read in.
-	 * @param writeFilename a string representing the path of the new AvailableTickets
-	 * file to be written.
-	 */
-	public Tickets(String readFileName, int writeFilename) {
-		// TODO - implement Tickets.Tickets
-		throw new UnsupportedOperationException();
+     * @param readFileName a string representing the path of the existing
+     * AvailableTickets file to be read in.
+     * @param writeFilename a string representing the path of the new AvailableTickets
+     */
+	public Tickets(String readFileName, String writeFilename) {
+        super(readFileName, writeFilename);
+        this.events = null;
+        readData();
+        this.eventIterator = this.events.iterator();
 	}
 
 	/**
 	 * This method is responsible for retrieving a event from the map of
 	 * event searching the events map for events that the seller has tickets
 	 * for then by the event name.
-	 * @param eventName a string that represents the name of the Event
+	 * @param title a string that represents the name of the Event
 	 * @param seller a string that represents the name of seller
 	 * @return an object that represents a ticket for an event.
 	 */
-	public Event getEvent(String eventName, String seller) {
-		// TODO - implement Tickets.getEvent
-		throw new UnsupportedOperationException();
+	public Event getEvent(String title, String seller) {
+        Iterator<Event> tmpIterator = this.events.iterator();
+        Event tmp = null;
+        while (tmpIterator.hasNext()) {
+            tmp = tmpIterator.next();
+            if ( (tmp.getTitle()).equals(title) && (tmp.getSeller()).equals(seller))
+                return tmp;
+        }
+        return null;
 	}
 
 	/**
 	 * This method is responsible for validating and executing the creation
-	 * of tickets for sale. Validates that the user selling the tickets has
-	 * the appropriate privileges, the number of tickets for sale does not
-	 * exceed 100 and the selling price of the ticket does not exceed 999.99.
-	 * @param event a string that represents the name of the Event
+	 * of tickets for sale. Validates that the number of tickets for sale does
+     * not exceed 100 and the selling price of the ticket does not exceed 999.99.
+	 * @param title a string that represents the name of the Event
 	 * @param seller a string that represents the name of the User who is selling
 	 * the tickets
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
+     * @return 0 on success, 1 on failure, 2 on InvalidNumTicketsError, 3 on
+     * InvalidPriceError
 	 */
-	public int newEvent(String event, String seller, int numTickets, double price) {
-		// TODO - implement Tickets.newEvent
-		throw new UnsupportedOperationException();
+	public int newEvent(String title, String seller, int numTickets, double price) {
+
+        if (numTickets < 0 || numTickets > 100)
+            return 2;
+        if (price < 0 || price > 999.99)
+            return 3;
+
+        Event tmp = new Event(title, seller, numTickets, price);
+
+        try {
+
+            this.events.add(tmp);
+
+        } catch (UnsupportedOperationException e){
+            e.printStackTrace(System.err);
+            return 1;
+        } catch (ClassCastException e) {
+            e.printStackTrace(System.err);
+            return 1;
+        } catch (NullPointerException e) {
+            e.printStackTrace(System.err);
+            return 1;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace(System.err);
+            return 1;
+        }
+        return 0;
 	}
 
 	/**
 	 * This method is responsible for deleting all tickets for events by a
-	 * seller, from the system. It searches the map for any event with the
-	 * key equal to the seller's name and deletes the event. Users with no
+	 * seller, from the system. It searches the list for an event with the
+	 * seller equal to the seller's name and deletes the event. Users with no
 	 * tickets for sale will trigger a KeyNotFound error. This error needs
 	 * to be caught and handled such that it does not raise and exit error.
-	 * @param event
+	 * @param seller a string that represents the name of the seller
 	 * @return 0 on success, 1 on failure.
 	 */
-	public int deleteSellerEvents(String event) {
-		// TODO - implement Tickets.deleteSellerEvents
-		throw new UnsupportedOperationException();
+	public int deleteSellerEvents(String seller) {
+        Iterator<Event> tmpIterator = this.events.iterator();
+        Event tmp = null;
+        while(tmpIterator.hasNext()) {
+            tmp = tmpIterator.next();
+            if (tmp.getSeller().equals(seller))
+
+                try {
+
+                    this.events.remove(tmp);
+
+                } catch (UnsupportedOperationException e){
+                    e.printStackTrace(System.err);
+                    return 1;
+                } catch (ClassCastException e) {
+                    e.printStackTrace(System.err);
+                    return 1;
+                } catch (NullPointerException e) {
+                    e.printStackTrace(System.err);
+                    return 1;
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace(System.err);
+                    return 1;
+                }
+        }
+        return 0;
 	}
 
 	/**
 	 * This method overrides the super class Data's decode. It accepts the
 	 * line of text and extracts the data to create a event and insert it
 	 * into the events map. The format for the data extraction is:
-	 * Start (col#)
-	 * Size
-	 * Event: attribute
-	 * 0
-	 * 20
-	 * title
-	 * 21
-	 * 15
-	 * seller
-	 * 37
-	 * 3
-	 * numTickets
-	 * 41
-	 * 6
-	 * price
+	 * Start(col#)     Size     Event: attribute
+	 *      0           20          title
+     *     21           15          seller
+	 *     37            3          numTickets
+	 *     41            6          price
 	 *  
-	 * @param line
+	 * @param line a string the represents a line of text from a file
 	 * @return 0 on success, 1 on failure.
 	 */
 	public int decode(String line) {
-		// TODO - implement Tickets.decode
-		throw new UnsupportedOperationException();
+        String title = line.substring(0, 19);
+        String seller = line.substring(21, 35);
+        int numTickets = new Integer(line.substring(37, 39));
+        double price = new Double(line.substring(41));
+        return newEvent(title, seller, numTickets, price);
 	}
 
 	/**
@@ -110,8 +158,12 @@ public class Tickets extends Data {
 	 * @return a string that represents the event to be written to file
 	 */
 	public String encode() {
-		// TODO - implement Tickets.encode
-		throw new UnsupportedOperationException();
+        String line = null;
+        if (this.eventIterator.hasNext()) {
+            Event tmp = this.eventIterator.next();
+            line = String.format("%-20s %-15s %-03d %-06.2f", tmp.getTitle(), tmp.getSeller(), tmp.getNumTickets(), tmp.getPrice());
+        }
+        return line;
 	}
 
 }
