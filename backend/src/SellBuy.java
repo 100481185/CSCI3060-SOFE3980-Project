@@ -7,12 +7,12 @@ public class SellBuy extends Record {
 	/**
 	 * a string that represents the name of the Event
 	 */
-	private String event;
+	private String title;
 	/**
 	 * a string that represents the name of the User whom is the
 	 * seller
 	 */
-	private String sellerName;
+	private String seller;
 	/**
 	 * an integer representing the number of tickets for sale
 	 */
@@ -26,23 +26,25 @@ public class SellBuy extends Record {
 	 * Constructor for SellBuy class. Inherits the constructor from Record
 	 * and sets the attribute code.
      * @param code an integer representing the transaction number.
-	 * @param event a string that represents the name of the Event
+	 * @param title a string that represents the name of the Event
 	 * @param seller a string that represents the name of the User
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
 	 */
-	public SellBuy(int code, String event, String seller, int numTickets, double price) {
+	public SellBuy(int code, String title, String seller, int numTickets, double price) {
         super(code);
-        // TODO - implement SellBuy.SellBuy
-		throw new UnsupportedOperationException();
+        this.title = title;
+        this.seller = seller;
+        this.numTickets = numTickets;
+        this.price = price;
 	}
 
-	public String getEvent() {
-		return this.event;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public String getSellerName() {
-		return this.sellerName;
+	public String getSeller() {
+		return this.seller;
 	}
 
 	public int getNumTickets() {

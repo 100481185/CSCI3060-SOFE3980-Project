@@ -26,8 +26,10 @@ public class Return extends Record {
 	 * @param refund a double that represents the amount of the refund
 	 */
 	public Return(int code, String buyer, String seller, double refund) {
-		// TODO - implement Return.Return
-		throw new UnsupportedOperationException();
+        super(code);
+        this.buyer = buyer;
+        this.seller = seller;
+        this.refund = refund;
 	}
 
 	public String getBuyer() {

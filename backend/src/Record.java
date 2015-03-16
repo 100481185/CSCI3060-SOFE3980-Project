@@ -9,17 +9,21 @@ public class Record {
 	 */
 	private int code;
 
+    /**
+     * Constructor for Record class
+     * @param code an integer that represents the transaction code.
+     */
+    public Record(int code) {
+        this.code = code;
+    }
+
+    /**
+     *
+     * @return an integer that represents the transaction code
+     */
 	public int getCode() {
 		return this.code;
 	}
 
-	/**
-	 * Constructor for Record class
-	 * @param code an integer that represents the transaction code.
-	 */
-	public Record(int code) {
-		// TODO - implement Commits.Commits
-		throw new UnsupportedOperationException();
-	}
 
 }

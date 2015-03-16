@@ -8,7 +8,7 @@ public class Regular extends Record {
 	/**
 	 * a string that represents the name of User
 	 */
-	private String user;
+	private String name;
 	/**
 	 * a string that represents the type of user
 	 */
@@ -22,17 +22,23 @@ public class Regular extends Record {
 	 * Constructor method for Regular class. Calls the constructor of super
 	 * to set code.
 	 * @param code an integer representing the transaction number.
-	 * @param user
+	 * @param name a string that represents the name of a user
 	 * @param type a string that represents the type of user
 	 * @param credit
 	 */
-	public Regular(int code, String user, String type, double credit) {
-		// TODO - implement Regular.Regular
-		throw new UnsupportedOperationException();
+	public Regular(int code, String name, String type, double credit) {
+        super(code);
+        this.name = name;
+        this.type = type;
+        this.credit = credit;
 	}
 
-	public String getUser() {
-		return this.user;
+    /**
+     *
+     * @return a string that represents the name of a user
+     */
+	public String getName() {
+		return this.name;
 	}
 
 	/**
@@ -43,6 +49,10 @@ public class Regular extends Record {
 		return this.type;
 	}
 
+    /**
+     *
+     * @return a double that represents the amount of credit
+     */
 	public double getCredit() {
 		return this.credit;
 	}
