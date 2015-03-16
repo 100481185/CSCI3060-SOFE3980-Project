@@ -10,9 +10,9 @@ public class Regular extends Record {
 	 */
 	private String user;
 	/**
-	 * a char array that represents the User's type.
+	 * a string that represents the type of user
 	 */
-	private char[] type;
+	private String type;
 	/**
 	 * a double that represents the amount of credit a User has.
 	 */
@@ -23,10 +23,10 @@ public class Regular extends Record {
 	 * to set code.
 	 * @param code an integer representing the transaction number.
 	 * @param user
-	 * @param type
+	 * @param type a string that represents the type of user
 	 * @param credit
 	 */
-	public Regular(int code, String user, char[] type, double credit) {
+	public Regular(int code, String user, String type, double credit) {
 		// TODO - implement Regular.Regular
 		throw new UnsupportedOperationException();
 	}
@@ -35,7 +35,11 @@ public class Regular extends Record {
 		return this.user;
 	}
 
-	public char[] getType() {
+	/**
+	 * 
+	 * @return a string that represents the type of user
+	 */
+	public String getType() {
 		return this.type;
 	}
 

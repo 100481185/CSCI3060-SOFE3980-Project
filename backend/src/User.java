@@ -9,7 +9,10 @@ public class User {
 	 * a char array of size two that represents a type of User
 	 */
 	private String name;
-	private char[] type;
+	/**
+	 * a string that represents the type of user
+	 */
+	private String type;
 	/**
 	 * a double that represents a User's current amount of credit.
 	 */
@@ -18,10 +21,10 @@ public class User {
 	/**
 	 * Constructor method of User.
 	 * @param name a string that represents the name of User
-	 * @param type a char array of size two that represents a type of User
+	 * @param type a string that represents the type of user
 	 * @param credit a double that represents a User's current amount of credit.
 	 */
-	public User(String name, char[] type, double credit) {
+	public User(String name, String type, double credit) {
 		// TODO - implement User.User
 		throw new UnsupportedOperationException();
 	}
@@ -30,7 +33,11 @@ public class User {
 		return this.name;
 	}
 
-	public char[] getType() {
+	/**
+	 * 
+	 * @return a string that represents the type of user
+	 */
+	public String getType() {
 		return this.type;
 	}
 

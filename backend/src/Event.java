@@ -23,12 +23,12 @@ public class Event {
 
 	/**
 	 * Constructor method for the Event class
-	 * @param name
-	 * @param seller
-	 * @param numTickets
-	 * @param price
+	 * @param title a string that represents the title of the event
+	 * @param seller a string that represents the name of User who is the seller
+	 * @param numTickets an integer representing the number of tickets for sale
+	 * @param price a double that represents the price of one ticket
 	 */
-	public Event(String name, String seller, int numTickets, double price) {
+	public Event(String title, String seller, int numTickets, double price) {
 		// TODO - implement Event.Event
 		throw new UnsupportedOperationException();
 	}
@@ -38,17 +38,29 @@ public class Event {
 	 * @return a string that represents the title of the event
 	 */
 	public String getTitle() {
-		return this.name;
+		return this.title;
 	}
 
+    /**
+     *
+     * @return a string that represents the name of the seller
+     */
 	public String getSeller() {
 		return this.seller;
 	}
 
+    /**
+     *
+     * @return an integer that represents the number of tickets for sale
+     */
 	public int getNumTickets() {
 		return this.numTickets;
 	}
 
+    /**
+     *
+     * @return a double that represents the price of one ticket
+     */
 	public double getPrice() {
 		return this.price;
 	}
