@@ -29,8 +29,10 @@ public class Event {
 	 * @param price a double that represents the price of one ticket
 	 */
 	public Event(String title, String seller, int numTickets, double price) {
-		// TODO - implement Event.Event
-		throw new UnsupportedOperationException();
+        this.title = title;
+        this.seller = seller;
+        this.numTickets = numTickets;
+        this.price = price;
 	}
 
 	/**
@@ -74,8 +76,11 @@ public class Event {
 	 * @return 0 on success, 1 on failure, 2 on AmountExceedsNumTickets
 	 */
 	public int sellTickets(int numTickets) {
-		// TODO - implement Event.sellTickets
-		throw new UnsupportedOperationException();
+		if ((this.getNumTickets() - numTickets) < 0) {
+            return  2;
+        }
+        this.numTickets -= numTickets;
+        return numTickets;
 	}
 
 }
