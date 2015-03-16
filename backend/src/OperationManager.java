@@ -29,8 +29,9 @@ public class OperationManager {
 	 * @param ticketsFile a string representing the path of the AvailableTickets file.
 	 */
 	public OperationManager(String transactionsFile, String accountsFile, String ticketsFile) {
-		// TODO - implement OperationManager.OperationManager
-		throw new UnsupportedOperationException();
+        this.transactions = new Transactions(transactionsFile);
+        this.accounts = new Accounts(accountsFile, accountsFile); // needs to be changed to a new file path
+        this.tickets = new Tickets(ticketsFile, ticketsFile); // needs to be changes to a new file path
 	}
 
 	/**
@@ -41,8 +42,47 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure, 2 on fatal failure.
 	 */
 	public int processTransactions() {
-		// TODO - implement OperationManager.doTransaction
-		throw new UnsupportedOperationException();
+		Record cur = null;
+        int check = 0;
+        while ((cur = this.transactions.getTransaction()) != null) {
+            switch (cur.getCode()) {
+                case 1:
+                    if(doCreate((Regular) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                case 2:
+                    if(doDelete((Regular) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                case 3:
+                    if(doSell((SellBuy) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                case 4:
+                    if(doBuy((SellBuy) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                case 5:
+                    if(doRefund((Return) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                case 6:
+                    if(doAddCredit((Regular) cur) > 0)
+                        // TODO: implement error handling
+                        break;
+                    break;
+                default:
+                    return 2;
+            }
+
+
+        }
+        return 0;
 	}
 
 	/**
@@ -51,12 +91,10 @@ public class OperationManager {
 	 * proceeds to call the newUser() method in Accounts. If any errors are
 	 * reported it logs them to xstream.log and outputs the error to
 	 * terminal.
-	 * @param name a String that represents the name of User
-	 * @param type a car array of size 2 that represents a User's type
-	 * @param credit a double that represents the amount of credit a User has.
+	 * @param regular a transaction record of type Regular
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doCreate(String name, char[] type, double credit) {
+	private int doCreate(Regular regular) {
 		// TODO - implement OperationManager.doCreate
 		throw new UnsupportedOperationException();
 	}
@@ -66,10 +104,10 @@ public class OperationManager {
 	 * system. It is called by doTransaction when the transaction code is
 	 * 02. It calls the deleteUser method from the Accounts class. If any
 	 * errors are reported it logs them to xstream.log and terminal.
-	 * @param name a String that represents the name of User
+	 * @param record a transaction record of type Regular
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doDelete(String name) {
+	private int doDelete(Regular record) {
 		// TODO - implement OperationManager.doDelete
 		throw new UnsupportedOperationException();
 	}
@@ -79,13 +117,10 @@ public class OperationManager {
 	 * on the system. It is called by doTransaction when the transaction
 	 * code is 04. It calls the buyTickets method from the Tickets class.
 	 * If any errors are reported it logs them to xstream.log and terminal.
-	 * @param event a string that represents the name of an Event
-	 * @param seller a String that represents the name of the User who is selling the tickets
-	 * @param numTickets an integer that represents the quantity of tickets for sale.
-	 * @param price a double that represents the price of a Ticket.
+	 * @param record a transaction record of type SellBuy
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doBuy(String event, String seller, int numTickets, double price) {
+	private int doBuy(SellBuy record) {
 		// TODO - implement OperationManager.doBuy
 		throw new UnsupportedOperationException();
 	}
@@ -96,13 +131,10 @@ public class OperationManager {
 	 * code is 03. It calls the sellTickets method from the Tickets class.
 	 * If any errors are reported it logs them to xstream.log and outputs to
 	 * terminal.
-	 * @param event a string that represents the name of an Event.
-	 * @param seller a string that represents the name of the User selling the tickets.
-	 * @param numTickets an integer that represents the number of tickets.
-	 * @param price a double that represents the price of a Ticket.
+	 * @param record a transaction record of type SellBuy
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doSell(String event, String seller, int numTickets, double price) {
+	private int doSell(SellBuy record) {
 		// TODO - implement OperationManager.doSell
 		throw new UnsupportedOperationException();
 	}
@@ -113,12 +145,10 @@ public class OperationManager {
 	 * code is 05. It calls the removeCredit and addCredit method from the
 	 * Accounts class. Any errors reported are logged in xstream.log and
 	 * terminal.
-	 * @param buyer a string that represents the name of the buyer User.
-	 * @param seller a string that represents the name of the seller User.
-	 * @param amount a double that represents the amount of credit to be refunded.
+	 * @param record a transaction record of type Refund
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doRefund(String buyer, String seller, double amount) {
+	private int doRefund(Return record) {
 		// TODO - implement OperationManager.doRefund
 		throw new UnsupportedOperationException();
 	}
@@ -128,12 +158,20 @@ public class OperationManager {
 	 * on the system. It is called by doTransaction when the transaction
 	 * code is 06. It calls the addCredit method from the Accounts class.
 	 * Any errors reported are logged in xstream.log and outputs to terminal.
-	 * @param name a string that represents the name of User
-	 * @param amount a double that represents the amount of credit to be added.
+	 * @param record a transaction record of type Regular
 	 * @return 0 on success, 1 on failure.
 	 */
-	private int doAddCredit(String name, double amount) {
+	private int doAddCredit(Regular record) {
 		// TODO - implement OperationManager.doAddCredit
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param argv
+	 */
+	public static void main(String[] argv) {
+		// TODO - implement OperationManager.main
 		throw new UnsupportedOperationException();
 	}
 
