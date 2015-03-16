@@ -8,10 +8,19 @@ public class Transactions extends Data {
 	 * DailyTransactions file.
 	 */
 	private List<Record> records;
-	/**
-	 * an iterator that represents the list of records.
-	 */
-	private Iterator<Record> recordIterator;
+    /**
+     * an iterator that represents the list of records.
+     */
+    private Iterator<Record> recordIterator;
+    /**
+     * a list of Regular transactions that represent the sessions logged in users
+     */
+    private List<Regular> loggedInUsers;
+    /**
+     * an iterator that represents a list of the sessions logged in users
+     */
+    private Iterator<Regular> loggedInIterator;
+
 
 	/**
 	 * Constructor for Transactions class. Reads in all transactions from
@@ -21,7 +30,8 @@ public class Transactions extends Data {
 	public Transactions(String fileName) {
         super(fileName);
         readData();
-        this.recordIterator = records.iterator();
+        this.recordIterator = this.records.iterator();
+        this.loggedInIterator = this.loggedInUsers.iterator();
 	}
 
 	/**
@@ -37,6 +47,13 @@ public class Transactions extends Data {
         return tmp;
 	}
 
+    public Regular getLoggedInUser() {
+        Regular tmp = null;
+        if (this.loggedInIterator.hasNext())
+            tmp = this.loggedInIterator.next();
+        return tmp;
+    }
+
 	/**
 	 * This method is responsible for parsing the line of text and inserting
 	 * the appropriate transaction record into the transactions list
@@ -49,7 +66,7 @@ public class Transactions extends Data {
         // extract the code from the line
         int code = new Integer(line.substring(0, 1));
 
-        if (code == 1 || code == 2 || code == 6) { // if tr code is Create, Delete or addCredit
+        if (code == 0 || code == 1 || code == 2 || code == 6) { // if tr code is Create, Delete or addCredit
             // extract name of user
             String name = line.substring(3, 17);
             // extract type of user
@@ -58,6 +75,9 @@ public class Transactions extends Data {
             double credit = new Double(line.substring(22, 27));
             // create a new Regular Transaction
             tmp = new Regular(code, name, type, credit);
+            if (code == 0)
+                // add the sessions user to the loggedIn user list
+                this.loggedInUsers.add((Regular) tmp);
         } else if (code == 3 || code == 4) {   // if tr code is Buy or Sell
             // extract event title
             String title = line.substring(3, 22);
@@ -69,7 +89,6 @@ public class Transactions extends Data {
             double price = new Double(line.substring(45, 50));
             // create a new SellBuy transaction
             tmp = new SellBuy(code, title, seller, numTickets, price);
-
         } else if (code == 5) {
             // extract the buyers name
             String buyer = line.substring(3, 17);
