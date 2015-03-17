@@ -1,3 +1,5 @@
+package backend;
+
 /**
  * This class represents a event that has tickets for sale in the
  * system.
@@ -22,9 +24,9 @@ public class Event {
 	private double price;
 
 	/**
-	 * Constructor method for the Event class
+	 * Constructor method for the xstreambackend.Event class
 	 * @param title a string that represents the title of the event
-	 * @param seller a string that represents the name of User who is the seller
+	 * @param seller a string that represents the name of xstreambackend.User who is the seller
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of one ticket
 	 */

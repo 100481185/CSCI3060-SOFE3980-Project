@@ -1,3 +1,5 @@
+package backend;
+
 import java.io.*;
 
 /**
@@ -22,7 +24,7 @@ public class Data {
 	private String writeFilename;
 
 	/**
-	 * Constructor method for Data class. Sets readFilename and
+	 * Constructor method for xstreambackend.Data class. Sets readFilename and
 	 * writeFilename to the filename
 	 * @param fileName a string representing the path of the UserAccounts file.
 	 */
@@ -32,7 +34,7 @@ public class Data {
 	}
 
     /**
-     * Constructor method for Data class. Sets separate read and write files.
+     * Constructor method for xstreambackend.Data class. Sets separate read and write files.
      * @param readFilename a string representing the path of the file to be read from
      * @param writeFilename a string representing the path of the file to be written to
      */
@@ -49,7 +51,7 @@ public class Data {
 	 * error code 1.
 	 * @return 0 on success, 1 on failure
 	 */
-	protected int readData() {
+    public int readData() {
         // initialize a buffer for reading
         BufferedReader bufferedReader = null;
         try {
@@ -95,7 +97,7 @@ public class Data {
 	 * the method reports the error, closes the file and exits with status 1.
 	 * @return 0 on success, 1 on failure.
 	 */
-	protected int writeData() {
+    public int writeData() {
         // initialize a buffer for writing
         BufferedWriter bufferedWriter = null;
         try {

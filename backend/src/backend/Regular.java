@@ -1,3 +1,5 @@
+package backend;
+
 /**
  * This class represents a regular transaction in the
  * systems memory. It is responsible for providing access to
@@ -6,7 +8,7 @@
 public class Regular extends Record {
 
 	/**
-	 * a string that represents the name of User
+	 * a string that represents the name of xstreambackend.User
 	 */
 	private String name;
 	/**
@@ -14,12 +16,12 @@ public class Regular extends Record {
 	 */
 	private String type;
 	/**
-	 * a double that represents the amount of credit a User has.
+	 * a double that represents the amount of credit a xstreambackend.User has.
 	 */
 	private double credit;
 
 	/**
-	 * Constructor method for Regular class. Calls the constructor of super
+	 * Constructor method for xstreambackend.Regular class. Calls the constructor of super
 	 * to set code.
 	 * @param code an integer representing the transaction number.
 	 * @param name a string that represents the name of a user

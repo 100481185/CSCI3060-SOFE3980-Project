@@ -1,3 +1,5 @@
+package backend;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Tickets extends Data {
 	private Iterator<Event> eventIterator;
 
 	/**
-	 * Constructor for Tickets class. Calls super class Data to set
+	 * Constructor for xstreambackend.Tickets class. Calls super class xstreambackend.Data to set
 	 * filenames.
      * @param readFileName a string representing the path of the existing
      * AvailableTickets file to be read in.
@@ -38,7 +40,7 @@ public class Tickets extends Data {
 	 * This method is responsible for retrieving a event from the map of
 	 * event searching the events map for events that the seller has tickets
 	 * for then by the event name.
-	 * @param title a string that represents the name of the Event
+	 * @param title a string that represents the name of the xstreambackend.Event
 	 * @param seller a string that represents the name of seller
 	 * @return an object that represents a ticket for an event.
 	 */
@@ -57,8 +59,8 @@ public class Tickets extends Data {
 	 * This method is responsible for validating and executing the creation
 	 * of tickets for sale. Validates that the number of tickets for sale does
      * not exceed 100 and the selling price of the ticket does not exceed 999.99.
-	 * @param title a string that represents the name of the Event
-	 * @param seller a string that represents the name of the User who is selling
+	 * @param title a string that represents the name of the xstreambackend.Event
+	 * @param seller a string that represents the name of the xstreambackend.User who is selling
 	 * the tickets
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
@@ -132,10 +134,10 @@ public class Tickets extends Data {
 	}
 
 	/**
-	 * This method overrides the super class Data's decode. It accepts the
+	 * This method overrides the super class xstreambackend.Data's decode. It accepts the
 	 * line of text and extracts the data to create a event and insert it
 	 * into the events map. The format for the data extraction is:
-	 * Start(col#)     Size     Event: attribute
+	 * Start(col#)     Size     xstreambackend.Event: attribute
 	 *      0           20          title
      *     21           15          seller
 	 *     37            3          numTickets
@@ -153,7 +155,7 @@ public class Tickets extends Data {
 	}
 
 	/**
-	 * This method overrides the super class Data's encode. It is
+	 * This method overrides the super class xstreambackend.Data's encode. It is
 	 * responsible for calling the next event from the eventIterator and
 	 * formatting the event attributes into a string.
 	 * @return a string that represents the event to be written to file

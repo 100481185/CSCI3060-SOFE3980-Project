@@ -1,12 +1,14 @@
+package backend;
+
 /**
- * This class represents an account for a User. It is responsible
+ * This class represents an account for a xstreambackend.User. It is responsible
  * for storing and retrieving a single users information. Any access
  * errors are reported to caller.
  */
 public class User {
 
 	/**
-	 * a char array of size two that represents a type of User
+	 * a char array of size two that represents a type of xstreambackend.User
 	 */
 	private String name;
 	/**
@@ -14,15 +16,15 @@ public class User {
 	 */
 	private String type;
 	/**
-	 * a double that represents a User's current amount of credit.
+	 * a double that represents a xstreambackend.User's current amount of credit.
 	 */
 	private double credit;
 
 	/**
-	 * Constructor method of User.
-	 * @param name a string that represents the name of User
+	 * Constructor method of xstreambackend.User.
+	 * @param name a string that represents the name of xstreambackend.User
 	 * @param type a string that represents the type of user
-	 * @param credit a double that represents a User's current amount of credit.
+	 * @param credit a double that represents a xstreambackend.User's current amount of credit.
 	 */
 	public User(String name, String type, double credit) {
         this.name = name;

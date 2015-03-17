@@ -1,15 +1,17 @@
+package backend;
+
 /**
  * This class is represents a return transaction. It is responsible for providing access to all of it attributes. It inherits the
- * attribute code and the method getCode() from Record.
+ * attribute code and the method getCode() from xstreambackend.Record.
  */
 public class SellBuy extends Record {
 
 	/**
-	 * a string that represents the name of the Event
+	 * a string that represents the name of the xstreambackend.Event
 	 */
 	private String title;
 	/**
-	 * a string that represents the name of the User whom is the
+	 * a string that represents the name of the xstreambackend.User whom is the
 	 * seller
 	 */
 	private String seller;
@@ -23,11 +25,11 @@ public class SellBuy extends Record {
 	private double price;
 
 	/**
-	 * Constructor for SellBuy class. Inherits the constructor from Record
+	 * Constructor for xstreambackend.SellBuy class. Inherits the constructor from xstreambackend.Record
 	 * and sets the attribute code.
      * @param code an integer representing the transaction number.
-	 * @param title a string that represents the name of the Event
-	 * @param seller a string that represents the name of the User
+	 * @param title a string that represents the name of the xstreambackend.Event
+	 * @param seller a string that represents the name of the xstreambackend.User
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
 	 */

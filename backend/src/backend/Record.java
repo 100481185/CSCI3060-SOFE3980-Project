@@ -1,3 +1,5 @@
+package backend;
+
 /**
  * This class represents a transaction. It is responsible
  * for storing and retrieving transaction data.
@@ -10,7 +12,7 @@ public class Record {
 	private int code;
 
     /**
-     * Constructor for Record class
+     * Constructor for xstreambackend.Record class
      * @param code an integer that represents the transaction code.
      */
     public Record(int code) {
