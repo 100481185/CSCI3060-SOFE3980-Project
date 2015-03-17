@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class Accounts extends Data {
      */
     public Accounts(String readFilename, String writeFilename) {
         super(readFilename, writeFilename);
-        this.users = null;
+        this.users = new HashMap<String, User>();
         // build user accounts in memory
         readData();
         this.userIterator = users.entrySet().iterator();
@@ -54,11 +55,11 @@ public class Accounts extends Data {
             // TODO: implement NameExistsError
             return 2;
         // check if type is valid
-        if (!type.equals("AA") || !type.equals("FS") || !type.equals("BS") || !type.equals("SS")) {
+        if (!(type.equals("AA") || type.equals("FS") || type.equals("BS") || type.equals("SS"))) {
             // TODO: implement InvalidTypeError
             return 3;
         }
-        if (credit < 0 || credit > 999999)
+        if (credit < 0 || credit > 999999999)
             // TODO: implement InvalidCreditError
             return 4;
 
@@ -152,11 +153,11 @@ public class Accounts extends Data {
             return 2;
 
         // extract name
-        String name = line.substring(0,14);
+        String name = line.substring(0,15).trim();
         // extract type
-        String type = line.substring(16, 17);
+        String type = line.substring(16, 18).trim();
         // extract credit
-        double credit = new Double(line.substring(19, 27));
+        double credit = new Double(line.substring(19));
 
         // create a user with method newUser
         // if newUser exist with failure its exit status is reported

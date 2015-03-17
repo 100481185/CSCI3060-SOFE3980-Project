@@ -1,26 +1,19 @@
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Transactions extends Data {
 
 	/**
-	 * An array that represents all the transaction records in the
-	 * DailyTransactions file.
+	 * A queue that represents all the transaction records in the
+	 * DailyTransactions file. This data structure is memory efficient
+     * because it discards the memory element after processing.
 	 */
-	private List<Record> records;
+	private Queue<Record> records;
     /**
-     * an iterator that represents the list of records.
+     * A queue of Regular transactions that represent the sessions logged in users
+     * This data structure is memory efficient as is disposes of the element after
+     * processing.
      */
-    private Iterator<Record> recordIterator;
-    /**
-     * a list of Regular transactions that represent the sessions logged in users
-     */
-    private List<Regular> loggedInUsers;
-    /**
-     * an iterator that represents a list of the sessions logged in users
-     */
-    private Iterator<Regular> loggedInIterator;
-
+    private Queue<String> loggedInUsers;
 
 	/**
 	 * Constructor for Transactions class. Reads in all transactions from
@@ -29,29 +22,26 @@ public class Transactions extends Data {
 	 */
 	public Transactions(String fileName) {
         super(fileName);
+        this.records = new LinkedList<Record>();
+        this.loggedInUsers = new LinkedList<String>();
         readData();
-        this.recordIterator = this.records.iterator();
-        this.loggedInIterator = this.loggedInUsers.iterator();
 	}
 
 	/**
 	 * This method is responsible retrieving a transaction record from the
-	 * recordIterator by calling recordIterator.next().
+	 * by removing the first element from the Queue
 	 * @return A object that represents a transaction record, null on end of list
 	 */
-	public Record getTransaction() {
-        // initialize a tmp record
-        Record tmp = null;
-        if (recordIterator.hasNext())
-            tmp = recordIterator.next();
-        return tmp;
+	public Record getTransaction() {        // initialize a tmp record
+        return this.records.poll();
 	}
 
-    public Regular getLoggedInUser() {
-        Regular tmp = null;
-        if (this.loggedInIterator.hasNext())
-            tmp = this.loggedInIterator.next();
-        return tmp;
+    /**
+     * This method is responsible for retrieving the next logged in user from the Queue.
+     * @return a string the represents the name of the logged in user
+     */
+    public String getLoggedInUser() {
+       return this.loggedInUsers.poll();
     }
 
 	/**
@@ -64,42 +54,44 @@ public class Transactions extends Data {
         // initialize a temp record
         Record tmp = null;
         // extract the code from the line
-        int code = new Integer(line.substring(0, 1));
+        int code = new Integer(line.substring(0,2));
 
-        if (code == 0 || code == 1 || code == 2 || code == 6) { // if tr code is Create, Delete or addCredit
+        if (code == 0 || code == 1 || code == 2 || code == 6) {// if tr code is Create, Delete or addCredit
             // extract name of user
-            String name = line.substring(3, 17);
+            String name = (line.substring(3, 18)).trim();
             // extract type of user
-            String type = line.substring(19, 20);
+            String type = line.substring(19, 21);
             // extract users credit
-            double credit = new Double(line.substring(22, 27));
+            double credit = new Double(line.substring(22));
             // create a new Regular Transaction
             tmp = new Regular(code, name, type, credit);
             if (code == 0)
                 // add the sessions user to the loggedIn user list
-                this.loggedInUsers.add((Regular) tmp);
-        } else if (code == 3 || code == 4) {   // if tr code is Buy or Sell
-            // extract event title
-            String title = line.substring(3, 22);
+                this.loggedInUsers.add(name);
+
+        } else if (code == 3 || code == 4) {// extract event title
+            String title = line.substring(3, 22).trim();
             // extract seller's name
-            String seller = line.substring(24, 39);
+            String seller = line.substring(23, 39).trim();
             // extract the number of tickets for sale
-            int numTickets = new Integer(line.substring(41, 43));
+            int numTickets = new Integer(line.substring(39, 42));
             // extract the price of the ticket
-            double price = new Double(line.substring(45, 50));
+            double price = new Double(line.substring(43));
             // create a new SellBuy transaction
             tmp = new SellBuy(code, title, seller, numTickets, price);
-        } else if (code == 5) {
-            // extract the buyers name
-            String buyer = line.substring(3, 17);
+
+        } else if (code == 5) {// extract the buyers name
+            String buyer = line.substring(3, 17).trim();
             // extract the sellers name
-            String seller = line.substring(19, 33);
+            String seller = line.substring(19, 33).trim();
             // extract the refund amount
             double refund = new Double(line.substring(35, 43));
             // create a new Return transaction
             tmp = new Return(code, buyer, seller, refund);
-        } else { // Invalid Code error
+
+        } else {
             return 2;
+
         }
 
         try {

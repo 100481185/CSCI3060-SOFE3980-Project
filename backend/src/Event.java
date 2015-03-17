@@ -73,14 +73,15 @@ public class Event {
 	 * number of tickets for sale, an error is reported and method exits
 	 * with status 2.
 	 * @param numTickets an integer representing the number of tickets purchased.
-	 * @return 0 on success, 1 on failure, 2 on AmountExceedsNumTickets
+	 * @return 0 on success, 1 on failure, 2 on AmountExceedsSellMax, 3 on AmountExceedsNumTickets
 	 */
 	public int sellTickets(int numTickets) {
-		if ((this.getNumTickets() - numTickets) < 0) {
-            return  2;
+        if (numTickets > 4)
+            return 2;
+		if ((this.numTickets - numTickets) < 0) {
+            return  3;
         }
         this.numTickets -= numTickets;
         return numTickets;
 	}
-
 }

@@ -20,11 +20,14 @@ public class OperationManager {
 	 * provides access to all tickets in the systems memory.
 	 */
 	private Tickets tickets;
+    /**
+     * an object of type User which represents the User who is currently logged in
+     */
+    private User loggedIn;
 
 	/**
 	 * Constructor for OperationManager
-	 * @param transactionsFile a string representing the path of the DailyTransactions
-	 * file.
+	 * @param transactionsFile a string representing the path of the DailyTransactions file.
 	 * @param accountsFile a string representing the path of the UserAccounts file.
 	 * @param ticketsFile a string representing the path of the AvailableTickets file.
 	 */
@@ -32,6 +35,8 @@ public class OperationManager {
         this.transactions = new Transactions(transactionsFile);
         this.accounts = new Accounts(accountsFile, accountsFile); // needs to be changed to a new file path
         this.tickets = new Tickets(ticketsFile, ticketsFile); // needs to be changes to a new file path
+        // set the first sessions logged in user to null
+        this.loggedIn = setLoggedIn();
 	}
 
 	/**
@@ -42,10 +47,14 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure, 2 on fatal failure.
 	 */
 	public int processTransactions() {
-		Record cur = null;
-        int check = 0;
+        // initialize and empty Record
+		Record cur;
         while ((cur = this.transactions.getTransaction()) != null) {
             switch (cur.getCode()) {
+                case 0:
+                    if ((this.loggedIn = setLoggedIn()) == null)
+                        return 1;
+                    break;
                 case 1:
                     if(doCreate((Regular) cur) > 0)
                         // TODO: implement error handling
@@ -85,6 +94,16 @@ public class OperationManager {
         return 0;
 	}
 
+    /**
+     * This method is responsible for setting the sessions currently logged
+     * in user.
+     * @return 0 on success, 1 on failure
+     */
+    public User setLoggedIn() {
+        String name = transactions.getLoggedInUser();
+        return this.accounts.getUser(name);
+    }
+
 	/**
 	 * This method executes a create new user transaction on the system. It
 	 * is called by doTransaction when the transaction code is 01. It
@@ -95,8 +114,9 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doCreate(Regular regular) {
-		// TODO - implement OperationManager.doCreate
-		throw new UnsupportedOperationException();
+		if (!loggedIn.getType().equals("AA"))
+            return 1;
+        return this.accounts.newUser(regular.getName(), regular.getType(), regular.getCredit());
 	}
 
 	/**
@@ -108,8 +128,9 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doDelete(Regular record) {
-		// TODO - implement OperationManager.doDelete
-		throw new UnsupportedOperationException();
+        if (!loggedIn.getType().equals("AA"))
+            return 1;
+        return this.accounts.deleteUser(record.getName());
 	}
 
 	/**
@@ -121,9 +142,39 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doBuy(SellBuy record) {
-		// TODO - implement OperationManager.doBuy
-		throw new UnsupportedOperationException();
-	}
+        // set a tmp event to the event in memory
+        Event event = this.tickets.getEvent(record.getTitle(), record.getSeller());
+        // set a tmp seller to the user in memory
+        User seller = this.accounts.getUser(record.getSeller());
+        // set a tmp buyer to the user in memory
+        User buyer = this.loggedIn;
+
+        // calculate num of tickets purchased
+        int numTicketPurchased = event.getNumTickets() - record.getNumTickets();
+        // validate num of tickets purchased is less than 4
+        if (numTicketPurchased > 4) {
+            return 2;
+        }
+
+        // calculate total price paid
+        double total = numTicketPurchased * event.getPrice();
+        // validate total does not exceed buyers available credit
+        if ((this.loggedIn.getCredit() - total) < 0) {
+            return 3;
+        }
+        // validate the addition of total does not surpass the CreditMax
+        if ((seller.getCredit() + total) > 999999999)
+            return 4;
+
+        // remove credit from buyer
+        buyer.removeCredit(total);
+        // add credit to seller
+        seller.addCredit(total);
+        // preform the purchase of tickets
+        event.sellTickets(numTicketPurchased);
+
+        return 0;
+    }
 
 	/**
 	 * This method is responsible for performing a sell tickets transaction
@@ -135,9 +186,10 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doSell(SellBuy record) {
-		// TODO - implement OperationManager.doSell
-		throw new UnsupportedOperationException();
-	}
+		if (loggedIn.getType().equals("SB"))
+            return 2;
+        return this.tickets.newEvent(record.getTitle(), record.getSeller(), record.getNumTickets(), record.getPrice());
+    }
 
 	/**
 	 * This method is responsible for performing a refund transaction
@@ -149,8 +201,39 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doRefund(Return record) {
-		// TODO - implement OperationManager.doRefund
-		throw new UnsupportedOperationException();
+        // check that the sessions user is an admin
+        if (!this.loggedIn.getType().equals("AA"))
+            return 1;
+
+        // create a reference to the buyer in memory
+        User buyer = this.accounts.getUser(record.getBuyer());
+        // validate buyer exists on the system
+        if (buyer == null) {
+            return 1;
+        }
+        // validate that buyer account will not exceed MaxAccountLimit
+        if ((buyer.getCredit() + record.getRefund()) > 999999999)
+            return 1;
+
+        // create a reference to the seller in memory
+        User seller = this.accounts.getUser(record.getSeller());
+        // validate seller exists on the system
+        if (seller == null) {
+            return 1;
+        }
+        // check that refund does not exceed seller's available credit
+        if ((seller.getCredit() - record.getRefund()) < 0)
+            return 1;
+
+        // remove funds from seller with validation
+        if(seller.removeCredit(record.getRefund()) > 0)
+            return 1;
+
+        // add funds to buyer with validation
+        if(buyer.addCredit(record.getRefund()) > 0)
+            return 1;
+
+        return 0;
 	}
 
 	/**
@@ -162,17 +245,49 @@ public class OperationManager {
 	 * @return 0 on success, 1 on failure.
 	 */
 	private int doAddCredit(Regular record) {
-		// TODO - implement OperationManager.doAddCredit
-		throw new UnsupportedOperationException();
+        // check that the sessions user is an admin
+        if (!this.loggedIn.getType().equals("AA"))
+            return 1;
+
+        // create a reference to the user
+        User user = this.accounts.getUser(record.getName());
+        // validate user exists
+        if (user == null)
+            return 1;
+
+        // validate that the amount of credit is within 0 to 1000
+        if (record.getCredit() < 0 || record.getCredit() > 1000)
+            return 1;
+
+        // validate that when amount added the users credit is not > 999999999
+        if ((record.getCredit() + user.getCredit()) > 999999999)
+            return 1;
+
+        // add the credit with validation
+        if (user.addCredit(record.getCredit()) > 0)
+            return 1;
+
+        return 0;
 	}
 
 	/**
-	 * 
-	 * @param argv
+	 * xstream - backend
+     *
+     * This is the main program for running the backend of xstream.
+     *
+     * To run with specific data files, include the paths in cmd-line. The order
+     * is DailyTransactions file, UserAccounts file, AvailableTickets file.
+     *
+     * If no files are specified then the default data files will be used
+     *
+	 * @param args an array of strings from the command-line which represent filenames
 	 */
-	public static void main(String[] argv) {
-		// TODO - implement OperationManager.main
-		throw new UnsupportedOperationException();
+	public static void main(String[] args) {
+        String transactionsFile = "DailyTransactions.txt";
+        String userAccountsFile = "UserAccounts.txt";
+        String availableTicketsFile = "AvailableTickets.txt";
+        OperationManager operationManager;
+        operationManager = new OperationManager(transactionsFile, userAccountsFile, availableTicketsFile);
+        operationManager.processTransactions();
 	}
-
 }

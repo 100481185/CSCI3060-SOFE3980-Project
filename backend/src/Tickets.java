@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class Tickets extends Data {
      */
 	public Tickets(String readFileName, String writeFilename) {
         super(readFileName, writeFilename);
-        this.events = null;
+        this.events = new LinkedList<Event>();
         readData();
         this.eventIterator = this.events.iterator();
 	}
@@ -144,10 +145,10 @@ public class Tickets extends Data {
 	 * @return 0 on success, 1 on failure.
 	 */
 	public int decode(String line) {
-        String title = line.substring(0, 19);
-        String seller = line.substring(21, 35);
-        int numTickets = new Integer(line.substring(37, 39));
-        double price = new Double(line.substring(41));
+        String title = line.substring(0, 19).trim();
+        String seller = line.substring(20, 35).trim();
+        int numTickets = new Integer(line.substring(36, 39));
+        double price = new Double(line.substring(40));
         return newEvent(title, seller, numTickets, price);
 	}
 
