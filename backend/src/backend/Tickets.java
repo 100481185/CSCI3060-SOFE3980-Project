@@ -21,9 +21,25 @@ public class Tickets extends Data {
 	 * an iterator of the event list
 	 */
 	private Iterator<Event> eventIterator;
+    /**
+     * a boolean that represents if the Iterator needs to be reset
+     * should only be called once in encode.
+     */
+    private boolean reset;
 
-	/**
-	 * Constructor for xstreambackend.Tickets class. Calls super class xstreambackend.Data to set
+    /**
+     * default Constructor for Tickets class.
+     * Primarily used for testing purposes
+     */
+    public Tickets() {
+        super("AvailableTickets.txt");
+        this.events = new LinkedList<Event>();
+        this.eventIterator = this.events.iterator();
+        this.reset = true;
+    }
+
+    /**
+     * Constructor for xstreambackend.Tickets class. Calls super class xstreambackend.Data to set
 	 * filenames.
      * @param readFileName a string representing the path of the existing
      * AvailableTickets file to be read in.
@@ -34,7 +50,8 @@ public class Tickets extends Data {
         this.events = new LinkedList<Event>();
         readData();
         this.eventIterator = this.events.iterator();
-	}
+        this.reset = true;
+    }
 
 	/**
 	 * This method is responsible for retrieving a event from the map of
@@ -68,11 +85,14 @@ public class Tickets extends Data {
      * InvalidPriceError
 	 */
 	public int newEvent(String title, String seller, int numTickets, double price) {
-
+        if (title.length() > 20)
+            return 1;
+        if (seller.length() > 15)
+            return 1;
         if (numTickets < 0 || numTickets > 100)
-            return 2;
+            return 1;
         if (price < 0 || price > 999.99)
-            return 3;
+            return 1;
 
         Event tmp = new Event(title, seller, numTickets, price);
 
@@ -161,6 +181,10 @@ public class Tickets extends Data {
 	 * @return a string that represents the event to be written to file
 	 */
 	public String encode() {
+        if (this.reset) {
+            this.eventIterator = this.events.iterator();
+            this.reset = false;
+        }
         String line = null;
         if (this.eventIterator.hasNext()) {
             Event tmp = this.eventIterator.next();
@@ -168,5 +192,4 @@ public class Tickets extends Data {
         }
         return line;
 	}
-
 }
