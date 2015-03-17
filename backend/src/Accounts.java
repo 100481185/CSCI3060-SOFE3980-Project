@@ -55,7 +55,7 @@ public class Accounts extends Data {
             // TODO: implement NameExistsError
             return 2;
         // check if type is valid
-        if (!(type.equals("AA") || type.equals("FS") || type.equals("BS") || type.equals("SS"))) {
+        if (!(type.equals("AA") || type.equals("FS") || type.equals("BS") || type.equals("SB"))) {
             // TODO: implement InvalidTypeError
             return 3;
         }
