@@ -23,10 +23,25 @@ public class Accounts extends Data {
      * an iterator of the users map
      */
     private Iterator<Map.Entry<String, User>> userIterator;
+    /**
+     * an integer that represents the count
+     */
+    private boolean reset;
 
     /**
-     * Constructor method for xstreambackend.Accounts class. It calls the super class
-     * xstreambackend.Data's constructor and builds the user accounts representation in
+     * default constructor for Accounts class.
+     * This constructor is mainly used for testing purposes.
+     */
+    public Accounts() {
+        super("UserAccounts.txt");
+        this.users = new HashMap<String, User>();
+        this.userIterator = users.entrySet().iterator();
+        this.reset = true;
+    }
+
+    /**
+     * Constructor method for Accounts class. It calls the super class
+     * Data's constructor and builds the user accounts representation in
      * memory.
      * @param readFilename a string representing the path of the existing UserAccounts
      * file
@@ -39,6 +54,7 @@ public class Accounts extends Data {
         // build user accounts in memory
         readData();
         this.userIterator = users.entrySet().iterator();
+        this.reset = true;
     }
 
     /**
@@ -52,6 +68,10 @@ public class Accounts extends Data {
      * UserTypeError, 4 on UserCreditError
      */
     public int newUser(String name, String type, double credit) {
+
+        if (name.length() > 15)
+            return 1;
+
         // check if name already exists
         if (getUser(name) != null)
             // TODO: implement NameExistsError
@@ -150,7 +170,7 @@ public class Accounts extends Data {
             return 2;
 
         // check mandatory blank spaces are respected
-        if (line.charAt(15) != ' ' && line.charAt(18) != ' ')
+        if (line.charAt(15) != ' ' || line.charAt(18) != ' ')
             // TODO: FieldSpacingError
             return 2;
 
@@ -177,14 +197,21 @@ public class Accounts extends Data {
      * signaling calling function to finish write.
      */
     public String encode() {
+        if (reset) {
+            this.userIterator = users.entrySet().iterator();
+            this.reset = false;
+        }
         // create a tmp string
         String line = null;
         // if there is another record in memory
         if(this.userIterator.hasNext()) {
             // make a tmp copy of the record
             User cur = (this.userIterator.next()).getValue();
-            // format the records attributes to file properties
-            line = String.format("%-15s  %s %09.2f", cur.getName(), cur.getType(), cur.getCredit());
+            if (cur.getCredit() == (int) cur.getCredit())
+                line = String.format("%-15s %-2s %09d", cur.getName(), cur.getType(), (int) cur.getCredit());
+            else
+                // format the records attributes to file properties
+                line = String.format("%-15s %-2s %06.2f", cur.getName(), cur.getType(), cur.getCredit());
         }
         return line;
     }
