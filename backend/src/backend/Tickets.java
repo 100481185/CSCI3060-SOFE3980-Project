@@ -62,15 +62,12 @@ public class Tickets extends Data {
 	 * @return an object that represents a ticket for an event.
 	 */
 	public Event getEvent(String title, String seller) {
-        Iterator<Event> tmpIterator = this.events.iterator();
-        Event tmp = null;
-        while (tmpIterator.hasNext()) {
-            tmp = tmpIterator.next();
-            if ( (tmp.getTitle()).equals(title) && (tmp.getSeller()).equals(seller))
+        for (Event tmp : this.events) {
+            if ((tmp.getTitle()).equals(title) && (tmp.getSeller()).equals(seller))
                 return tmp;
         }
         return null;
-	}
+    }
 
 	/**
 	 * This method is responsible for validating and executing the creation
@@ -126,17 +123,18 @@ public class Tickets extends Data {
 	 * @return 0 on success, 1 on failure.
 	 */
 	public int deleteSellerEvents(String seller) {
-        Iterator<Event> tmpIterator = this.events.iterator();
-        Event tmp = null;
-        while(tmpIterator.hasNext()) {
-            tmp = tmpIterator.next();
-            if (tmp.getSeller().equals(seller))
-
+        // check that there are event tickets for sale
+        if (this.events.isEmpty())
+            return 1;
+        Iterator<Event> iter = this.events.iterator();
+        int check = 1;
+        while (iter.hasNext()) {
+            Event tmp = iter.next();
+            if (tmp.getSeller().equals(seller)) {
                 try {
-
-                    this.events.remove(tmp);
-
-                } catch (UnsupportedOperationException e){
+                    iter.remove();
+                    check = 0;
+                } catch (UnsupportedOperationException e) {
                     e.printStackTrace(System.err);
                     return 1;
                 } catch (ClassCastException e) {
@@ -149,9 +147,10 @@ public class Tickets extends Data {
                     e.printStackTrace(System.err);
                     return 1;
                 }
+            }
         }
-        return 0;
-	}
+        return check;
+    }
 
 	/**
 	 * This method overrides the super class xstreambackend.Data's decode. It accepts the
@@ -167,10 +166,15 @@ public class Tickets extends Data {
 	 * @return 0 on success, 1 on failure.
 	 */
 	public int decode(String line) {
+        if (line.length() > 47)
+            return 1;
+        if ((line.charAt(20) != ' ' || line.charAt(36) != ' ' || line.charAt(40) != ' '))
+            return 1;
+
         String title = line.substring(0, 19).trim();
-        String seller = line.substring(20, 35).trim();
-        int numTickets = new Integer(line.substring(36, 39));
-        double price = new Double(line.substring(40));
+        String seller = line.substring(21, 36).trim();
+        int numTickets = new Integer(line.substring(37, 40));
+        double price = new Double(line.substring(41));
         return newEvent(title, seller, numTickets, price);
 	}
 
@@ -188,7 +192,7 @@ public class Tickets extends Data {
         String line = null;
         if (this.eventIterator.hasNext()) {
             Event tmp = this.eventIterator.next();
-            line = String.format("%-20s %-15s %-03d %-06.2f", tmp.getTitle(), tmp.getSeller(), tmp.getNumTickets(), tmp.getPrice());
+            line = String.format("%-20s %-15s %03d %06.2f", tmp.getTitle(), tmp.getSeller(), tmp.getNumTickets(), tmp.getPrice());
         }
         return line;
 	}
