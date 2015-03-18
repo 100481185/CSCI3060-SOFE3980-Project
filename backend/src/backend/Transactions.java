@@ -26,6 +26,7 @@ public class Transactions extends Data {
     public Transactions() {
         super("AvailableTickets.txt");
         this.records = new LinkedList<Record>();
+        this.loggedInUsers = new LinkedList<String>();
     }
 
 	/**
@@ -83,22 +84,22 @@ public class Transactions extends Data {
                 this.loggedInUsers.add(name);
 
         } else if (code == 3 || code == 4) {// extract event title
-            String title = line.substring(3, 22).trim();
+            String title = line.substring(3, 23).trim();
             // extract seller's name
-            String seller = line.substring(23, 39).trim();
+            String seller = line.substring(24, 39).trim();
             // extract the number of tickets for sale
-            int numTickets = new Integer(line.substring(39, 42));
+            int numTickets = new Integer(line.substring(40, 43));
             // extract the price of the ticket
-            double price = new Double(line.substring(43));
+            double price = new Double(line.substring(44));
             // create a new xstreambackend.SellBuy transaction
             tmp = new SellBuy(code, title, seller, numTickets, price);
 
         } else if (code == 5) {// extract the buyers name
-            String buyer = line.substring(3, 17).trim();
+            String buyer = line.substring(3, 18).trim();
             // extract the sellers name
-            String seller = line.substring(19, 33).trim();
+            String seller = line.substring(19, 34).trim();
             // extract the refund amount
-            double refund = new Double(line.substring(35, 43));
+            double refund = new Double(line.substring(35));
             // create a new xstreambackend.Return transaction
             tmp = new Return(code, buyer, seller, refund);
 
