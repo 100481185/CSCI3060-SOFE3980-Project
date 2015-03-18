@@ -1,3 +1,5 @@
+package unit;
+
 import backend.Record;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +12,7 @@ import java.util.Collection;
 import static junit.framework.TestCase.assertEquals;
 
 /**
- * UserTest:
+ * unit.UserTest:
  * <brief description of class>
  */
 @RunWith(Parameterized.class)

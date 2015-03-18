@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Test Results &mdash; BackEndTestSuite</title>
+    <title>Test Results &mdash; unit.BackEndTestSuite</title>
     <style type="text/css">
         html {
             height: 100%
@@ -593,8 +593,9 @@
 <body>
 <div id="container">
     <div id="header">
-        <div class="time">24 ms</div>
-        <h1>BackEndTestSuite: <strong><span class="total">26 total, </span><span class="failed">1 failed, </span><span
+        <div class="time">18 ms</div>
+        <h1>unit.BackEndTestSuite: <strong><span class="total">26 total, </span><span
+                class="error">1 error, </span><span
                 class="passed">25 passed</span></strong>
         </h1>
 
@@ -614,30 +615,25 @@
         <ul id="tree">
             <li xmlns="" class="level top failed open">
 <span><em class="time">
-    <div class="time">24 ms</div>
-</em>BackEndTestSuite</span>
+    <div class="time">18 ms</div>
+</em>unit.BackEndTestSuite</span>
                 <ul>
                     <li class="level suite open">
 <span><em class="time">
-    <div class="time">4 ms</div>
-</em>DataTest</span>
+    <div class="time">3 ms</div>
+</em>unit.DataTest</span>
                         <ul>
                             <li class="level test">
 <span><em class="time">
-    <div class="time">4 ms</div>
+    <div class="time">3 ms</div>
 </em><em class="status">passed</em>testReadData</span>
-                                <ul>
-                                    <li class="text">
-                                        <span class="stdout">User5           AA 000499.99<br/>User4           SS 000777.78<br/>User3           BS 000888.78<br/>User2           FS 000999.78<br/>User1           AA 999999817<br/></span>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </li>
                     <li class="level suite open">
 <span><em class="time">
     <div class="time">0 ms</div>
-</em>UserTest</span>
+</em>unit.UserTest</span>
                         <ul>
                             <li class="level test">
 <span><em class="time">
@@ -653,6 +649,11 @@
 <span><em class="time">
     <div class="time">0 ms</div>
 </em><em class="status">passed</em>testRemoveCredit</span>
+                                <ul>
+                                    <li class="text">
+                                        <span class="stdout">User5           AA 000499.99<br/>User4           SS 000777.78<br/>User3           BS 000888.78<br/>User2           FS 000999.78<br/>User1           AA 999999817<br/></span>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="level test">
 <span><em class="time">
@@ -668,8 +669,8 @@
                     </li>
                     <li class="level suite open">
 <span><em class="time">
-    <div class="time">1 ms</div>
-</em>AccountsTest</span>
+    <div class="time">3 ms</div>
+</em>unit.AccountsTest</span>
                         <ul>
                             <li class="level test">
 <span><em class="time">
@@ -678,7 +679,7 @@
                             </li>
                             <li class="level test">
 <span><em class="time">
-    <div class="time">0 ms</div>
+    <div class="time">1 ms</div>
 </em><em class="status">passed</em>testDeleteUser</span>
                             </li>
                             <li class="level test">
@@ -688,7 +689,7 @@
                             </li>
                             <li class="level test">
 <span><em class="time">
-    <div class="time">0 ms</div>
+    <div class="time">1 ms</div>
 </em><em class="status">passed</em>testEncode</span>
                             </li>
                             <li class="level test">
@@ -700,12 +701,12 @@
                     </li>
                     <li class="level suite open">
 <span><em class="time">
-    <div class="time">3 ms</div>
-</em>TicketsTests</span>
+    <div class="time">2 ms</div>
+</em>unit.TicketsTests</span>
                         <ul>
                             <li class="level test">
 <span><em class="time">
-    <div class="time">1 ms</div>
+    <div class="time">0 ms</div>
 </em><em class="status">passed</em>testGetEvent</span>
                             </li>
                             <li class="level test">
@@ -732,8 +733,8 @@
                     </li>
                     <li class="level suite open">
 <span><em class="time">
-    <div class="time">0 ms</div>
-</em>RecordTest</span>
+    <div class="time">1 ms</div>
+</em>unit.RecordTest</span>
                         <ul>
                             <li class="level suite open">
 <span><em class="time">
@@ -749,12 +750,12 @@
                             </li>
                             <li class="level suite open">
 <span><em class="time">
-    <div class="time">0 ms</div>
+    <div class="time">1 ms</div>
 </em>[1]</span>
                                 <ul>
                                     <li class="level test">
 <span><em class="time">
-    <div class="time">0 ms</div>
+    <div class="time">1 ms</div>
 </em><em class="status">passed</em>testRecordConstruct[1]</span>
                                     </li>
                                 </ul>
@@ -823,12 +824,12 @@
                     </li>
                     <li class="level suite failed open">
 <span><em class="time">
-    <div class="time">16 ms</div>
-</em>TransactionsTest</span>
+    <div class="time">9 ms</div>
+</em>unit.TransactionsTest</span>
                         <ul>
                             <li class="level test">
 <span><em class="time">
-    <div class="time">2 ms</div>
+    <div class="time">1 ms</div>
 </em><em class="status">passed</em>testGetTransaction</span>
                             </li>
                             <li class="level test">
@@ -838,11 +839,11 @@
                             </li>
                             <li class="level test failed open">
 <span><em class="time">
-    <div class="time">14 ms</div>
-</em><em class="status">failed</em>testDecode</span>
+    <div class="time">8 ms</div>
+</em><em class="status">error</em>testDecode</span>
                                 <ul>
                                     <li class="text">
-                                        <span class="stderr">junit.framework.AssertionFailedError: Expected: &lt;null&gt; but was: backend.Regular@6f621a25<br/>	at TransactionsTest.testDecode(TransactionsTest.java:62)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runners.Suite.runChild(Suite.java:128)<br/>	at org.junit.runners.Suite.runChild(Suite.java:27)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/></span>
+                                        <span class="stderr">java.lang.NullPointerException<br/>	at backend.Transactions.decode(Transactions.java:83)<br/>	at unit.TransactionsTest.testDecode(unit.TransactionsTest.java:63)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)<br/>	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)<br/>	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)<br/>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)<br/>	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)<br/>	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)<br/>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)<br/>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runners.Suite.runChild(Suite.java:128)<br/>	at org.junit.runners.Suite.runChild(Suite.java:27)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)<br/>	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)<br/>	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br/>	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)<br/></span>
                                     </li>
                                 </ul>
                             </li>
@@ -854,7 +855,7 @@
     </div>
 </div>
 <div id="footer">
-    <p>Generated by IntelliJ IDEA on 17/03/15 9:19 PM</p>
+    <p>Generated by IntelliJ IDEA on 17/03/15 9:27 PM</p>
 </div>
 </body>
 </html>

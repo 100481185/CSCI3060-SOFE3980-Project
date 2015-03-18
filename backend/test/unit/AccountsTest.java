@@ -1,3 +1,5 @@
+package unit;
+
 import backend.Accounts;
 import backend.User;
 import org.junit.After;
@@ -9,7 +11,7 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNull;
 
 /**
- * AccountsTest:
+ * unit.AccountsTest:
  * <brief description of class>
  */
 public class AccountsTest {

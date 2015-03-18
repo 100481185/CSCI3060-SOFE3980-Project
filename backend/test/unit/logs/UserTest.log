@@ -4,7 +4,7 @@ ISSUE 1: 17/03/15 4:20AM
     9.99999999E8
     <Click to see difference>
 
-	at UserTest.testRemoveCredit(UserTest.java:66)
+	at unit.UserTest.testRemoveCredit(unit.UserTest.java:66)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

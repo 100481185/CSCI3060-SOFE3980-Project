@@ -12,7 +12,7 @@ public class Transactions extends Data {
 	 */
 	private Queue<Record> records;
     /**
-     * A queue of xstreambackend.Regular transactions that represent the sessions logged in users
+     * A queue of Regular transactions that represent the sessions logged in users
      * This data structure is memory efficient as is disposes of the element after
      * processing.
      */
@@ -30,8 +30,8 @@ public class Transactions extends Data {
     }
 
 	/**
-	 * Constructor for xstreambackend.Transactions class. Reads in all transactions from
-	 * DailyTransactions file and stores it in memory.
+     * Constructor for Transactions class. Reads in all transactions from
+     * DailyTransactions file and stores it in memory.
 	 * @param fileName A string that represents the path to the DailyTransactions file.
 	 */
 	public Transactions(String fileName) {
@@ -77,7 +77,7 @@ public class Transactions extends Data {
             String type = line.substring(19, 21);
             // extract users credit
             double credit = new Double(line.substring(22));
-            // create a new xstreambackend.Regular Transaction
+            // create a new Regular Transaction
             tmp = new Regular(code, name, type, credit);
             if (code == 0)
                 // add the sessions user to the loggedIn user list
@@ -91,7 +91,7 @@ public class Transactions extends Data {
             int numTickets = new Integer(line.substring(40, 43));
             // extract the price of the ticket
             double price = new Double(line.substring(44));
-            // create a new xstreambackend.SellBuy transaction
+            // create a new SellBuy transaction
             tmp = new SellBuy(code, title, seller, numTickets, price);
 
         } else if (code == 5) {// extract the buyers name
@@ -100,7 +100,7 @@ public class Transactions extends Data {
             String seller = line.substring(19, 34).trim();
             // extract the refund amount
             double refund = new Double(line.substring(35));
-            // create a new xstreambackend.Return transaction
+            // create a new Return transaction
             tmp = new Return(code, buyer, seller, refund);
 
         } else {

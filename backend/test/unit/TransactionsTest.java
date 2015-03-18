@@ -1,3 +1,5 @@
+package unit;
+
 import backend.Regular;
 import backend.Return;
 import backend.SellBuy;
@@ -52,21 +54,24 @@ public class TransactionsTest {
     @Test
     public void testGetTransaction() throws Exception {
         // insert transactions in sequential order
-        assertEquals(0, transactions.decode(line00Logout));
         assertEquals(0, transactions.decode(line01Create));
         assertEquals(0, transactions.decode(line02Delete));
         assertEquals(0, transactions.decode(line03Sell));
         assertEquals(0, transactions.decode(line04Buy));
         assertEquals(0, transactions.decode(line05Refund));
         assertEquals(0, transactions.decode(line06AddCredit));
+        assertEquals(0, transactions.decode(line00Logout));
+
+        // check if logout was recorded
+        assertEquals("User1", transactions.getLoggedInUser());
 
         // get transactions in the same order as inserted
-        assertSame(Regular.class, (transactions.getTransaction()).getClass());
         assertSame(Regular.class, (transactions.getTransaction()).getClass());
         assertSame(Regular.class, (transactions.getTransaction()).getClass());
         assertSame(SellBuy.class, (transactions.getTransaction()).getClass());
         assertSame(SellBuy.class, (transactions.getTransaction()).getClass());
         assertSame(Return.class, (transactions.getTransaction()).getClass());
+        assertSame(Regular.class, (transactions.getTransaction()).getClass());
         assertSame(Regular.class, (transactions.getTransaction()).getClass());
         assertNull(transactions.getTransaction());
     }
@@ -74,7 +79,22 @@ public class TransactionsTest {
 
     @Test
     public void testGetLoggedInUser() throws Exception {
+        // create a set of  logged in users
+        String line0 = "00 User0           AA 999999999";
+        String line1 = "00 User1           AA 999999999";
+        String line2 = "00 User2           AA 999999999";
 
+        // insert each user after some transactions
+        assertEquals(0, transactions.decode(line04Buy));
+        assertEquals(0, transactions.decode(line0));
+        assertEquals(0, transactions.decode(line04Buy));
+        assertEquals(0, transactions.decode(line1));
+        assertEquals(0, transactions.decode(line04Buy));
+        assertEquals(0, transactions.decode(line2));
+
+        assertEquals("User0", transactions.getLoggedInUser());
+        assertEquals("User1", transactions.getLoggedInUser());
+        assertEquals("User2", transactions.getLoggedInUser());
     }
 
     @Test

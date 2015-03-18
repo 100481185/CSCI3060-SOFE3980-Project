@@ -1,11 +1,12 @@
+package unit;
+
 import backend.Data;
-import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * unit.AccountsTest:
+ * unit.unit.AccountsTest:
  * <brief description of class>
  */
 public class DataTest {

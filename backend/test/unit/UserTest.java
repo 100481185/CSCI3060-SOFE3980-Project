@@ -1,3 +1,5 @@
+package unit;
+
 import backend.User;
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +8,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 /**
- * UserTest:
+ * unit.UserTest:
  * <brief description of class>
  */
 public class UserTest {

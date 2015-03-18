@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Logger, version 1.4
-#   logs stdin, stdout and stderr to their
+#   unit.logs stdin, stdout and stderr to their
 #   repective files.
 #
 

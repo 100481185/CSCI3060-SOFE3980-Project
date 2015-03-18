@@ -1,8 +1,10 @@
+package unit;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * BackEndTestSuite:
+ * unit.BackEndTestSuite:
  * <brief description of class>
  */
 @RunWith(Suite.class)
@@ -13,7 +15,6 @@ import org.junit.runners.Suite;
         TicketsTests.class,
         RecordTest.class,
         TransactionsTest.class
-
 })
 public class BackEndTestSuite {
 }
