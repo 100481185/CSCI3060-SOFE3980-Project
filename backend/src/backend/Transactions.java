@@ -1,6 +1,7 @@
 package backend;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Transactions extends Data {
 
@@ -16,6 +17,16 @@ public class Transactions extends Data {
      * processing.
      */
     private Queue<String> loggedInUsers;
+
+
+    /**
+     * default constructor for Transactions class.
+     * primarily used for testing purposes
+     */
+    public Transactions() {
+        super("AvailableTickets.txt");
+        this.records = new LinkedList<Record>();
+    }
 
 	/**
 	 * Constructor for xstreambackend.Transactions class. Reads in all transactions from
