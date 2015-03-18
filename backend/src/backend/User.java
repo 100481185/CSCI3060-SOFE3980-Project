@@ -20,7 +20,17 @@ public class User {
 	 */
 	private double credit;
 
-	/**
+    /**
+     * Default constructor for the User class. Constructs an empty user.
+     * It is primarily used for testing purposes.
+     */
+    public User() {
+        this.name = "";
+        this.type = "";
+        this.credit = 0;
+    }
+
+    /**
 	 * Constructor method of xstreambackend.User.
 	 * @param name a string that represents the name of xstreambackend.User
 	 * @param type a string that represents the type of user
