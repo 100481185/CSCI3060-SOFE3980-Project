@@ -66,7 +66,7 @@ public class OperationManager {
             switch (cur.getCode()) {
                 case 0:
                     if ((this.loggedIn = setLoggedIn()) == null)
-                        return 1;
+                        break;
                     break;
                 case 1:
                     if(doCreate((Regular) cur) > 0)
@@ -287,7 +287,11 @@ public class OperationManager {
 	/**
 	 * xstream - backend
      *
-     * This is the main program for running the backend of xstream.
+     * This is the main program for running the backend of xstream. This program is intended to
+     * validate the frontend transactions for a day. The files are read in and stored in data
+     * structures at the construction of the object. The processTransactions method processes
+     * each transaction and validates it in the system. At the end of the program the new files
+     * are generated.
      *
      * To run with specific data files, include the paths in cmd-line. The order
      * is DailyTransactions file, UserAccounts file, AvailableTickets file.
