@@ -99,9 +99,16 @@ public class OperationManagerTest {
         // create a user account
         accounts.decode(user1);
 
+        opManager.setLoggedIn();
+
+        // accessing private member function of OperationManager class
         Method doCreate = OperationManager.class.getDeclaredMethod("doCreate", Regular.class);
         doCreate.setAccessible(true);
-        Object ret = doCreate.invoke(opManager, transactions.getTransaction());
+        // create a re
+        Regular transacation = (Regular) transactions.getTransaction();
+        System.out.printf("code:%d name:%s type:%s credit:%.2f \n", transacation.getCode(),
+                transacation.getName(), transacation.getType(), transacation.getCredit());
+        int ret = (Integer) doCreate.invoke(opManager, transacation);
         System.out.print(ret);
         assertEquals(0, ret);
     }

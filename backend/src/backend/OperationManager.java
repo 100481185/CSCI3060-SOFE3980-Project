@@ -46,8 +46,8 @@ public class OperationManager {
 	 */
 	public OperationManager(String transactionsFile, String accountsFile, String ticketsFile) {
         this.transactions = new Transactions(transactionsFile);
-        this.accounts = new Accounts(accountsFile, accountsFile); // needs to be changed to a new file path
-        this.tickets = new Tickets(ticketsFile, ticketsFile); // needs to be changes to a new file path
+        this.accounts = new Accounts(accountsFile, "UserAccounts.out"); // needs to be changed to a new file path
+        this.tickets = new Tickets(ticketsFile, "AvailableTickets.out"); // needs to be changes to a new file path
         // set the first sessions logged in user to null
         this.loggedIn = setLoggedIn();
 	}
@@ -102,6 +102,8 @@ public class OperationManager {
                     return 2;
             }
         }
+        accounts.writeData();
+        tickets.writeData();
         return 0;
 	}
 
@@ -112,7 +114,8 @@ public class OperationManager {
      */
     public User setLoggedIn() {
         String name = transactions.getLoggedInUser();
-        return this.accounts.getUser(name);
+        loggedIn = accounts.getUser(name);
+        return loggedIn;
     }
 
 	/**
