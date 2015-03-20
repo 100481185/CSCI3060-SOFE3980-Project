@@ -28,7 +28,7 @@ public class OperationManagerTest {
     private final String user4 = "user4           SS 000000000";
 
     // Tickets Constants
-    private final String ticket1 = "event1               user1           100 000025";
+    private final String ticket1 = "even     t1               user1           100 000025";
     private final String ticket2 = "event2               user2           050 000.25";
     private final String ticket3 = "event3               user4           004 000005";
 
