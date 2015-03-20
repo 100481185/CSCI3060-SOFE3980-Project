@@ -166,6 +166,7 @@ public class DoCreateTest {
                 user.getName(), user.getType(), user.getCredit());
     }
 
+
     @Test
     public void testDoCreate() throws Exception {
         // set LoggedIn user
