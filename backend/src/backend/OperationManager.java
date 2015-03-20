@@ -297,6 +297,8 @@ public class OperationManager {
      * is DailyTransactions file, UserAccounts file, AvailableTickets file.
      *
      * If no files are specified then the default data files will be used
+     * 
+     * All documentation is in doc/Phase4
      *
 	 * @param args an array of strings from the command-line which represent filenames
 	 */
