@@ -17,7 +17,7 @@ using namespace std;
 
 /*
 Data:
-    Handles file I/O actions to read/write data to/from UserAccounts, AvailableTickets,
+    Handles file I/O actions to read/write backend.data to/from UserAccounts, AvailableTickets,
     and DailyTransactions in order to obtain and update information during transactions.
  */
 class Data
@@ -31,21 +31,21 @@ public:
 
     /*
     ReadData: 
-	Handles reading of data from file to memory
+	Handles reading of backend.data from file to memory
 	Return 0 on success, -1 on failure
     */
     int ReadData();
 
     /*
     WriteData:
-	Handles writing of data from memory to file
+	Handles writing of backend.data from memory to file
 	Return 0 on success, -1 on failure
     */
     int WriteData();
 
     /*
     data_:
-	list containing lines of data from a text file
+	list containing lines of backend.data from a text file
     */
     std::list<std::string> data_;
 
@@ -53,7 +53,7 @@ public:
 private:
     // file_name_: the relative path to the file.
     std::string file_name_;
-    // *data_file_: the stream to read and write to the data file.
+    // *data_file_: the stream to read and write to the backend.data file.
     std::fstream *data_file_;
 
     /*

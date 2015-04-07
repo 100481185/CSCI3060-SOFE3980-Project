@@ -44,7 +44,7 @@ source ${SRCDIR}/Logger.sh ${TARGETTESTDIR};
 #   RETURN 0 on success, -int on failure
 function TestCase {
     ########### Setup TestEnv #############
-    # remove the old data
+    # remove the old backend.data
     cleanTest
 
     TAB=""

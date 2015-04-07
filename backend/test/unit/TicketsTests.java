@@ -1,7 +1,6 @@
 package unit;
 
-import backend.Event;
-import backend.Tickets;
+import backend.event.*;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -60,7 +59,7 @@ public class TicketsTests {
         priceExceedsMax = null;
     }
 
-    public int newEvent(Event event) {
+    public int newEvent(Event event) throws IllegalSellerException, IllegalNumTicketsException, IllegalPriceException, IllegalTitleException {
         String title = event.getTitle();
         String seller = event.getSeller();
         int numTickets = event.getNumTickets();

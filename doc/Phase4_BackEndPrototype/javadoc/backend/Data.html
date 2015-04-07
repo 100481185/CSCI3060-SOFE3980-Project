@@ -85,7 +85,7 @@ if (location.href.indexOf('is-external=true') == -1) {
         <li>java.lang.Object</li>
         <li>
             <ul class="inheritance">
-                <li>backend.Data</li>
+                <li>backend.File</li>
             </ul>
         </li>
     </ul>
@@ -105,7 +105,7 @@ extends java.lang.Object</pre>
                 <div class="block">This class represents a base class for handling all read and write
                     operation on a file. It provides inheriting classes safe read and
                     write methods that check and report errors. It also provides
-                    subclasses with methods that can be overridden to extract data
+                    subclasses with methods that can be overridden to extract backend.data
                     from lines with their individual formatting. If two files are specified
                     in the constructor the first file will be used for read operations and
                     the second for write operations. If one file is specified it will
@@ -374,7 +374,7 @@ extends java.lang.Object</pre>
                                 <h4>decode</h4>
                                 <pre>public&nbsp;int&nbsp;decode(java.lang.String&nbsp;line)</pre>
                                 <div class="block">This method is intended to be overridden in inheriting classes. Each
-                                    class should provide a method to parse and extract data from the line
+                                    class should provide a method to parse and extract backend.data from the line
                                     of text with their individual formatting requirements. The base class
                                     simply prints the line of text to console.
                                 </div>
@@ -396,7 +396,7 @@ extends java.lang.Object</pre>
                                     write to file. Each subclass should provide a line of text
                                     formatted to match attribute characteristics. This method is called
                                     repeatedly by the writeData method until an EOF is received. The
-                                    base class will rewrite the data in the file to the file.
+                                    base class will rewrite the backend.data in the file to the file.
                                     IMPORTANT: EOF must be on a line by itself
                                 </div>
                                 <dl>

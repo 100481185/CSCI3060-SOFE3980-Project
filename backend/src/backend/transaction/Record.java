@@ -1,8 +1,8 @@
-package backend;
+package backend.transaction;
 
 /**
  * This class represents a transaction. It is responsible
- * for storing and retrieving transaction data.
+ * for storing and retrieving transaction backend.data.
  */
 public class Record {
 

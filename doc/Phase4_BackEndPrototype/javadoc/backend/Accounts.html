@@ -85,10 +85,10 @@ if (location.href.indexOf('is-external=true') == -1) {
         <li>java.lang.Object</li>
         <li>
             <ul class="inheritance">
-                <li><a href="../backend/Data.html" title="class in backend">backend.Data</a></li>
+                <li><a href="../backend/Data.html" title="class in backend">backend.File</a></li>
                 <li>
                     <ul class="inheritance">
-                        <li>backend.Accounts</li>
+                        <li>backend.user.Accounts</li>
                     </ul>
                 </li>
             </ul>
@@ -231,7 +231,7 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
                                 <td class="colFirst"><code>java.lang.String</code></td>
                                 <td class="colLast"><code><strong><a href="../backend/Accounts.html#encode()">encode</a></strong>()</code>
 
-                                    <div class="block">This method overrides the encode method in data.</div>
+                                    <div class="block">This method overrides the encode method in backend.data.</div>
                                 </td>
                             </tr>
                             <tr class="rowColor">
@@ -487,12 +487,13 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
                             <li class="blockList">
                                 <h4>encode</h4>
                                 <pre>public&nbsp;java.lang.String&nbsp;encode()</pre>
-                                <div class="block">This method overrides the encode method in data. The method get the
-                                    next user from the userIterator and converts its data to a formatted
+                                <div class="block">This method overrides the encode method in backend.data. The method
+                                    get the
+                                    next user from the userIterator and converts its backend.data to a formatted
                                     string. name is 15 char with trailing spaces, type is 2 char, credit
                                     is 9 digits with or without decimal and leading 0's. All fields have
                                     a blank space between them. The formatted line is returned to be
-                                    written to file. If end of data set is reached a EOF is sent
+                                    written to file. If end of backend.data set is reached a EOF is sent
                                     signaling calling function to finish write.
                                 </div>
                                 <dl>

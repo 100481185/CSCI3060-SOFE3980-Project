@@ -1,4 +1,6 @@
-package backend;
+package backend.transaction;
+
+import backend.data.Data;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,13 +9,13 @@ public class Transactions extends Data {
 
 	/**
 	 * A queue that represents all the transaction records in the
-	 * DailyTransactions file. This data structure is memory efficient
+     * DailyTransactions file. This backend.data structure is memory efficient
      * because it discards the memory element after processing.
 	 */
 	private Queue<Record> records;
     /**
      * A queue of Regular transactions that represent the sessions logged in users
-     * This data structure is memory efficient as is disposes of the element after
+     * This backend.data structure is memory efficient as is disposes of the element after
      * processing.
      */
     private Queue<String> loggedInUsers;
@@ -38,7 +40,6 @@ public class Transactions extends Data {
         super(fileName);
         this.records = new LinkedList<Record>();
         this.loggedInUsers = new LinkedList<String>();
-        readData();
 	}
 
 	/**

@@ -86,10 +86,10 @@ if (location.href.indexOf('is-external=true') == -1) {
         <li>java.lang.Object</li>
         <li>
             <ul class="inheritance">
-                <li><a href="../backend/Data.html" title="class in backend">backend.Data</a></li>
+                <li><a href="../backend/Data.html" title="class in backend">backend.File</a></li>
                 <li>
                     <ul class="inheritance">
-                        <li>backend.Tickets</li>
+                        <li>backend.event.Tickets</li>
                     </ul>
                 </li>
             </ul>
@@ -469,8 +469,8 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
                                 <pre>public&nbsp;int&nbsp;decode(java.lang.String&nbsp;line)</pre>
                                 <div class="block">This method overrides the super class xstreambackend.Data's decode.
                                     It accepts the
-                                    line of text and extracts the data to create a event and insert it
-                                    into the events map. The format for the data extraction is:
+                                    line of text and extracts the backend.data to create a event and insert it
+                                    into the events map. The format for the backend.data extraction is:
                                     Start(col#) Size xstreambackend.Event: attribute
                                     0 20 title
                                     21 15 seller

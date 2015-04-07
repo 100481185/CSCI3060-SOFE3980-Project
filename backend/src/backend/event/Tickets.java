@@ -1,4 +1,8 @@
-package backend;
+package backend.event;
+
+import backend.data.Data;
+import backend.data.FatalErrorException;
+import backend.data.IllegalLineLengthException;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -13,8 +17,11 @@ import java.util.List;
  */
 public class Tickets extends Data {
 
-	/**
-	 * a list of Events that represents the AvailableTickets file
+    private static final int TITLELENGTH = 20;
+    private static final int NAMELENGTH = 15;
+
+    /**
+     * a list of Events that represents the AvailableTickets file
 	 */
 	public List<Event> events;
 	/**
@@ -48,7 +55,6 @@ public class Tickets extends Data {
 	public Tickets(String readFileName, String writeFilename) {
         super(readFileName, writeFilename);
         this.events = new LinkedList<Event>();
-        readData();
         this.eventIterator = this.events.iterator();
         this.reset = true;
     }
@@ -78,38 +84,24 @@ public class Tickets extends Data {
 	 * the tickets
 	 * @param numTickets an integer representing the number of tickets for sale
 	 * @param price a double that represents the price of a ticket
-     * @return 0 on success, 1 on failure, 2 on InvalidNumTicketsError, 3 on
-     * InvalidPriceError
-	 */
-	public int newEvent(String title, String seller, int numTickets, double price) {
-        if (title.length() > 20)
-            return 1;
-        if (seller.length() > 15)
-            return 1;
+     * @return 0 on success
+     */
+    public int newEvent(String title, String seller, int numTickets, double price)
+            throws IllegalTitleException, IllegalSellerException, IllegalNumTicketsException, IllegalPriceException {
+
+        if (title.length() > TITLELENGTH)
+            throw new IllegalTitleException("Length of title must be less than 20");
+
+        if (seller.length() > NAMELENGTH)
+            throw new IllegalSellerException("Length of Seller must be less that 15");
+
         if (numTickets < 0 || numTickets > 100)
-            return 1;
+            throw new IllegalNumTicketsException("Number of tickets must be greater than 0 and less than 100");
         if (price < 0 || price > 999.99)
-            return 1;
+            throw new IllegalPriceException("Price must be greater than 0 and less than 999.99");
 
         Event tmp = new Event(title, seller, numTickets, price);
-
-        try {
-
-            this.events.add(tmp);
-
-        } catch (UnsupportedOperationException e){
-            e.printStackTrace(System.err);
-            return 1;
-        } catch (ClassCastException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        } catch (NullPointerException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        }
+        this.events.add(tmp);
         return 0;
 	}
 
@@ -154,9 +146,9 @@ public class Tickets extends Data {
 
 	/**
 	 * This method overrides the super class xstreambackend.Data's decode. It accepts the
-	 * line of text and extracts the data to create a event and insert it
-	 * into the events map. The format for the data extraction is:
-	 * Start(col#)     Size     xstreambackend.Event: attribute
+     * line of text and extracts the backend.data to create a event and insert it
+     * into the events map. The format for the backend.data extraction is:
+     * Start(col#)     Size     xstreambackend.Event: attribute
 	 *      0           20          title
      *     21           15          seller
 	 *     37            3          numTickets
@@ -165,18 +157,23 @@ public class Tickets extends Data {
 	 * @param line a string the represents a line of text from a file
 	 * @return 0 on success, 1 on failure.
 	 */
-	public int decode(String line) {
+    public int decode(String line) throws FatalErrorException {
         if (line.length() > 47)
-            return 1;
+            throw new FatalErrorException(new IllegalLineLengthException(line.length(), 47));
         if ((line.charAt(20) != ' ' || line.charAt(36) != ' ' || line.charAt(40) != ' '))
-            return 1;
+            throw new FatalErrorException(new IllegalLineLengthException(line.length(), 47));
 
         String title = line.substring(0, 19).trim();
         String seller = line.substring(21, 36).trim();
         int numTickets = new Integer(line.substring(37, 40));
         double price = new Double(line.substring(41));
-        return newEvent(title, seller, numTickets, price);
-	}
+
+        try {
+            return newEvent(title, seller, numTickets, price);
+        } catch (Exception e) {
+            throw new FatalErrorException(e);
+        }
+    }
 
 	/**
 	 * This method overrides the super class xstreambackend.Data's encode. It is

@@ -1,4 +1,4 @@
-#include "../include/data.h"
+#include "../include/backend.data.h"
 
 Data::Data(string file_name) : file_name_(file_name) {
 }
@@ -7,11 +7,11 @@ int Data::ReadData() {
     // open with read flag
     if (OpenFile('r')) {
         std::string line;
-	// iterate through file and read from it to obtain data
+	// iterate through file and read from it to obtain backend.data
         while (getline(*data_file_, line)) {
             try
             {
-		// stop reading data when END is reached
+		// stop reading backend.data when END is reached
                 if (line.substr(0, 3) == "END") {
                     break;
                 }

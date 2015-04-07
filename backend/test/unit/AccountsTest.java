@@ -1,7 +1,6 @@
 package unit;
 
-import backend.Accounts;
-import backend.User;
+import backend.user.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +29,7 @@ public class AccountsTest {
 
     @Test
     public void testNewUser() throws Exception {
-        // Valid new user data
+        // Valid new user backend.data
         String name = "Nicholas";
         String type = "AA";
         double credit = 999999999;
@@ -100,12 +99,20 @@ public class AccountsTest {
     }
 
     @Test
-    public void testDeleteUser() {
+    public void testDeleteUser() throws UserExistsException {
         String name = "ValidDelete";
         String type = "AA";
         double credit = 400;
 
-        assertEquals(0, accounts.newUser(name, type, credit));
+        try {
+            assertEquals(0, accounts.newUser(name, type, credit));
+        } catch (CreditLimitException e) {
+            e.printStackTrace();
+        } catch (IllegalUserTypeException e) {
+            e.printStackTrace();
+        } catch (IllegalUserNameException e) {
+            e.printStackTrace();
+        }
         assertEquals(0, accounts.deleteUser(name));
 
         // Error: Accounts does not exist
@@ -120,7 +127,7 @@ public class AccountsTest {
 
     @Test
     public void testGetUser() throws Exception {
-        // Valid new user data
+        // Valid new user backend.data
         String name = "Nicholas";
         String type = "AA";
         double credit = 999999999;

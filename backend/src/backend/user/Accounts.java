@@ -1,4 +1,8 @@
-package backend;
+package backend.user;
+
+import backend.data.Data;
+import backend.data.FatalErrorException;
+import backend.data.IllegalLineLengthException;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,6 +17,8 @@ import java.util.Map;
  * reported to caller and logged.
  */
 public class Accounts extends Data {
+
+    public static final int ACCOUNTLINELENGTH = 27;
 
     /**
      * a map with key, username, and value, xstreambackend.User, that represents
@@ -52,7 +58,6 @@ public class Accounts extends Data {
         super(readFilename, writeFilename);
         this.users = new HashMap<String, User>();
         // build user accounts in memory
-        readData();
         this.userIterator = users.entrySet().iterator();
         this.reset = true;
     }
@@ -67,36 +72,31 @@ public class Accounts extends Data {
      * @return 0 on success, 1 on failure, 2 on UserExistsError, 3 on on
      * UserTypeError, 4 on UserCreditError
      */
-    public int newUser(String name, String type, double credit) {
+    public int newUser(String name, String type, double credit)
+            throws CreditLimitException, UserExistsException, IllegalUserTypeException, IllegalUserNameException {
 
         if (name.length() > 15)
-            return 1;
+            throw new IllegalUserNameException(name);
 
         // check if name already exists
         if (getUser(name) != null)
-            // TODO: implement NameExistsError
-            return 2;
+            throw new UserExistsException(name, true);
+
         // check if type is valid
         if (!(type.equals("AA") || type.equals("FS") || type.equals("BS") || type.equals("SS"))) {
-            // TODO: implement InvalidTypeError
-            return 3;
+            throw new IllegalUserTypeException(type);
         }
-        if (credit < 0 || credit > 999999999)
-            // TODO: implement InvalidCreditError
-            return 4;
+
+        double limit;
+        if (credit < (limit = 0) || credit > (limit = 999999999))
+            throw new CreditLimitException(0, credit, limit);
 
         // create new user
         User tmp = new User(name, type, credit);
-        try {
 
-            // add user to users map with key name
-            this.users.put(name, tmp);
+        // add user to users map with key name
+        this.users.put(name, tmp);
 
-        } catch (IllegalArgumentException e) {
-            // TODO: implement IllegalArgumentException
-            e.printStackTrace(System.err);
-            return 1;
-        }
         return 0;
     }
 
@@ -108,26 +108,13 @@ public class Accounts extends Data {
      * @param name a string that represents the name of xstreambackend.User
      * @return 0 on success, 1 on failure, 2 on UserDoesNotExistError
      */
-    public int deleteUser(String name) {
-        try {
-            // remove the user from users map
-            User tmp = this.users.remove(name);
+    public int deleteUser(String name) throws UserExistsException {
+        // remove the user from users map
+        User tmp = this.users.remove(name);
 
-            // If name does not exist
-            if (tmp == null)
-                // TODO: implement NameDoesNotExistError
-                return 2;
-
-        } catch (UnsupportedOperationException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        } catch (ClassCastException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        } catch (NullPointerException e) {
-            e.printStackTrace(System.err);
-            return 1;
-        }
+        // If name does not exist
+        if (tmp == null)
+            throw new UserExistsException(name, false);
         // successfully deleted user
         return 0;
     }
@@ -139,19 +126,8 @@ public class Accounts extends Data {
      * @return an objects that represents a xstreambackend.User account on success, null on failure
      */
     public User getUser(String name) {
-        //  initialize a tmp xstreambackend.User
-        User tmp = null;
-        try {
-            // search the users map by key, name
-            tmp = this.users.get(name);
-
-        } catch (ClassCastException e) {
-            e.printStackTrace(System.err);
-        } catch (NullPointerException e) {
-            e.printStackTrace(System.err);
-        }
-
-        return tmp;
+        // search the users map by key, name
+        return this.users.get(name);
     }
 
     /**
@@ -163,15 +139,13 @@ public class Accounts extends Data {
      * @param line a string that represents a line from a file
      * @return 0 on success, 1 on failure, 2 on fatal error
      */
-    public int decode(String line) {
+    public int decode(String line) throws FatalErrorException {
         // check length of line is 27
-        if (line.length() == 27)
-            //TODO: LineLengthError
-            return 2;
+        if (line.length() == ACCOUNTLINELENGTH)
+            throw new FatalErrorException(new IllegalLineLengthException(line.length(), ACCOUNTLINELENGTH));
 
         // check mandatory blank spaces are respected
         if (line.charAt(15) != ' ' || line.charAt(18) != ' ')
-            // TODO: FieldSpacingError
             return 2;
 
         // extract name
@@ -184,16 +158,20 @@ public class Accounts extends Data {
         // create a user with method newUser
         // if newUser exist with failure its exit status is reported
         // to calling function
-        return newUser(name, type, credit);
+        try {
+            return newUser(name, type, credit);
+        } catch (Exception e) {
+            throw new FatalErrorException(e);
+        }
     }
 
     /**
-     * This method overrides the encode method in data. The method get the
-     * next user from the userIterator and converts its data to a formatted
+     * This method overrides the encode method in backend.data. The method get the
+     * next user from the userIterator and converts its backend.data to a formatted
      * string. name is 15 char with trailing spaces, type is 2 char, credit
      * is 9 digits with or without decimal and leading 0's. All fields have
      * a blank space between them. The formatted line is returned to be
-     * written to file. If end of data set is reached a EOF is sent
+     * written to file. If end of backend.data set is reached a EOF is sent
      * signaling calling function to finish write.
      */
     public String encode() {

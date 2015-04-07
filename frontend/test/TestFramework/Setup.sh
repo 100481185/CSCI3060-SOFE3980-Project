@@ -21,7 +21,7 @@ source "${SETUPDIR}"/Clean.sh
 
 # setup():
 #   creates a new build from source can
-#+  be called if test requires clean data
+#+  be called if test requires clean backend.data
 function setup {
     echo -e "${Black}"
     # remove the current TestBuild dir

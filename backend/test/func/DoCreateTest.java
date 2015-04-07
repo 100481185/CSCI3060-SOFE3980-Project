@@ -1,7 +1,14 @@
 package func;
 
 
-import backend.*;
+import backend.BackEnd;
+import backend.data.FatalErrorException;
+import backend.event.Tickets;
+import backend.transaction.Record;
+import backend.transaction.Regular;
+import backend.transaction.Transactions;
+import backend.user.Accounts;
+import backend.user.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +32,7 @@ public class DoCreateTest {
 
     // Accounts Constants
 
-    // Admin Test data
+    // Admin Test backend.data
     private static final String adminLine = "Admin           AA 999999999";
     private static final User adminUser = new User("Admin", "AA", 999999999);
 
@@ -68,7 +75,7 @@ public class DoCreateTest {
     }
 
 
-    private OperationManager op;
+    private BackEnd op;
     private Transactions tr;
     private Accounts ac;
     private Tickets tk;
@@ -128,11 +135,11 @@ public class DoCreateTest {
     }
 
     @Before
-    public void setUp() {
+    public void setUp() throws FatalErrorException {
         this.tr = new Transactions();
         this.ac = new Accounts();
         this.tk = new Tickets();
-        this.op = new OperationManager(tr, ac, tk);
+        this.op = new BackEnd(tr, ac, tk);
         for (String line : trData)
             tr.decode(line);
         for (String line : acData)
@@ -173,7 +180,7 @@ public class DoCreateTest {
         User cur = op.setLoggedIn();
 
         // make the private method accessible
-        Method doCreate = OperationManager.class.getDeclaredMethod("doCreate", Regular.class);
+        Method doCreate = BackEnd.class.getDeclaredMethod("doCreate", Regular.class);
         doCreate.setAccessible(true);
 
         Record curRecord = tr.getTransaction();

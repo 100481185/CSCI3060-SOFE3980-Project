@@ -10,7 +10,7 @@
 Session:
     Provides users with access to session controls. Handles
     the creation and control of memory elements. Provides
-    users with access to data elements.
+    users with access to backend.data elements.
  */
 class Session
 {

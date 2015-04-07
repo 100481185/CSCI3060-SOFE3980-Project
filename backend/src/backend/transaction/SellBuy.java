@@ -1,4 +1,4 @@
-package backend;
+package backend.transaction;
 
 /**
  * This class is represents a return transaction. It is responsible for providing access to all of it attributes. It inherits the

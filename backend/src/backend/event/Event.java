@@ -1,4 +1,4 @@
-package backend;
+package backend.event;
 
 /**
  * This class represents a event that has tickets for sale in the
@@ -77,11 +77,12 @@ public class Event {
 	 * @param numTickets an integer representing the number of tickets purchased.
 	 * @return 0 on success, 1 on failure, 2 on AmountExceedsSellMax, 3 on AmountExceedsNumTickets
 	 */
-	public int sellTickets(int numTickets) {
+    public int sellTickets(int numTickets) throws TicketSaleLimitException, InsufficientTicketsException {
+        int MAXTICKETSALELIMIT = 4;
         if (numTickets > 4)
-            return 2;
-		if ((this.numTickets - numTickets) < 0) {
-            return  3;
+            throw new TicketSaleLimitException(numTickets, 4);
+        if ((this.numTickets - numTickets) < 0) {
+            throw new InsufficientTicketsException(this.numTickets, numTickets);
         }
         this.numTickets -= numTickets;
         return numTickets;

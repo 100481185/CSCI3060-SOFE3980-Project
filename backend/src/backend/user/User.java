@@ -1,4 +1,5 @@
-package backend;
+package backend.user;
+
 
 /**
  * This class represents an account for a xstreambackend.User. It is responsible
@@ -6,6 +7,8 @@ package backend;
  * errors are reported to caller.
  */
 public class User {
+
+    public static final int NAMELENGTH = 15;
 
 	/**
 	 * a char array of size two that represents a type of xstreambackend.User
@@ -67,12 +70,12 @@ public class User {
 	 * @return 0 on success, 1 on failure, 2 on MaxAmountExceededError, 3 on
      * MaxCreditLimitError
 	 */
-	public int addCredit(double amount) {
-        if (amount < 0 || amount > 1000.00)
-            return 2;
-        if ((this.credit + amount) > 999999999)
-            return 3;
-        this.credit += amount;
+    public int addCredit(double amount) throws CreditLimitException {
+        double creditLimit = 999999999;
+        if ((this.credit + amount) > creditLimit)
+            throw new CreditLimitException(amount, credit, creditLimit);
+        else
+            this.credit += amount;
         return 0;
 	}
 
@@ -85,9 +88,10 @@ public class User {
 	 * @param amount a double that represents the amount to be deducted from a users account
 	 * @return 0 on success, 1 on failure, 2 AmountExceedsCreditError
 	 */
-	public int removeCredit(double amount) {
+    public int removeCredit(double amount) throws CreditLimitException {
+        double creditLimit = 0;
         if ((this.credit - amount) < 0)
-            return 2;
+            throw new CreditLimitException(amount, credit, creditLimit);
         this.credit -= amount;
         return 0;
 	}

@@ -1,9 +1,9 @@
 package unit;
 
-import backend.Regular;
-import backend.Return;
-import backend.SellBuy;
-import backend.Transactions;
+import backend.transaction.Regular;
+import backend.transaction.Return;
+import backend.transaction.SellBuy;
+import backend.transaction.Transactions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

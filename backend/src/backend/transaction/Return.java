@@ -1,4 +1,4 @@
-package backend;
+package backend.transaction;
 
 /**
  * This class represents a return transaction record. It is

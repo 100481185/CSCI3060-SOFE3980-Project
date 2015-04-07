@@ -1,6 +1,6 @@
 package unit;
 
-import backend.User;
+import backend.user.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

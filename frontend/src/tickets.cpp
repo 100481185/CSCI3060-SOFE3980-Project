@@ -48,13 +48,13 @@ int Tickets::new_event(string event, string seller, int num_tic, double price) {
 }
 
 int Tickets::write_events() {
-    // clear data buffer
+    // clear backend.data buffer
     data_.clear();
     // create a pointer to the start of accounts
     map<string, Event>::iterator ptr = tickets_.begin();
     for (ptr; ptr != tickets_.end(); ptr++) {
         // get the formatted string version of the account
-        // pointed to by ptr and insert it into data
+        // pointed to by ptr and insert it into backend.data
         data_.push_front(ptr->second.event());
     }
     WriteData();

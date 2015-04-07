@@ -1,5 +1,5 @@
 Issue 1: 17/03/15 3:02AM
-    junit.framework.AssertionFailedError: Expected: <null> but was: backend.User@3741553a
+    junit.framework.AssertionFailedError: Expected: <null> but was: backend.users.User@3741553a
 	at unit.AccountsTest.testDecode(unit.AccountsTest.java:156)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)

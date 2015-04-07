@@ -1,14 +1,14 @@
 #ifndef XSTREAM_EVENTS_H
 #define XSTREAM_EVENTS_H
 
-#include "data.h"
+#include "backend.data.h"
 #include "event.h"
 #include <iostream>
 #include <string>
 #include <map>
 
-// relative path that contains ticket data
-#define EVENTS "data/AvailableTickets.txt"
+// relative path that contains ticket backend.data
+#define EVENTS "backend.data/AvailableTickets.txt"
 
 /*
 Tickets:

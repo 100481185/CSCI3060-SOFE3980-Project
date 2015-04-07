@@ -1,14 +1,14 @@
 #ifndef XSTREAM_USER_ACCOUNTS_H
 #define XSTREAM_USER_ACCOUNTS_H
 
-#include "data.h"
+#include "backend.data.h"
 #include "user.h"
 #include <iostream>
 #include <string>
 #include <map>
 
 // path to the UserAccount.txt file
-#define USER_ACCOUNTS "data/UserAccounts.txt"
+#define USER_ACCOUNTS "backend.data/UserAccounts.txt"
 
 /*
 Accounts:

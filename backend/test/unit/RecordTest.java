@@ -1,6 +1,6 @@
 package unit;
 
-import backend.Record;
+import backend.transaction.Record;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

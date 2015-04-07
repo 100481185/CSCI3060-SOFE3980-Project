@@ -85,10 +85,10 @@ if (location.href.indexOf('is-external=true') == -1) {
         <li>java.lang.Object</li>
         <li>
             <ul class="inheritance">
-                <li><a href="../backend/Data.html" title="class in backend">backend.Data</a></li>
+                <li><a href="../backend/Data.html" title="class in backend">backend.File</a></li>
                 <li>
                     <ul class="inheritance">
-                        <li>backend.Transactions</li>
+                        <li>backend.transaction.Transactions</li>
                     </ul>
                 </li>
             </ul>
@@ -127,7 +127,8 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
 
                                     <div class="block">A queue of Regular transactions that represent the sessions
                                         logged in users
-                                        This data structure is memory efficient as is disposes of the element after
+                                        This backend.data structure is memory efficient as is disposes of the element
+                                        after
                                         processing.
                                     </div>
                                 </td>
@@ -268,7 +269,7 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
                                 <pre>private&nbsp;java.util.Queue&lt;<a href="../backend/Record.html"
                                                                         title="class in backend">Record</a>&gt; records</pre>
                                 <div class="block">A queue that represents all the transaction records in the
-                                    DailyTransactions file. This data structure is memory efficient
+                                    DailyTransactions file. This backend.data structure is memory efficient
                                     because it discards the memory element after processing.
                                 </div>
                             </li>
@@ -282,7 +283,7 @@ extends <a href="../backend/Data.html" title="class in backend">Data</a></pre>
                                 <pre>private&nbsp;java.util.Queue&lt;java.lang.String&gt; loggedInUsers</pre>
                                 <div class="block">A queue of Regular transactions that represent the sessions logged in
                                     users
-                                    This data structure is memory efficient as is disposes of the element after
+                                    This backend.data structure is memory efficient as is disposes of the element after
                                     processing.
                                 </div>
                             </li>

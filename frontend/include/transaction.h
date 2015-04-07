@@ -1,14 +1,14 @@
 #ifndef XSTREAM_DAILY_TRANSACTIONS_H
 #define XSTREAM_DAILY_TRANSACTIONS_H
 
-#include "data.h"
+#include "backend.data.h"
 #include "../include/commit.h"
 #include <iostream>
 
 using namespace std;
 
-// relative path for file that contains Transaction data.
-#define TRANSACTIONS "data/DailyTransactions.txt"
+// relative path for file that contains Transaction backend.data.
+#define TRANSACTIONS "backend.data/DailyTransactions.txt"
 
 /*
 Transactions:

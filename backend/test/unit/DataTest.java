@@ -1,6 +1,7 @@
 package unit;
 
-import backend.Data;
+import backend.data.Data;
+import backend.data.FatalErrorException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class DataTest {
     }
 
     @Test
-    public void testReadData() {
+    public void testReadData() throws FatalErrorException {
         data.readData();
     }
 }

@@ -50,14 +50,14 @@ int Accounts::del_user(string name) {
 }
 
 int Accounts::write_accounts() {
-    // clear data buffer
+    // clear backend.data buffer
     data_.clear();
     // create a pointer to the start of accounts
     map<string, User>::iterator ptr = accounts_.begin();
     // iterate through accounts
     for (ptr; ptr != accounts_.end(); ptr++) {
         // get the formatted string version of the account
-        // pointed to by ptr and insert it into data
+        // pointed to by ptr and insert it into backend.data
         data_.push_front(ptr->second.user());
     }
     WriteData();

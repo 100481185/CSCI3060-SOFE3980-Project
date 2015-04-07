@@ -77,7 +77,7 @@ ISSUE 3: 17/03/15 5:19PM
 	at java.util.Formatter.format(Formatter.java:2469)
 	at java.util.Formatter.format(Formatter.java:2423)
 	at java.lang.String.format(String.java:2790)
-	at backend.Tickets.encode(Tickets.java:195)
+	at backend.event.Tickets.encode(Tickets.java:195)
 	at unit.TicketsTests.testEncode(unit.TicketsTests.java:129)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)

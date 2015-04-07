@@ -19,13 +19,13 @@ readonly CLEANTESTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 readonly TARGETCLEAN=$1
 
 # cleanTest():
-#   cleans test data and output files
+#   cleans test backend.data and output files
 function cleanTest {
     if [ -f $1/output.txt ]; then
         rm $1/output.txt
     fi
 
-    if [ -d $1/data ]; then
+    if [ -d $1/backend.data ]; then
         rm -r $1/data
     fi
 }

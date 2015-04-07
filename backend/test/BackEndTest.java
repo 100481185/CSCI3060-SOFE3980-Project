@@ -1,4 +1,9 @@
-import backend.*;
+import backend.BackEnd;
+import backend.event.Tickets;
+import backend.transaction.Regular;
+import backend.transaction.Transactions;
+import backend.user.Accounts;
+import backend.user.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,9 +14,9 @@ import static junit.framework.TestCase.assertEquals;
 
 /**
  * OperationManagerTest:
- * This test class is responsible for running the input output tests on data sets
+ * This test class is responsible for running the input output tests on backend.data sets
  */
-public class OperationManagerTest {
+public class BackEndTest {
     // Transaction constants
     private final String tr1Create = "01 user5           AA 999999999";
     private final String tr2Delete = "02 user5           AA 999999999";
@@ -28,12 +33,12 @@ public class OperationManagerTest {
     private final String user4 = "user4           SS 000000000";
 
     // Tickets Constants
-    private final String ticket1 = "even     t1               user1           100 000025";
+    private final String ticket1 = "event1               user1           100 000025";
     private final String ticket2 = "event2               user2           050 000.25";
     private final String ticket3 = "event3               user4           004 000005";
 
 
-    private OperationManager opManager;
+    private BackEnd opManager;
     private Transactions transactions;
     private Accounts accounts;
     private Tickets tickets;
@@ -43,7 +48,7 @@ public class OperationManagerTest {
         this.transactions = new Transactions();
         this.accounts = new Accounts();
         this.tickets = new Tickets();
-        opManager = new OperationManager(transactions, accounts, tickets);
+        opManager = new BackEnd(transactions, accounts, tickets);
     }
 
     @After
@@ -102,13 +107,13 @@ public class OperationManagerTest {
         opManager.setLoggedIn();
 
         // accessing private member function of OperationManager class
-        Method doCreate = OperationManager.class.getDeclaredMethod("doCreate", Regular.class);
+        Method doCreate = BackEnd.class.getDeclaredMethod("doCreate", Regular.class);
         doCreate.setAccessible(true);
         // create a re
-        Regular transacation = (Regular) transactions.getTransaction();
-        System.out.printf("code:%d name:%s type:%s credit:%.2f \n", transacation.getCode(),
-                transacation.getName(), transacation.getType(), transacation.getCredit());
-        int ret = (Integer) doCreate.invoke(opManager, transacation);
+        Regular transaction = (Regular) transactions.getTransaction();
+        System.out.printf("code:%d name:%s type:%s credit:%.2f \n", transaction.getCode(),
+                transaction.getName(), transaction.getType(), transaction.getCredit());
+        int ret = (Integer) doCreate.invoke(opManager, transaction);
         System.out.print(ret);
         assertEquals(0, ret);
     }
