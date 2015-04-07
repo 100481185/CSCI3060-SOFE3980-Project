@@ -22,8 +22,8 @@ public class Tickets extends Data {
 
     /**
      * a list of Events that represents the AvailableTickets file
-	 */
-	public List<Event> events;
+     */
+    public List<Event> events;
 	/**
 	 * an iterator of the event list
 	 */
@@ -149,7 +149,7 @@ public class Tickets extends Data {
      * line of text and extracts the backend.data to create a event and insert it
      * into the events map. The format for the backend.data extraction is:
      * Start(col#)     Size     xstreambackend.Event: attribute
-	 *      0           20          title
+     *      0           20          title
      *     21           15          seller
 	 *     37            3          numTickets
 	 *     41            6          price

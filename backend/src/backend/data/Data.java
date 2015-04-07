@@ -129,8 +129,8 @@ public class Data {
 	 * This method is intended to be overridden in inheriting classes. Each
      * class should provide a method to parse and extract backend.data from the line
      * of text with their individual formatting requirements. The base class
-	 * simply prints the line of text to console.
-	 * @param line a string that represents a line from a file.
+     * simply prints the line of text to console.
+     * @param line a string that represents a line from a file.
 	 */
     public int decode(String line) throws FatalErrorException {
         System.out.println(line);
@@ -145,8 +145,8 @@ public class Data {
 	 * repeatedly by the writeData method until an EOF is received. The
      * base class will rewrite the backend.data in the file to the file.
      * IMPORTANT: EOF must be on a line by itself
-	 * @return a string that represents a line of text to be written to file
-	 */
+     * @return a string that represents a line of text to be written to file
+     */
     public String encode() throws FatalErrorException {
         // does nothing
         return null;

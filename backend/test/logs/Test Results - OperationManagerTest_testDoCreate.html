@@ -490,25 +490,24 @@
                             return arg ? 1 : 0;
                         }
 
-                        var backend
+                        var backend;
                     .
                         data = [];
                         branches.each(function (i, e) {
                             data[i] = $(e).is(":has(>ul:visible)") ? 1 : 0;
                         });
                         $.cookie(settings.cookieId, data.join(""));
-                    };
-
+                    }
                     function deserialize() {
                         var stored = $.cookie(settings.cookieId);
                         if (stored) {
-                            var backend
+                            var backend;
                         .
                             data = stored.split("");
                             branches.each(function (i, e) {
                                 $(e).find(">ul")[parseInt(data[i]) ? "show" : "hide"]();
                             });
-                        };
+                        }
                     }
 
                     // add treeview class to activate styles
